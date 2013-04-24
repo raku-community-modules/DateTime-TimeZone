@@ -2,6 +2,6 @@
   "name"        : "DateTime::TimeZone",
   "version"     : "*",
   "description" : "A library of Time Zones in Perl 6",
-  "depends"     : [ "DateTime::Olson" ],
+  "depends"     : [ ],
   "source-url"    : "git://github.com/supernovus/perl6-timezone.git"
 }
