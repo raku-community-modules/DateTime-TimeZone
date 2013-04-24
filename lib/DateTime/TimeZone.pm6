@@ -1,15 +1,13 @@
-class DateTime::TimeZone;
+module DateTime::TimeZone;
 
-## This will be the base class for the rest of the TimeZone objects.
-
-## We export some subroutines.
+## An app-facing set of friendly subroutines for working with timezones.
 
 sub timezone (Str $name, DateTime $datetime=DateTime.new(time)) is export {
   my $namespace = $name.subst('/', '::', :g);
   my $class;
   try {
     require $namespace;
-    $class = ::($namespace).new($datetime);
+    $class = ::($namespace).new(:$datetime);
     CATCH {
       warn "Could not find a TimeZone class for '$name'.";
     }
@@ -38,3 +36,4 @@ sub tz-offset (Str $offset-string) is export {
     0;
   }
 }
+
