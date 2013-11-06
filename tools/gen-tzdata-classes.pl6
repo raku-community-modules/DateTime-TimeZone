@@ -6,7 +6,7 @@ grammar TZData {
         ^ [ <comment> | <rule> | <zone> | <link> ] * $
     }
     token comment {
-        \h*'#'\N*\s*
+        \s*'#'\N*\s*
     }
     token rule {
         Rule\s+<name>\s+<from>\s+<to>\s+<type>\s+<in>\s+<on>\s+<at>\s+<save>\s+<letter> [ <comment> | \s* ]
