@@ -37,6 +37,7 @@ grammar TZData {
     token old-tz { \S+ }
 }
 
+say "Outputting to ./tmp";
 my $text = slurp "./tzdata/northamerica";
 my $parsed = TZData.parse($text);
 
@@ -99,6 +100,44 @@ if $parsed {
         %ruledata{$rule<name>}.push($tmp);
     }
 
+    for @zones -> $zone {
+        my @dirs_to_make;
+        my $dir = ("./tmp/" ~ $zone<name> ~ ".pm6").path.directory;
+        while !($dir.IO ~~ :d) {
+            @dirs_to_make.unshift($dir);
+            $dir = $dir.path.parent;
+        }
+        for @dirs_to_make -> $dir {
+            mkdir($dir);
+        }
+        my $fh = open("./tmp/" ~ $zone<name> ~ ".pm6", :w);
+        my @rules;
+        my @zoneentries = $zone<zonedata>;
+        my @zonedata;
+        for @zoneentries -> $zoneentry {
+            my $rule = "";
+            if $zoneentry<rules> ne "-" {
+                $rule = ~$zoneentry<rules>;
+                @rules.push(~$zoneentry<rules>);
+            }
+            my $until = $zoneentry<until>;
+            if $until {
+                $until = ~$until;
+            } else {
+                $until = Inf;
+            }
+            my $data = ( until => $until, baseoffset => ~$zoneentry<gmtoff>, rules => $rule ).hash;
+            @zonedata.push($data);
+        }
+        @rules = uniq sort @rules;
+        $fh.say("my %rules = ( ");
+        for @rules -> $rule {
+            $fh.say(" $rule => " ~ %ruledata{$rule}.perl ~ ",");
+        }
+        $fh.say(");");
+        $fh.say("my @zonedata = " ~ @zonedata.perl);
+        $fh.close();
+    }
+
     say "done";
-    say %ruledata.perl;
 }
