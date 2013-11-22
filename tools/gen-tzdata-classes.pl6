@@ -15,7 +15,7 @@ grammar TZData {
         Zone\s+<name> <zonedata>+
     }
     token zonedata {
-        \s*<!before Rule><!before Link><!before Zone><gmtoff>\s+<rules>\s+<format>[\h+<until>]? [ <comment> | \s* ]
+        \h*<!before Rule><!before Link><!before Zone><!before '#'><gmtoff>\s+<rules>\s+<format>[\h+<until>]? [ <comment> | \s* ]
     }
     token link {
         Link\s+<new-tz>\s+<old-tz> [ <comment> | \s* ]
