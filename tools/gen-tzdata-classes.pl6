@@ -110,7 +110,14 @@ if $parsed {
         for @dirs_to_make -> $dir {
             mkdir($dir);
         }
+
         my $fh = open("./tmp/" ~ $zone<name> ~ ".pm6", :w);
+        my $classname = ~$zone<name>;
+        $classname ~~ s:g/\//::/;
+        $fh.say("use v6;");
+        $fh.say("use DateTime::TimeZone::Zone;");
+        $fh.say("class DateTime::TimeZone::Zone::" ~ $classname ~ " does DateTime::TimeZone::Zone;");
+
         my @rules;
         my @zoneentries = $zone<zonedata>;
         my @zonedata;
@@ -123,6 +130,29 @@ if $parsed {
             my $until = $zoneentry<until>;
             if $until {
                 $until = ~$until;
+                my @tmp = split(/\s+/, $until);
+                my @tmp_t;
+                if @tmp[3] {
+                    @tmp_t = split(/\:/, @tmp[3]);
+                    # TODO: I don't know what these characters represent.
+                    # TODO: I should find out, since they're probably important...
+                    @tmp_t[1] ~~ s/u$//;
+                    @tmp_t[1] ~~ s/s$//;
+                }
+                if @tmp[1] {
+                    @tmp[1] = %month-to-num{@tmp[1]};
+                }
+                my $until_dt;
+                # TODO: handle lastSun (we ignore it for now simply because I don't want to deal
+                # with it yet)
+                if @tmp[3] && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
+                    $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]), :hour(+@tmp_t[0]), :minute(+@tmp_t[1]));
+                } elsif @tmp[2] && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
+                    $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]));
+                } else {
+                    $until_dt = DateTime.new(:year(+@tmp[0]));
+                }
+                $until = $until_dt.posix;
             } else {
                 $until = Inf;
             }
@@ -130,12 +160,12 @@ if $parsed {
             @zonedata.push($data);
         }
         @rules = uniq sort @rules;
-        $fh.say("my %rules = ( ");
+        $fh.say('has %.rules = ( ');
         for @rules -> $rule {
             $fh.say(" $rule => " ~ %ruledata{$rule}.perl ~ ",");
         }
         $fh.say(");");
-        $fh.say("my @zonedata = " ~ @zonedata.perl);
+        $fh.say('has @.zonedata = ' ~ @zonedata.perl ~ ';');
         $fh.close();
     }
 
