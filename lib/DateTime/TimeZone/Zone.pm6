@@ -34,7 +34,6 @@ method offset {
 
     for @rule-list -> $rule {
       if $.datetime.year ~~ $rule<years> {
-        say 'found a possible rule';
         my $datetime;
 
         my @time = split(/\:/, $rule<time>);
@@ -85,18 +84,14 @@ method offset {
           }
           $datetime .= delta($day, days);
         }
-        say 'datetime created, checking for validity...';
-        if $.datetime.Instant > $datetime.Instant {
+        if $.datetime.Instant >= $datetime.Instant {
           if !$max-dt || $datetime.Instant > $max-dt.Instant {
-            say 'updating change';
             $max-dt = $datetime;
             $change = $rule<adjust> || '0:00';
           }
         }
       }
     }
-
-    say 'change is ' ~ $change;
 
     my @tmp = split(/\:/, $change);
     $offset += @tmp[0] * 60 * 60;
