@@ -63,9 +63,9 @@ method offset {
           loop {
             my $new-dt = $datetime.delta(1, weeks);
             if $new-dt.month == $datetime.month {
-                $datetime = $new-dt;
+              $datetime = $new-dt;
             } else {
-                last;
+              last;
             }
           }
         } elsif $rule<dow> {
