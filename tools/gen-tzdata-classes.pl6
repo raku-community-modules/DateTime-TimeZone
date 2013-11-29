@@ -172,6 +172,30 @@ sub MAIN($tzdata-file, $output-dir) {
             $fh.close();
         }
 
+        for @links -> $link {
+            my $old-tz = ~$link<old-tz>;
+            my $new-tz = ~$link<new-tz>;
+
+            my @dirs_to_make;
+            my $dir = ($output-dir ~ $old-tz ~ ".pm6").path.directory;
+            while !($dir.IO ~~ :d) {
+                @dirs_to_make.unshift($dir);
+                $dir = $dir.path.parent;
+            }
+            for @dirs_to_make -> $dir {
+                mkdir($dir);
+            }
+            my $fh = open($output-dir ~ $old-tz ~ ".pm6", :w);
+
+            $old-tz ~~ s:g/\//::/;
+            $new-tz ~~ s:g/\//::/;
+
+            $fh.say("use v6;");
+            $fh.say("use DateTime::TimeZone::Zone::$new-tz;");
+            $fh.say("class DateTime::TimeZone::Zone::$old-tz is DateTime::TimeZone::Zone::$new-tz;");
+            $fh.close();
+        }
+
         say "done";
     } else {
         say "Unable to parse."
