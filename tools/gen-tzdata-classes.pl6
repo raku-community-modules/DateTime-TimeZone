@@ -103,7 +103,7 @@ sub MAIN($tzdata-file, $output-dir) {
 
         for @zones -> $zone {
             my @dirs_to_make;
-            my $dir = ("./tmp/" ~ $zone<name> ~ ".pm6").path.directory;
+            my $dir = ($output-dir ~ $zone<name> ~ ".pm6").path.directory;
             while !($dir.IO ~~ :d) {
                 @dirs_to_make.unshift($dir);
                 $dir = $dir.path.parent;
@@ -112,7 +112,7 @@ sub MAIN($tzdata-file, $output-dir) {
                 mkdir($dir);
             }
 
-            my $fh = open("./tmp/" ~ $zone<name> ~ ".pm6", :w);
+            my $fh = open($output-dir ~ $zone<name> ~ ".pm6", :w);
             my $classname = ~$zone<name>;
             $classname ~~ s:g/\//::/;
             $fh.say("use v6;");
