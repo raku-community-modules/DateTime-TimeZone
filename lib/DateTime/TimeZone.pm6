@@ -4,10 +4,10 @@ module DateTime::TimeZone;
 
 sub timezone (Str $name, DateTime $datetime=DateTime.new(time)) is export {
   my $namespace = $name.subst('/', '::', :g);
-  $namespace [R~]= "DateTime::TimeZone::Zone::";
+  $namespace = "DateTime::TimeZone::Zone::" ~ $namespace;
   my $class;
   try {
-    require $namespace;
+    require ::($namespace);
     $class = ::($namespace).new(:$datetime);
     CATCH {
       warn "Could not find a TimeZone class for '$name'.";
