@@ -64,6 +64,7 @@ my %day-to-num = (
 
 sub MAIN($tzdata-file, $output-dir) {
     say "Outputting to $output-dir";
+    say "Reading file $tzdata-file";
     my $text = slurp $tzdata-file;
     my $parsed = TZData.parse($text);
 
