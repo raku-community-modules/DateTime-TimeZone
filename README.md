@@ -32,9 +32,10 @@ A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
 This is very much under development, and currently only the tz-offset()
 subroutine is supported. 
 
-## Author
+## Authors
 
  * [Timothy Totten](https://github.com/supernovus/)
+ * [Andrew Egeler](https://github.com/retupmoca/)
 
 ## License
 
