@@ -148,9 +148,9 @@ sub MAIN($tzdata-file, $output-dir) {
                     my $until_dt;
                     # TODO: handle lastSun (we ignore it for now simply because I don't want to deal
                     # with it yet)
-                    if @tmp[3] && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
+                    if @tmp[3] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
                         $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]), :hour(+@tmp_t[0]), :minute(+@tmp_t[1]));
-                    } elsif @tmp[2] && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
+                    } elsif @tmp[2] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
                         $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]));
                     } else {
                         $until_dt = DateTime.new(:year(+@tmp[0]));
