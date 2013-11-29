@@ -1,5 +1,6 @@
 #!/usr/bin/env perl6
 use v6;
+#use Grammar::Tracer;
 
 grammar TZData {
     token TOP {
@@ -9,16 +10,16 @@ grammar TZData {
         \s*'#'\N*\s*
     }
     token rule {
-        Rule\s+<name>\s+<from>\s+<to>\s+<type>\s+<in>\s+<on>\s+<at>\s+<save>\s+<letter> [ <comment> | \s* ]
+        Rule\s+<name>\s+<from>\s+<to>\s+<type>\s+<in>\s+<on>\s+<at>\s+<save>\s+<letter> <comment>? \s*
     }
     token zone {
         Zone\s+<name> <zonedata>+
     }
     token zonedata {
-        \h*<!before Rule><!before Link><!before Zone><!before '#'><gmtoff>\s+<rules>\s+<format>[\h+<until>]? [ <comment> | \s* ]
+        \h*<!before Rule><!before Link><!before Zone><!before '#'><gmtoff>\s+<rules>\s+<format>[\h+<until>]? <comment>* \s*
     }
     token link {
-        Link\s+<new-tz>\s+<old-tz> [ <comment> | \s* ]
+        Link\s+<new-tz>\s+<old-tz> <comment>? \s*
     }
     token name { \S+ }
     token from { \S+ }
