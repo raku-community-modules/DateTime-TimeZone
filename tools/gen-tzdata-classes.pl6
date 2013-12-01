@@ -105,7 +105,10 @@ sub MAIN($tzdata-file, $output-dir) {
 
         for @zones -> $zone {
             my @dirs_to_make;
-            my $dir = ($output-dir ~ $zone<name> ~ ".pm6").path.directory;
+            my $name = ~$zone<name>;
+            $name ~~ s:g/\+/_plus_/;
+            $name ~~ s:g/\-/_minus_/;
+            my $dir = ($output-dir ~ $name ~ ".pm6").path.directory;
             while !($dir.IO ~~ :d) {
                 @dirs_to_make.unshift($dir);
                 $dir = $dir.path.parent;
@@ -114,8 +117,8 @@ sub MAIN($tzdata-file, $output-dir) {
                 mkdir($dir);
             }
 
-            my $fh = open($output-dir ~ $zone<name> ~ ".pm6", :w);
-            my $classname = ~$zone<name>;
+            my $fh = open($output-dir ~ $name ~ ".pm6", :w);
+            my $classname = $name;
             $classname ~~ s:g/\//::/;
             $fh.say("use v6;");
             $fh.say("use DateTime::TimeZone::Zone;");
@@ -191,7 +194,11 @@ sub MAIN($tzdata-file, $output-dir) {
 
         for @links -> $link {
             my $old-tz = ~$link<old-tz>;
+            $old-tz ~~ s:g/\+/_plus_/;
+            $old-tz ~~ s:g/\-/_minus_/;
             my $new-tz = ~$link<new-tz>;
+            $new-tz ~~ s:g/\+/_plus_/;
+            $new-tz ~~ s:g/\-/_minus_/;
 
             my @dirs_to_make;
             my $dir = ($output-dir ~ $old-tz ~ ".pm6").path.directory;

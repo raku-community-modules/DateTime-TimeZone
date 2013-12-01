@@ -18,6 +18,9 @@ method offset {
   }
 
   my $offset = $best-zoneentry<baseoffset>;
+  if $offset eq '0' {
+      $offset = '0:00';
+  }
   my @tmp = split(/\:/, $offset);
   $offset = +@tmp[0] * 60 * 60;
   if +@tmp[0] < 0 {
