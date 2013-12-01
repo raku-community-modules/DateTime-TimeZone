@@ -128,7 +128,10 @@ sub MAIN($tzdata-file, $output-dir) {
                 my $rule = "";
                 if $zoneentry<rules> ne "-" {
                     $rule = ~$zoneentry<rules>;
-                    @rules.push(~$zoneentry<rules>);
+                    if $rule ~~ /^\d+\:\d+/ {
+                    } else {
+                        @rules.push(~$zoneentry<rules>);
+                    }
                 }
                 my $until = $zoneentry<until>;
                 if $until {
@@ -159,7 +162,21 @@ sub MAIN($tzdata-file, $output-dir) {
                 } else {
                     $until = Inf;
                 }
-                my $data = ( until => $until, baseoffset => ~$zoneentry<gmtoff>, rules => $rule ).hash;
+                my $data;
+                if $rule ~~ /^\d+\:\d+/ {
+                    my @rule = split(/\:/, $rule);
+                    my @gmtoff = split(/\:/, ~$zoneentry<gmtoff>);
+                    @gmtoff[0] += @rule[0];
+
+                    my $gmt_final = @gmtoff[0] ~ ':' ~ sprintf('%02d', @gmtoff[1]);
+                    if @gmtoff[2] {
+                        $gmt_final ~= ':' ~ sprintf('%02d', @gmtoff[2]);
+                    }
+
+                    $data = ( until => $until, baseoffset => @gmtoff[0] ~ ':' ~ @gmtoff[1], rules => "" ).hash;
+                } else {
+                    $data = ( until => $until, baseoffset => ~$zoneentry<gmtoff>, rules => $rule ).hash;
+                }
                 @zonedata.push($data);
             }
             @rules = uniq sort @rules;
