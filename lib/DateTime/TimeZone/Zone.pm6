@@ -60,10 +60,10 @@ method offset {
           } else {
             $day = 7 - ($rule<dow><dow> - $datetime.day-of-week);
           }
-          $datetime .= delta($day, days);
+          $datetime .= later(days => $day);
 
           loop {
-            my $new-dt = $datetime.delta(1, weeks);
+            my $new-dt = $datetime.later(weeks => 1);
             if $new-dt.month == $datetime.month {
               $datetime = $new-dt;
             } else {
@@ -85,7 +85,7 @@ method offset {
           while $day < $rule<dow><mindate> {
             $day += 7;
           }
-          $datetime .= delta($day, days);
+          $datetime .= later(days => $day);
         }
         if $.datetime.Instant >= $datetime.Instant {
           if !$max-dt || $datetime.Instant > $max-dt.Instant {
