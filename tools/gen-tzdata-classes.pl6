@@ -33,7 +33,7 @@ grammar TZData {
     token gmtoff { \S+ }
     token rules { \S+ }
     token format { \S+ }
-    token until { <-['#'\n]>+ }
+    token until { <-[#\n]>+ }
     token new-tz { \S+ }
     token old-tz { \S+ }
 }
