@@ -108,7 +108,7 @@ sub MAIN($tzdata-file, $output-dir) {
             my $name = ~$zone<name>;
             $name ~~ s:g/\+/_plus_/;
             $name ~~ s:g/\-/_minus_/;
-            my $dir = ($output-dir ~ $name ~ ".pm6").path.directory;
+            my $dir = ($output-dir ~ $name ~ ".pm6").IO.dirname;
             while !($dir.IO ~~ :d) {
                 @dirs_to_make.unshift($dir);
                 $dir = $dir.path.parent;
@@ -201,7 +201,7 @@ sub MAIN($tzdata-file, $output-dir) {
             $new-tz ~~ s:g/\-/_minus_/;
 
             my @dirs_to_make;
-            my $dir = ($output-dir ~ $old-tz ~ ".pm6").path.directory;
+            my $dir = ($output-dir ~ $old-tz ~ ".pm6").IO.dirname;
             while !($dir.IO ~~ :d) {
                 @dirs_to_make.unshift($dir);
                 $dir = $dir.path.parent;
