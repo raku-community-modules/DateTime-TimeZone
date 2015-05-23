@@ -72,9 +72,9 @@ sub MAIN($tzdata-file, $output-dir) {
     if $parsed {
         say "parsed";
         my %ruledata;
-        my @rules = $parsed<rule>;
-        my @zones = $parsed<zone>;
-        my @links = $parsed<link>;
+        my @rules := $parsed<rule>;
+        my @zones := $parsed<zone>;
+        my @links := $parsed<link>;
         my $x = 0;
         say +@rules ~ " rules";
         say +@zones ~ " zones";
@@ -125,7 +125,7 @@ sub MAIN($tzdata-file, $output-dir) {
             $fh.say("class DateTime::TimeZone::Zone::" ~ $classname ~ " does DateTime::TimeZone::Zone;");
 
             my @rules;
-            my @zoneentries = $zone<zonedata>;
+            my @zoneentries := $zone<zonedata>;
             my @zonedata;
             for @zoneentries -> $zoneentry {
                 my $rule = "";
