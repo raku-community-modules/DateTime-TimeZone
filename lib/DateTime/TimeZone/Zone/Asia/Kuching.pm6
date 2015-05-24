@@ -1,6 +1,6 @@
 use v6;
 use DateTime::TimeZone::Zone;
-class DateTime::TimeZone::Zone::Asia::Kuching does DateTime::TimeZone::Zone;
+unit class DateTime::TimeZone::Zone::Asia::Kuching does DateTime::TimeZone::Zone;
 has %.rules = ( 
  NBorneo => [{:adjust("0:20"), :date("14"), :letter("TS"), :month(9), :time("0:00"), :years(1935..1941)}, {:adjust("0"), :date("14"), :letter("-"), :month(12), :time("0:00"), :years(1935..1941)}],
 );

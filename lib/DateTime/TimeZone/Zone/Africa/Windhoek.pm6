@@ -1,6 +1,6 @@
 use v6;
 use DateTime::TimeZone::Zone;
-class DateTime::TimeZone::Zone::Africa::Windhoek does DateTime::TimeZone::Zone;
+unit class DateTime::TimeZone::Zone::Africa::Windhoek does DateTime::TimeZone::Zone;
 has %.rules = ( 
  Namibia => [{:adjust("1:00"), :dow({:dow(7), :mindate("1")}), :letter("S"), :month(9), :time("2:00"), :years(1994..Inf)}, {:adjust("0"), :dow({:dow(7), :mindate("1")}), :letter("-"), :month(4), :time("2:00"), :years(1995..Inf)}],
 );

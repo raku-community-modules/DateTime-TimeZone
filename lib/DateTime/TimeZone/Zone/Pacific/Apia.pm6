@@ -1,6 +1,6 @@
 use v6;
 use DateTime::TimeZone::Zone;
-class DateTime::TimeZone::Zone::Pacific::Apia does DateTime::TimeZone::Zone;
+unit class DateTime::TimeZone::Zone::Pacific::Apia does DateTime::TimeZone::Zone;
 has %.rules = ( 
  WS => [{:adjust("1"), :lastdow(7), :letter("D"), :month(9), :time("3:00"), :years(2012..Inf)}, {:adjust("0"), :dow({:dow(7), :mindate("1")}), :letter("-"), :month(4), :time("4:00"), :years(2012..Inf)}],
 );

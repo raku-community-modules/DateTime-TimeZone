@@ -1,6 +1,6 @@
 use v6;
 use DateTime::TimeZone::Zone;
-class DateTime::TimeZone::Zone::Africa::Johannesburg does DateTime::TimeZone::Zone;
+unit class DateTime::TimeZone::Zone::Africa::Johannesburg does DateTime::TimeZone::Zone;
 has %.rules = ( 
  SA => [{:adjust("1:00"), :dow({:dow(7), :mindate("15")}), :letter("-"), :month(9), :time("2:00"), :years(1942..1943)}, {:adjust("0"), :dow({:dow(7), :mindate("15")}), :letter("-"), :month(3), :time("2:00"), :years(1943..1944)}],
 );

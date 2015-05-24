@@ -1,6 +1,6 @@
 use v6;
 use DateTime::TimeZone::Zone;
-class DateTime::TimeZone::Zone::Asia::Seoul does DateTime::TimeZone::Zone;
+unit class DateTime::TimeZone::Zone::Asia::Seoul does DateTime::TimeZone::Zone;
 has %.rules = ( 
  ROK => [{:adjust("1:00"), :date("15"), :letter("D"), :month(5), :time("0:00"), :years(1960..1960)}, {:adjust("0"), :date("13"), :letter("S"), :month(9), :time("0:00"), :years(1960..1960)}, {:adjust("1:00"), :dow({:dow(7), :mindate("8")}), :letter("D"), :month(5), :time("0:00"), :years(1987..1988)}, {:adjust("0"), :dow({:dow(7), :mindate("8")}), :letter("S"), :month(10), :time("0:00"), :years(1987..1988)}],
 );
