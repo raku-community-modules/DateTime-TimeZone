@@ -122,7 +122,7 @@ sub MAIN($tzdata-file, $output-dir) {
             $classname ~~ s:g/\//::/;
             $fh.say("use v6;");
             $fh.say("use DateTime::TimeZone::Zone;");
-            $fh.say("class DateTime::TimeZone::Zone::" ~ $classname ~ " does DateTime::TimeZone::Zone;");
+            $fh.say("unit class DateTime::TimeZone::Zone::" ~ $classname ~ " does DateTime::TimeZone::Zone;");
 
             my @rules;
             my @zoneentries := $zone<zonedata>;
@@ -216,7 +216,7 @@ sub MAIN($tzdata-file, $output-dir) {
 
             $fh.say("use v6;");
             $fh.say("use DateTime::TimeZone::Zone::$new-tz;");
-            $fh.say("class DateTime::TimeZone::Zone::$old-tz is DateTime::TimeZone::Zone::$new-tz;");
+            $fh.say("unit class DateTime::TimeZone::Zone::$old-tz is DateTime::TimeZone::Zone::$new-tz;");
             $fh.close();
         }
 
