@@ -8,8 +8,8 @@ use DateTime::TimeZone::Zone;
 
 plan 4;
 
-use DateTime::TimeZone::Zone::Asia::Riyadh87;
-my $tz = DateTime::TimeZone::Zone::Asia::Riyadh87.new;
+use DateTime::TimeZone::Zone::Asia::Barnaul;
+my $tz = DateTime::TimeZone::Zone::Asia::Barnaul.new;
 ok $tz, "timezone can be instantiated";
 is $tz.rules.WHAT, Hash, "rules is a Hash";
 ok $tz.zonedata, "timezone has zonedata";
