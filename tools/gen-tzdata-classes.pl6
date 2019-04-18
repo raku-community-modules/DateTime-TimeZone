@@ -10,7 +10,7 @@ grammar TZData {
         \s*'#'\N*\s*
     }
     token rule {
-        Rule\s+<name>\s+<from>\s+<to>\s+<type>\s+<in>\s+<on>\s+<at>\s+<save>\s+<letter> <comment>? \s*
+        Rule\s+<name>\s+<from>\s+<to-time>\s+<type>\s+<in>\s+<on>\s+<at>\s+<save>\s+<letter> <comment>? \s*
     }
     token zone {
         Zone\s+<name> <zonedata>+
@@ -23,7 +23,7 @@ grammar TZData {
     }
     token name { \S+ }
     token from { \S+ }
-    token to { \S+ }
+    token to-time { \S+ }
     token type { \S+ }
     token in { \S+ }
     token on { \S+ }
@@ -81,7 +81,7 @@ sub MAIN($tzdata-file, $output-dir) {
         say +@links ~ " links";
         for @rules -> $rule {
             my $yfrom = +$rule<from>;
-            my $yto = ~$rule<to>;
+            my $yto = ~$rule<to-time>;
             if $yto eq 'only' { $yto = $yfrom; }
             elsif $yto eq 'max' { $yto = Inf; }
             else { $yto = +$yto; }
@@ -155,7 +155,15 @@ sub MAIN($tzdata-file, $output-dir) {
                     # TODO: handle lastSun (we ignore it for now simply because I don't want to deal
                     # with it yet)
                     if @tmp[3] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
+                        my $nudge-date = False;
+                        if +@tmp_t[0] == 24 {
+                            @tmp_t[0] -= 24;
+                            $nudge-date++;
+                        }
+
                         $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]), :hour(+@tmp_t[0]), :minute(+@tmp_t[1]));
+
+                        $until_dt += Duration.new(:days(1)) if $nudge-date;
                     } elsif @tmp[2] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
                         $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]));
                     } else {
@@ -204,7 +212,7 @@ sub MAIN($tzdata-file, $output-dir) {
             my $dir = ($output-dir ~ $old-tz ~ ".pm6").IO.dirname;
             while !($dir.IO ~~ :d) {
                 @dirs_to_make.unshift($dir);
-                $dir = $dir.path.parent;
+                $dir = $dir.IO.parent;
             }
             for @dirs_to_make -> $dir {
                 mkdir($dir);
