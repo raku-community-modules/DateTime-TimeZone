@@ -193,7 +193,7 @@ sub MAIN($tzdata-file, $output-dir) {
             @rules = unique sort @rules;
             $fh.say('has %.rules = ( ');
             for @rules -> $rule {
-                $fh.say(" $rule => " ~ %ruledata{$rule}.perl ~ ",");
+                $fh.say(" '$rule' => " ~ %ruledata{$rule}.perl ~ ",");
             }
             $fh.say(");");
             $fh.say('has @.zonedata = ' ~ @zonedata.perl ~ ';');
