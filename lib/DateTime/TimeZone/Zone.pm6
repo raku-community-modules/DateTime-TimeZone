@@ -55,10 +55,10 @@ method offset {
                                    hour => +@time[0],
                                    minute => +@time[1]);
           my $day;
-          if $rule<dow><dow> <= $datetime.day-of-week {
-            $day = $datetime.day-of-week - $rule<dow><dow>;
+          if $datetime.day-of-week <= $rule<lastdow> {
+            $day = $rule<lastdow> - $datetime.day-of-week;
           } else {
-            $day = 7 - ($rule<dow><dow> - $datetime.day-of-week);
+            $day = 7 - ($datetime.day-of-week - $rule<lastdow>);
           }
           $datetime .= later(days => $day);
 
@@ -77,10 +77,10 @@ method offset {
                                    hour => +@time[0],
                                    minute => +@time[1]);
           my $day;
-          if $rule<dow><dow> <= $datetime.day-of-week {
-            $day = $datetime.day-of-week - $rule<dow><dow>;
+          if $datetime.day-of-week <= $rule<dow><dow> {
+            $day = $rule<dow><dow> - $datetime.day-of-week;
           } else {
-            $day = 7 - ($rule<dow><dow> - $datetime.day-of-week);
+            $day = 7 - ($datetime.day-of-week - $rule<dow><dow>);
           }
           while $day < $rule<dow><mindate> {
             $day += 7;
