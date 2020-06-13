@@ -20,7 +20,7 @@ method !time-to-offset($str is copy) {
 }
 
 method offset {
-  my $time = $.datetime.posix;
+  my $time = $!datetime.posix;
   my $best-zoneentry;
   for @.zonedata -> $zoneentry {
     if $zoneentry<until> > $time {
@@ -39,20 +39,20 @@ method offset {
     my $max-dt;
 
     for @rule-list -> $rule {
-      if $.datetime.year ~~ $rule<years> {
+      if $!datetime.year ~~ $rule<years> {
         my $datetime;
 
         my @time = split(/\:/, $rule<time>);
         @time[1] ~~ s/u$//;
 
         if $rule<date> {
-          $datetime = DateTime.new(year => $.datetime.year,
+          $datetime = DateTime.new(year => $!datetime.year,
                                    month => $rule<month>,
                                    day => $rule<date>,
                                    hour => +@time[0],
                                    minute => +@time[1]);
         } elsif $rule<lastdow> {
-          $datetime = DateTime.new(year => $.datetime.year,
+          $datetime = DateTime.new(year => $!datetime.year,
                                    month => $rule<month>,
                                    day => 1,
                                    hour => +@time[0],
@@ -74,7 +74,7 @@ method offset {
             }
           }
         } elsif $rule<dow> {
-          $datetime = DateTime.new(year => $.datetime.year,
+          $datetime = DateTime.new(year => $!datetime.year,
                                    month => $rule<month>,
                                    day => 1,
                                    hour => +@time[0],
@@ -90,7 +90,7 @@ method offset {
           }
           $datetime .= later(days => $day);
         }
-        if $.datetime.Instant >= $datetime.Instant {
+        if $!datetime.Instant >= $datetime.Instant {
           if !$max-dt || $datetime.Instant > $max-dt.Instant {
             $max-dt = $datetime;
             $change = $rule<adjust> || '0:00';
