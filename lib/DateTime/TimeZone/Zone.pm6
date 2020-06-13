@@ -6,6 +6,19 @@ unit role DateTime::TimeZone::Zone;
 
 has $.datetime;   ## The DateTime object used to determine offset from.
 
+method !time-to-offset($str is copy) {
+  $str = '0:00' if $str eq '0';
+
+  my @tmp = split(/\:/, $str);
+  my $offset = +@tmp[0] * 60 * 60;
+  if +@tmp[0] < 0 {
+    $offset -= @tmp[1] * 60;
+  } else {
+    $offset += @tmp[1] * 60;
+  }
+  return $offset;
+}
+
 method offset {
   my $time = $.datetime.posix;
   my $best-zoneentry;
@@ -17,17 +30,7 @@ method offset {
     }
   }
 
-  my $offset = $best-zoneentry<baseoffset>;
-  if $offset eq '0' {
-      $offset = '0:00';
-  }
-  my @tmp = split(/\:/, $offset);
-  $offset = +@tmp[0] * 60 * 60;
-  if +@tmp[0] < 0 {
-    $offset -= @tmp[1] * 60;
-  } else {
-    $offset += @tmp[1] * 60;
-  }
+  my $offset = self!time-to-offset: $best-zoneentry<baseoffset>;
 
   if $best-zoneentry<rules> {
     my @rule-list = %.rules{$best-zoneentry<rules>}.list;
@@ -96,15 +99,9 @@ method offset {
       }
     }
 
-    my @tmp = split(/\:/, $change);
-    $offset += @tmp[0] * 60 * 60;
-    if +@tmp[0] < 0 {
-      $offset -= @tmp[1] * 60;
-    } else {
-      $offset += @tmp[1] * 60;
-    }
+    $offset += self!time-to-offset: $change;
   }
-  
+
   return $offset;
 }
 
