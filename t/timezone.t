@@ -7,7 +7,16 @@ use lib './lib';
 use Test;
 use DateTime::TimeZone;
 
-plan 4;
+plan 6;
+
+sub doesn't-warn (&code, Str $desc) {
+    my ($did-warn, $message) = False;
+    &code();
+    CONTROL { when CX::Warn { $did-warn = True; $message = .message; .resume } }
+
+    diag "code must not warn but it produced a warning: $message" if $did-warn;
+    nok $did-warn, $desc;
+}
 
 # Relevant entries in the tz database:
 #
@@ -45,4 +54,13 @@ is timezone('America/Chicago', DateTime.new(
         hour => 15, minute => 1, second => 1)).Int,
     tz-offset('-0500'),
     'Correct offset with lastSun rule and first day of month == Tuesday (day after)';
+
+
+# https://github.com/supernovus/perl6-timezone/issues/17
+{
+    my $time = DateTime.new: '2019-11-10T10:08:00-08:00';
+    my $offset = 0;
+    doesn't-warn { $offset = timezone('PST8PDT',$time).Int }, 'Retrieve timezone with \'0\' adjustment doesn\'t warn';
+    is $offset.Int, -28800, 'Correct offset with timezone with \'0\' adjustment';
+}
 
