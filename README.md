@@ -2,7 +2,7 @@
 
 ## Introduction
 
-TimeZone handling for Perl 6.
+TimeZone handling for Raku.
 
 ## Subroutines
 
