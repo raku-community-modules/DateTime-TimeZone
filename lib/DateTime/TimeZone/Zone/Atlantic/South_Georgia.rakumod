@@ -1,4 +1,3 @@
-use v6;
 use DateTime::TimeZone::Zone;
 unit class DateTime::TimeZone::Zone::Atlantic::South_Georgia does DateTime::TimeZone::Zone;
 has %.rules = ( 

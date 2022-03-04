@@ -1,4 +1,3 @@
-use v6;
 use DateTime::TimeZone::Zone;
 unit class DateTime::TimeZone::Zone::America::Argentina::San_Luis does DateTime::TimeZone::Zone;
 has %.rules = ( 
