@@ -32,7 +32,6 @@ method !apply-rules(@rules) {
             my $datetime;
 
             my ($hour,$minute) = split(/\:/, %rule<time>);
-            $minute .= chop if $minute.ends-with("u");
             $hour   .= Int;
             $minute .= Int;
 
