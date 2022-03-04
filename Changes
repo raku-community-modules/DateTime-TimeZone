@@ -1,0 +1,6 @@
+Revision history for DateTime::TimeZone
+
+{{$NEXT}}
+    - First version in the zef ecosystem
+    - Moved extended tests to xt directory
+    - Some tweaks in generator scripts

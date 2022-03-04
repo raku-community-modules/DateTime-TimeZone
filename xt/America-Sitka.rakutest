@@ -1,0 +1,10 @@
+use Test;
+
+plan 4;
+
+use DateTime::TimeZone::Zone::America::Sitka;
+my $tz = DateTime::TimeZone::Zone::America::Sitka.new;
+ok $tz, "timezone can be instantiated";
+is $tz.rules.WHAT, Hash, "rules is a Hash";
+ok $tz.zonedata, "timezone has zonedata";
+is-deeply $tz.zonedata.WHAT, Array, "zonedata is an Array";
