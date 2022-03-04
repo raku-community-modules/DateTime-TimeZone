@@ -9,7 +9,7 @@
   "depends": [
   ],
   "description": "A Raku library for working with Time Zones",
-  "license": "NOASSERTION",
+  "license": "Artistic-2.0",
   "meta6": "0",
   "name": "DateTime::TimeZone",
   "perl": "6.*",
