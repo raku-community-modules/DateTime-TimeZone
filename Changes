@@ -1,6 +1,8 @@
 Revision history for DateTime::TimeZone
 
 {{$NEXT}}
+
+0.10.1  2022-03-04T14:21:11+01:00
     - First version in the zef ecosystem
     - Moved extended tests to xt directory
     - Some tweaks in generator scripts
