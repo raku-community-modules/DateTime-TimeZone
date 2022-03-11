@@ -1,4 +1,4 @@
-#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Generated on 2022-03-11T14:12:25+01:00 by parse.raku
 #- Based on Release 20198 - 2019-03-25 22:01:33 -0700
 
 use DateTime::TimeZone::Zone;
@@ -18,3 +18,14 @@ class DateTime::TimeZone::Zone::America::Argentina::Cordoba
         )
     }
 }
+
+class DateTime::TimeZone::Zone::America::Cordoba
+  is DateTime::TimeZone::Zone::America::Argentina::Cordoba {
+    method name(--> 'America/Cordoba') { }
+}
+
+class DateTime::TimeZone::Zone::America::Rosario
+  is DateTime::TimeZone::Zone::America::Argentina::Cordoba {
+    method name(--> 'America/Rosario') { }
+}
+

@@ -1,4 +1,4 @@
-#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Generated on 2022-03-11T14:12:25+01:00 by parse.raku
 #- Based on Release 20198 - 2019-03-25 22:01:33 -0700
 
 use DateTime::TimeZone::Zone;
@@ -22,5 +22,15 @@ class DateTime::TimeZone::Zone::Pacific::Auckland
 class DateTime::TimeZone::Zone::Antarctica::McMurdo
   is DateTime::TimeZone::Zone::Pacific::Auckland {
     method name(--> 'Antarctica/McMurdo') { }
+}
+
+class DateTime::TimeZone::Zone::Antarctica::South_Pole
+  is DateTime::TimeZone::Zone::Pacific::Auckland {
+    method name(--> 'Antarctica/South_Pole') { }
+}
+
+class DateTime::TimeZone::Zone::NZ
+  is DateTime::TimeZone::Zone::Pacific::Auckland {
+    method name(--> 'NZ') { }
 }
 

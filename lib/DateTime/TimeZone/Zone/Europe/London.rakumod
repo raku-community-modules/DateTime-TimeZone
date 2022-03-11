@@ -1,4 +1,4 @@
-#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Generated on 2022-03-11T14:12:25+01:00 by parse.raku
 #- Based on Release 20198 - 2019-03-25 22:01:33 -0700
 
 use DateTime::TimeZone::Zone;
@@ -33,5 +33,20 @@ class DateTime::TimeZone::Zone::Europe::Guernsey
 class DateTime::TimeZone::Zone::Europe::Isle_of_Man
   is DateTime::TimeZone::Zone::Europe::London {
     method name(--> 'Europe/Isle_of_Man') { }
+}
+
+class DateTime::TimeZone::Zone::Europe::Belfast
+  is DateTime::TimeZone::Zone::Europe::London {
+    method name(--> 'Europe/Belfast') { }
+}
+
+class DateTime::TimeZone::Zone::GB
+  is DateTime::TimeZone::Zone::Europe::London {
+    method name(--> 'GB') { }
+}
+
+class DateTime::TimeZone::Zone::GB_dash_Eire
+  is DateTime::TimeZone::Zone::Europe::London {
+    method name(--> 'GB-Eire') { }
 }
 

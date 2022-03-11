@@ -1,4 +1,4 @@
-#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Generated on 2022-03-11T14:12:25+01:00 by parse.raku
 #- Based on Release 20198 - 2019-03-25 22:01:33 -0700
 
 use DateTime::TimeZone::Zone;
@@ -19,3 +19,14 @@ class DateTime::TimeZone::Zone::America::Los_Angeles
         )
     }
 }
+
+class DateTime::TimeZone::Zone::US::Pacific
+  is DateTime::TimeZone::Zone::America::Los_Angeles {
+    method name(--> 'US/Pacific') { }
+}
+
+class DateTime::TimeZone::Zone::US::Pacific_dash_New
+  is DateTime::TimeZone::Zone::America::Los_Angeles {
+    method name(--> 'US/Pacific-New') { }
+}
+

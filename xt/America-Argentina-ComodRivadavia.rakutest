@@ -1,0 +1,14 @@
+#- Generated on 2022-03-11T14:12:25+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
+use Test;
+use DateTime::TimeZone::Zone::America::Argentina::ComodRivadavia;
+
+plan 4;
+
+my $tz := DateTime::TimeZone::Zone::America::Argentina::ComodRivadavia.new;
+
+isa-ok $tz, DateTime::TimeZone::Zone::America::Argentina::ComodRivadavia;
+is $tz.name, 'America/Argentina/ComodRivadavia', "is it named America/Argentina/ComodRivadavia";
+isa-ok $tz.zonedata, List, 'is the zonedata a List';
+isa-ok $tz.rules, Map, 'are the rules a Map';
