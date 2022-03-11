@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Australia::Lord_Howe does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'LH' => $[{:adjust("1:00"), :lastdow(7), :letter("-"), :month(10), :time("2:00"), :years(1981..1984)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(3), :time("2:00"), :years(1982..1985)}, {:adjust("0:30"), :lastdow(7), :letter("-"), :month(10), :time("2:00"), :years(1985..1985)}, {:adjust("0"), :dow(${:dow(7), :mindate("15")}), :letter("-"), :month(3), :time("2:00"), :years(1986..1989)}, {:adjust("0:30"), :date("19"), :letter("-"), :month(10), :time("2:00"), :years(1986..1986)}, {:adjust("0:30"), :lastdow(7), :letter("-"), :month(10), :time("2:00"), :years(1987..1999)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(3), :time("2:00"), :years(1990..1995)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(3), :time("2:00"), :years(1996..2005)}, {:adjust("0:30"), :lastdow(7), :letter("-"), :month(8), :time("2:00"), :years(2000..2000)}, {:adjust("0:30"), :lastdow(7), :letter("-"), :month(10), :time("2:00"), :years(2001..2007)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(4), :time("2:00"), :years(2006..2006)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(3), :time("2:00"), :years(2007..2007)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(4), :time("2:00"), :years(2008..Inf)}, {:adjust("0:30"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(10), :time("2:00"), :years(2008..Inf)}],
-);
-has @.zonedata = [{:baseoffset("10:36:20"), :rules(""), :until(-2366755200)}, {:baseoffset("10:00"), :rules(""), :until(347155200)}, {:baseoffset("10:30"), :rules("LH"), :until(473385600)}, {:baseoffset("10:30"), :rules("LH"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Australia::Lord_Howe
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Australia/Lord_Howe') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("10:36:20"),:until(-2364076800))), Map.new((:baseoffset("10:00"),:until(352252800))), Map.new((:baseoffset("10:30"),:rule("LH"),:until(489024000))), Map.new((:baseoffset("10:30"),:rule("LH")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'LH' => (Map.new((:adjust("1:00"),:lastdow(7),:month(10),:time("2:00"),:years(1981..1984))), Map.new((:dow((7, 1)),:month(3),:time("2:00"),:years(1982..1985))), Map.new((:adjust("0:30"),:lastdow(7),:month(10),:time("2:00"),:years(1985))), Map.new((:dow((7, 15)),:month(3),:time("2:00"),:years(1986..1989))), Map.new((:adjust("0:30"),:date(19),:month(10),:time("2:00"),:years(1986))), Map.new((:adjust("0:30"),:lastdow(7),:month(10),:time("2:00"),:years(1987..1999))), Map.new((:dow((7, 1)),:month(3),:time("2:00"),:years(1990..1995))), Map.new((:lastdow(7),:month(3),:time("2:00"),:years(1996..2005))), Map.new((:adjust("0:30"),:lastdow(7),:month(8),:time("2:00"),:years(2000))), Map.new((:adjust("0:30"),:lastdow(7),:month(10),:time("2:00"),:years(2001..2007))), Map.new((:dow((7, 1)),:month(4),:time("2:00"),:years(2006))), Map.new((:lastdow(7),:month(3),:time("2:00"),:years(2007))), Map.new((:dow((7, 1)),:month(4),:time("2:00"),:years(2008..Inf))), Map.new((:adjust("0:30"),:dow((7, 1)),:month(10),:time("2:00"),:years(2008..Inf)))),
+        )
+    }
+}

@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Pacific::Noumea does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'NC' => $[{:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(12), :time("0:00"), :years(1977..1978)}, {:adjust("0"), :date("27"), :letter("-"), :month(2), :time("0:00"), :years(1978..1979)}, {:adjust("1:00"), :date("1"), :letter("-"), :month(12), :time("2:00s"), :years(1996..1996)}, {:adjust("0"), :date("2"), :letter("-"), :month(3), :time("2:00s"), :years(1997..1997)}],
-);
-has @.zonedata = [{:baseoffset("11:05:48"), :rules(""), :until(-1829347200)}, {:baseoffset("11:00"), :rules("NC"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Pacific::Noumea
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Pacific/Noumea') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("11:05:48"),:until(-1829347200))), Map.new((:baseoffset("11:00"),:rule("NC")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'NC' => (Map.new((:adjust("1:00"),:dow((7, 1)),:month(12),:years(1977..1978))), Map.new((:date(27),:month(2),:years(1978..1979))), Map.new((:adjust("1:00"),:date(1),:month(12),:time("2:00s"),:years(1996))), Map.new((:date(2),:month(3),:time("2:00s"),:years(1997)))),
+        )
+    }
+}

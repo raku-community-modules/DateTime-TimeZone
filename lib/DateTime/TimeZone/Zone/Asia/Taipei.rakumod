@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Asia::Taipei does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Taiwan' => $[{:adjust("1:00"), :date("15"), :letter("D"), :month(5), :time("0:00"), :years(1946..1946)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(1946..1946)}, {:adjust("1:00"), :date("15"), :letter("D"), :month(4), :time("0:00"), :years(1947..1947)}, {:adjust("0"), :date("1"), :letter("S"), :month(11), :time("0:00"), :years(1947..1947)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(5), :time("0:00"), :years(1948..1951)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(1948..1951)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(3), :time("0:00"), :years(1952..1952)}, {:adjust("0"), :date("1"), :letter("S"), :month(11), :time("0:00"), :years(1952..1954)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(4), :time("0:00"), :years(1953..1959)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(1955..1961)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(6), :time("0:00"), :years(1960..1961)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(4), :time("0:00"), :years(1974..1975)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(1974..1975)}, {:adjust("1:00"), :date("1"), :letter("D"), :month(7), :time("0:00"), :years(1979..1979)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(1979..1979)}],
-);
-has @.zonedata = [{:baseoffset("8:06:00"), :rules(""), :until(-2335219200)}, {:baseoffset("8:00"), :rules(""), :until(-1017792000)}, {:baseoffset("9:00"), :rules(""), :until(-766191600)}, {:baseoffset("8:00"), :rules("Taiwan"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Asia::Taipei
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Asia/Taipei') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("8:06:00"),:until(-2335219200))), Map.new((:baseoffset("8:00"),:until(-1017792000))), Map.new((:baseoffset("9:00"),:until(-766191600))), Map.new((:baseoffset("8:00"),:rule("Taiwan")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Taiwan' => (Map.new((:adjust("1:00"),:date(15),:letter("D"),:month(5),:years(1946))), Map.new((:date(1),:letter("S"),:month(10),:years(1946))), Map.new((:adjust("1:00"),:date(15),:letter("D"),:month(4),:years(1947))), Map.new((:date(1),:letter("S"),:month(11),:years(1947))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(5),:years(1948..1951))), Map.new((:date(1),:letter("S"),:month(10),:years(1948..1951))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(3),:years(1952))), Map.new((:date(1),:letter("S"),:month(11),:years(1952..1954))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(4),:years(1953..1959))), Map.new((:date(1),:letter("S"),:month(10),:years(1955..1961))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(6),:years(1960..1961))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(4),:years(1974..1975))), Map.new((:date(1),:letter("S"),:month(10),:years(1974..1975))), Map.new((:adjust("1:00"),:date(1),:letter("D"),:month(7),:years(1979))), Map.new((:date(1),:letter("S"),:month(10),:years(1979)))),
+        )
+    }
+}

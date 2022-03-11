@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::America::Asuncion does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Para' => $[{:adjust("1:00"), :date("1"), :letter("-"), :month(10), :time("0:00"), :years(1975..1988)}, {:adjust("0"), :date("1"), :letter("-"), :month(3), :time("0:00"), :years(1975..1978)}, {:adjust("0"), :date("1"), :letter("-"), :month(4), :time("0:00"), :years(1979..1991)}, {:adjust("1:00"), :date("22"), :letter("-"), :month(10), :time("0:00"), :years(1989..1989)}, {:adjust("1:00"), :date("1"), :letter("-"), :month(10), :time("0:00"), :years(1990..1990)}, {:adjust("1:00"), :date("6"), :letter("-"), :month(10), :time("0:00"), :years(1991..1991)}, {:adjust("0"), :date("1"), :letter("-"), :month(3), :time("0:00"), :years(1992..1992)}, {:adjust("1:00"), :date("5"), :letter("-"), :month(10), :time("0:00"), :years(1992..1992)}, {:adjust("0"), :date("31"), :letter("-"), :month(3), :time("0:00"), :years(1993..1993)}, {:adjust("1:00"), :date("1"), :letter("-"), :month(10), :time("0:00"), :years(1993..1995)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(2), :time("0:00"), :years(1994..1995)}, {:adjust("0"), :date("1"), :letter("-"), :month(3), :time("0:00"), :years(1996..1996)}, {:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(10), :time("0:00"), :years(1996..2001)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(2), :time("0:00"), :years(1997..1997)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(3), :time("0:00"), :years(1998..2001)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(4), :time("0:00"), :years(2002..2004)}, {:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(9), :time("0:00"), :years(2002..2003)}, {:adjust("1:00"), :dow(${:dow(7), :mindate("15")}), :letter("-"), :month(10), :time("0:00"), :years(2004..2009)}, {:adjust("0"), :dow(${:dow(7), :mindate("8")}), :letter("-"), :month(3), :time("0:00"), :years(2005..2009)}, {:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(10), :time("0:00"), :years(2010..Inf)}, {:adjust("0"), :dow(${:dow(7), :mindate("8")}), :letter("-"), :month(4), :time("0:00"), :years(2010..2012)}, {:adjust("0"), :dow(${:dow(7), :mindate("22")}), :letter("-"), :month(3), :time("0:00"), :years(2013..Inf)}],
-);
-has @.zonedata = [{:baseoffset("-3:50:40"), :rules(""), :until(-2524521600)}, {:baseoffset("-3:50:40"), :rules(""), :until(-1206403200)}, {:baseoffset("-4:00"), :rules(""), :until(63072000)}, {:baseoffset("-3:00"), :rules(""), :until(126230400)}, {:baseoffset("-4:00"), :rules("Para"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::America::Asuncion
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'America/Asuncion') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-3:50:40"),:until(-2524521600))), Map.new((:baseoffset("-3:50:40"),:until(-1206403200))), Map.new((:baseoffset("-4:00"),:until(86745600))), Map.new((:baseoffset("-3:00"),:until(134006400))), Map.new((:baseoffset("-4:00"),:rule("Para")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Para' => (Map.new((:adjust("1:00"),:date(1),:month(10),:years(1975..1988))), Map.new((:date(1),:month(3),:years(1975..1978))), Map.new((:date(1),:month(4),:years(1979..1991))), Map.new((:adjust("1:00"),:date(22),:month(10),:years(1989))), Map.new((:adjust("1:00"),:date(1),:month(10),:years(1990))), Map.new((:adjust("1:00"),:date(6),:month(10),:years(1991))), Map.new((:date(1),:month(3),:years(1992))), Map.new((:adjust("1:00"),:date(5),:month(10),:years(1992))), Map.new((:date(31),:month(3),:years(1993))), Map.new((:adjust("1:00"),:date(1),:month(10),:years(1993..1995))), Map.new((:lastdow(7),:month(2),:years(1994..1995))), Map.new((:date(1),:month(3),:years(1996))), Map.new((:adjust("1:00"),:dow((7, 1)),:month(10),:years(1996..2001))), Map.new((:lastdow(7),:month(2),:years(1997))), Map.new((:dow((7, 1)),:month(3),:years(1998..2001))), Map.new((:dow((7, 1)),:month(4),:years(2002..2004))), Map.new((:adjust("1:00"),:dow((7, 1)),:month(9),:years(2002..2003))), Map.new((:adjust("1:00"),:dow((7, 15)),:month(10),:years(2004..2009))), Map.new((:dow((7, 8)),:month(3),:years(2005..2009))), Map.new((:adjust("1:00"),:dow((7, 1)),:month(10),:years(2010..Inf))), Map.new((:dow((7, 8)),:month(4),:years(2010..2012))), Map.new((:dow((7, 22)),:month(3),:years(2013..Inf)))),
+        )
+    }
+}

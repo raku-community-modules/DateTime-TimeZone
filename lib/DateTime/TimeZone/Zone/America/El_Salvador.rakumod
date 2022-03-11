@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::America::El_Salvador does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Salv' => $[{:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("D"), :month(5), :time("0:00"), :years(1987..1988)}, {:adjust("0"), :lastdow(7), :letter("S"), :month(9), :time("0:00"), :years(1987..1988)}],
-);
-has @.zonedata = [{:baseoffset("-5:56:48"), :rules(""), :until(-1546300800)}, {:baseoffset("-6:00"), :rules("Salv"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::America::El_Salvador
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'America/El_Salvador') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-5:56:48"),:until(-1546300800))), Map.new((:baseoffset("-6:00"),:rule("Salv")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Salv' => (Map.new((:adjust("1:00"),:dow((7, 1)),:letter("D"),:month(5),:years(1987..1988))), Map.new((:lastdow(7),:letter("S"),:month(9),:years(1987..1988)))),
+        )
+    }
+}

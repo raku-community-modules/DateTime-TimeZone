@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Asia::Colombo does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("5:19:24"), :rules(""), :until(-2840140800)}, {:baseoffset("5:19:32"), :rules(""), :until(-2019686400)}, {:baseoffset("5:30"), :rules(""), :until(-883267200)}, {:baseoffset("5:30"), :rules(""), :until(-883612800)}, {:baseoffset("6:30"), :rules(""), :until(-764028000)}, {:baseoffset("5:30"), :rules(""), :until(832982400)}, {:baseoffset("6:30"), :rules(""), :until(846289800)}, {:baseoffset("6:00"), :rules(""), :until(1145061000)}, {:baseoffset("5:30"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Asia::Colombo
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Asia/Colombo') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("5:19:24"),:until(-2840140800))), Map.new((:baseoffset("5:19:32"),:until(-2019686400))), Map.new((:baseoffset("5:30"),:until(-883267200))), Map.new((:baseoffset("5:60:00"),:until(-862617600))), Map.new((:baseoffset("6:30:00"),:until(-764028000))), Map.new((:baseoffset("5:30"),:until(832982400))), Map.new((:baseoffset("6:30"),:until(846289800))), Map.new((:baseoffset("6:00"),:until(1145061000))), Map.new((:baseoffset("5:30")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

@@ -1,4 +1,4 @@
-unit module DateTime::TimeZone:ver<0.10.1>:auth<zef:raku-community-modules>;
+unit module DateTime::TimeZone:ver<0.10.2>:auth<zef:raku-community-modules>;
 
 sub timezone(
   Str:D $name, DateTime:D $datetime = DateTime.new(time)
@@ -6,7 +6,7 @@ sub timezone(
     my $namespace := "DateTime::TimeZone::Zone::" ~ ($name
       .subst('/', '::',      :g)
       .subst('+', '_plus_',  :g)
-      .subst('-', '_minus_', :g)
+      .subst('-', '_dash_', :g)
     );
     try {
         require ::($namespace);
@@ -93,6 +93,8 @@ Same as the C<Str,DateTime> candidate, but allows being used as a method.
 Timothy Totten
 
 Andrew Egeler
+
+Elizabeth Mattijsen
 
 Source can be located at: https://github.com/raku-community-modules/DateTime-TimeZone .
 Comments and Pull Requests are welcome.

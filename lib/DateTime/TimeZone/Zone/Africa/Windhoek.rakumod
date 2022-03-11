@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Africa::Windhoek does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Namibia' => $[{:adjust("-1:00"), :date("21"), :letter("WAT"), :month(3), :time("0:00"), :years(1994..1994)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("CAT"), :month(9), :time("2:00"), :years(1994..2017)}, {:adjust("-1:00"), :dow(${:dow(7), :mindate("1")}), :letter("WAT"), :month(4), :time("2:00"), :years(1995..2017)}],
-);
-has @.zonedata = [{:baseoffset("1:08:24"), :rules(""), :until(-2458166400)}, {:baseoffset("1:30"), :rules(""), :until(-2114380800)}, {:baseoffset("2:00"), :rules(""), :until(-860968800)}, {:baseoffset("3:00"), :rules(""), :until(-845244000)}, {:baseoffset("2:00"), :rules(""), :until(637977600)}, {:baseoffset("2:00"), :rules("Namibia"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Africa::Windhoek
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Africa/Windhoek') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("1:08:24"),:until(-2458166400))), Map.new((:baseoffset("1:30"),:until(-2109283200))), Map.new((:baseoffset("2:00"),:until(-860968800))), Map.new((:baseoffset("3:00:00"),:until(-845244000))), Map.new((:baseoffset("2:00"),:until(637977600))), Map.new((:baseoffset("2:00"),:rule("Namibia")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Namibia' => (Map.new((:adjust("-1:00"),:date(21),:letter("WAT"),:month(3),:years(1994))), Map.new((:dow((7, 1)),:letter("CAT"),:month(9),:time("2:00"),:years(1994..2017))), Map.new((:adjust("-1:00"),:dow((7, 1)),:letter("WAT"),:month(4),:time("2:00"),:years(1995..2017)))),
+        )
+    }
+}

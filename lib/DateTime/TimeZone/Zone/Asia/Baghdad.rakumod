@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Asia::Baghdad does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Iraq' => $[{:adjust("1:00"), :date("1"), :letter("-"), :month(5), :time("0:00"), :years(1982..1982)}, {:adjust("0"), :date("1"), :letter("-"), :month(10), :time("0:00"), :years(1982..1984)}, {:adjust("1:00"), :date("31"), :letter("-"), :month(3), :time("0:00"), :years(1983..1983)}, {:adjust("1:00"), :date("1"), :letter("-"), :month(4), :time("0:00"), :years(1984..1985)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(9), :time("1:00s"), :years(1985..1990)}, {:adjust("1:00"), :lastdow(7), :letter("-"), :month(3), :time("1:00s"), :years(1986..1990)}, {:adjust("1:00"), :date("1"), :letter("-"), :month(4), :time("3:00s"), :years(1991..2007)}, {:adjust("0"), :date("1"), :letter("-"), :month(10), :time("3:00s"), :years(1991..2007)}],
-);
-has @.zonedata = [{:baseoffset("2:57:40"), :rules(""), :until(-2524521600)}, {:baseoffset("2:57:36"), :rules(""), :until(-1640995200)}, {:baseoffset("3:00"), :rules(""), :until(378691200)}, {:baseoffset("3:00"), :rules("Iraq"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Asia::Baghdad
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Asia/Baghdad') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("2:57:40"),:until(-2524521600))), Map.new((:baseoffset("2:57:36"),:until(-1640995200))), Map.new((:baseoffset("3:00"),:until(389059200))), Map.new((:baseoffset("3:00"),:rule("Iraq")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Iraq' => (Map.new((:adjust("1:00"),:date(1),:month(5),:years(1982))), Map.new((:date(1),:month(10),:years(1982..1984))), Map.new((:adjust("1:00"),:date(31),:month(3),:years(1983))), Map.new((:adjust("1:00"),:date(1),:month(4),:years(1984..1985))), Map.new((:lastdow(7),:month(9),:time("1:00s"),:years(1985..1990))), Map.new((:adjust("1:00"),:lastdow(7),:month(3),:time("1:00s"),:years(1986..1990))), Map.new((:adjust("1:00"),:date(1),:month(4),:time("3:00s"),:years(1991..2007))), Map.new((:date(1),:month(10),:time("3:00s"),:years(1991..2007)))),
+        )
+    }
+}

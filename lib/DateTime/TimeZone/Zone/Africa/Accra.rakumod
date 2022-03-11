@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Africa::Accra does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Ghana' => $[{:adjust("0:20"), :date("1"), :letter("-"), :month(9), :time("0:00"), :years(1920..1942)}, {:adjust("0"), :date("31"), :letter("-"), :month(12), :time("0:00"), :years(1920..1942)}],
-);
-has @.zonedata = [{:baseoffset("-0:00:52"), :rules(""), :until(-1640995200)}, {:baseoffset("0:00"), :rules("Ghana"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Africa::Accra
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Africa/Accra') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-0:00:52"),:until(-1640995200))), Map.new((:baseoffset("0:00"),:rule("Ghana")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Ghana' => (Map.new((:adjust("0:20"),:date(1),:month(9),:years(1920..1942))), Map.new((:date(31),:month(12),:years(1920..1942)))),
+        )
+    }
+}

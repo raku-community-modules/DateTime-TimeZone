@@ -61,6 +61,8 @@ Timothy Totten
 
 Andrew Egeler
 
+Elizabeth Mattijsen
+
 Source can be located at: https://github.com/raku-community-modules/DateTime-TimeZone . Comments and Pull Requests are welcome.
 
 COPYRIGHT AND LICENSE

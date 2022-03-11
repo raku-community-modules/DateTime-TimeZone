@@ -63,22 +63,14 @@ method !apply-rules(@rules) {
                     }
                 }
             }
-            elsif %rule<dow> -> %dow {
+            elsif %rule<dow> -> :($dow, $mindate) {
                 $datetime = DateTime.new: :$year,
                   :month(%rule<month>), :day(1), :$hour, :$minute;
-                my $days;
                 my $day-of-week := $datetime.day-of-week;
-                my $dowdow      := %dow<dow>;
-                if $day-of-week <= $dowdow {
-                    $days = $dowdow - $day-of-week;
-                }
-                else {
-                    $days = 7 - ($day-of-week - $dowdow);
-                }
-                my $mindate := %dow<mindate>;
-                while $days < $mindate {
-                    $days += 7;
-                }
+                my $days = $day-of-week <= $dow
+                  ?? $dow - $day-of-week
+                  !! 7 - ($day-of-week - $dow);
+                $days += 7 while $days < $mindate;
                 $datetime .= later(:$days);
             }
 
@@ -109,11 +101,15 @@ method offset() {
 #    }
 
     my $time := $!datetime.posix;
-    my %best-zone-entry := @.zonedata.first: -> %zone-entry {
-        $time < (%zone-entry<until> // Inf)
+    my %best-zone-entry;
+    if @.zonedata -> @zone-data {
+        %best-zone-entry := @zone-data.first: -> %zone-entry {
+            $time < (%zone-entry<until> // Inf)
+        }
     }
 
-    my int $offset = self!time-to-offset: %best-zone-entry<baseoffset>;
+    my int $offset;
+    $offset = self!time-to-offset($_) with %best-zone-entry<baseoffset>;
     my $rule-id := %best-zone-entry<rules>;
     if $rule-id && %.rules{$rule-id} -> @rules {
         $offset + self!apply-rules(@rules)
@@ -125,8 +121,10 @@ method offset() {
 
 ## The rest are convenience wrappers for converting the object to a number.
 
-method Int { self.offset.Int }
-method Num { self.offset.Num }
-method Numeric { self.offset }
+method gist() { self.name }
+method Str()  { self.name }
+method Int() { self.offset.Int }
+method Num() { self.offset.Num }
+method Numeric() { self.offset }
 
 # vim: expandtab shiftwidth=4

@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Africa::Sao_Tome does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("0:26:56"), :rules(""), :until(-2713910400)}, {:baseoffset("-0:36:45"), :rules(""), :until(-1830384000)}, {:baseoffset("0:00"), :rules(""), :until(1514768400)}, {:baseoffset("1:00"), :rules(""), :until(1546308000)}, {:baseoffset("0:00"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Africa::Sao_Tome
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Africa/Sao_Tome') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("0:26:56"),:until(-2713910400))), Map.new((:baseoffset("-0:36:45"),:until(-1830384000))), Map.new((:baseoffset("0:00"),:until(1514768400))), Map.new((:baseoffset("1:00"),:until(1546308000))), Map.new((:baseoffset("0:00")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

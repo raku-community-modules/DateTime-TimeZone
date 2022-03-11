@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Pacific::Pohnpei does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("-13:27:08"), :rules(""), :until(-3944678400)}, {:baseoffset("10:32:52"), :rules(""), :until(-2177452800)}, {:baseoffset("11:00"), :rules(""), :until(-1767225600)}, {:baseoffset("9:00"), :rules(""), :until(-1606780800)}, {:baseoffset("11:00"), :rules(""), :until(-1041379200)}, {:baseoffset("10:00"), :rules(""), :until(-907372800)}, {:baseoffset("9:00"), :rules(""), :until(-788918400)}, {:baseoffset("11:00"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Pacific::Pohnpei
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Pacific/Pohnpei') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-13:27:08"),:until(-3944678400))), Map.new((:baseoffset("10:32:52"),:until(-2177452800))), Map.new((:baseoffset("11:00"),:until(-1743638400))), Map.new((:baseoffset("9:00"),:until(-1606780800))), Map.new((:baseoffset("11:00"),:until(-1041379200))), Map.new((:baseoffset("10:00"),:until(-907372800))), Map.new((:baseoffset("9:00"),:until(-770601600))), Map.new((:baseoffset("11:00")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

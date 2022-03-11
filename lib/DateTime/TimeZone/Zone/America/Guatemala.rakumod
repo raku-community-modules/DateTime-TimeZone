@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::America::Guatemala does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Guat' => $[{:adjust("1:00"), :date("25"), :letter("D"), :month(11), :time("0:00"), :years(1973..1973)}, {:adjust("0"), :date("24"), :letter("S"), :month(2), :time("0:00"), :years(1974..1974)}, {:adjust("1:00"), :date("21"), :letter("D"), :month(5), :time("0:00"), :years(1983..1983)}, {:adjust("0"), :date("22"), :letter("S"), :month(9), :time("0:00"), :years(1983..1983)}, {:adjust("1:00"), :date("23"), :letter("D"), :month(3), :time("0:00"), :years(1991..1991)}, {:adjust("0"), :date("7"), :letter("S"), :month(9), :time("0:00"), :years(1991..1991)}, {:adjust("1:00"), :date("30"), :letter("D"), :month(4), :time("0:00"), :years(2006..2006)}, {:adjust("0"), :date("1"), :letter("S"), :month(10), :time("0:00"), :years(2006..2006)}],
-);
-has @.zonedata = [{:baseoffset("-6:02:04"), :rules(""), :until(-1617062400)}, {:baseoffset("-6:00"), :rules("Guat"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::America::Guatemala
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'America/Guatemala') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-6:02:04"),:until(-1617062400))), Map.new((:baseoffset("-6:00"),:rule("Guat")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Guat' => (Map.new((:adjust("1:00"),:date(25),:letter("D"),:month(11),:years(1973))), Map.new((:date(24),:letter("S"),:month(2),:years(1974))), Map.new((:adjust("1:00"),:date(21),:letter("D"),:month(5),:years(1983))), Map.new((:date(22),:letter("S"),:month(9),:years(1983))), Map.new((:adjust("1:00"),:date(23),:letter("D"),:month(3),:years(1991))), Map.new((:date(7),:letter("S"),:month(9),:years(1991))), Map.new((:adjust("1:00"),:date(30),:letter("D"),:month(4),:years(2006))), Map.new((:date(1),:letter("S"),:month(10),:years(2006)))),
+        )
+    }
+}

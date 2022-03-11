@@ -1,0 +1,14 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
+use Test;
+use DateTime::TimeZone::Zone::Etc::GMT_dash_8;
+
+plan 4;
+
+my $tz := DateTime::TimeZone::Zone::Etc::GMT_dash_8.new;
+
+isa-ok $tz, DateTime::TimeZone::Zone::Etc::GMT_dash_8;
+is $tz.name, 'Etc/GMT-8', "is it named Etc/GMT-8";
+isa-ok $tz.zonedata, List, 'is the zonedata a List';
+isa-ok $tz.rules, Map, 'are the rules a Map';

@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Asia::Brunei does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("7:39:40"), :rules(""), :until(-1388534400)}, {:baseoffset("7:30"), :rules(""), :until(-1167609600)}, {:baseoffset("8:00"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Asia::Brunei
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Asia/Brunei') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("7:39:40"),:until(-1383436800))), Map.new((:baseoffset("7:30"),:until(-1167609600))), Map.new((:baseoffset("8:00")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

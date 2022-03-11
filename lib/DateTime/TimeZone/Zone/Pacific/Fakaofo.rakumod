@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Pacific::Fakaofo does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("-11:24:56"), :rules(""), :until(-2177452800)}, {:baseoffset("-11:00"), :rules(""), :until(1325203200)}, {:baseoffset("13:00"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Pacific::Fakaofo
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Pacific/Fakaofo') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-11:24:56"),:until(-2177452800))), Map.new((:baseoffset("-11:00"),:until(1325203200))), Map.new((:baseoffset("13:00")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

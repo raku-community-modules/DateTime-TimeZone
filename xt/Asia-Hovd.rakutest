@@ -1,10 +1,14 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use Test;
+use DateTime::TimeZone::Zone::Asia::Hovd;
 
 plan 4;
 
-use DateTime::TimeZone::Zone::Asia::Hovd;
-my $tz = DateTime::TimeZone::Zone::Asia::Hovd.new;
-ok $tz, "timezone can be instantiated";
-is $tz.rules.WHAT, Hash, "rules is a Hash";
-ok $tz.zonedata, "timezone has zonedata";
-is-deeply $tz.zonedata.WHAT, Array, "zonedata is an Array";
+my $tz := DateTime::TimeZone::Zone::Asia::Hovd.new;
+
+isa-ok $tz, DateTime::TimeZone::Zone::Asia::Hovd;
+is $tz.name, 'Asia/Hovd', "is it named Asia/Hovd";
+isa-ok $tz.zonedata, List, 'is the zonedata a List';
+isa-ok $tz.rules, Map, 'are the rules a Map';

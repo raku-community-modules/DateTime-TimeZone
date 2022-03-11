@@ -1,7 +1,21 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Asia::Famagusta does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Cyprus' => $[{:adjust("1:00"), :date("13"), :letter("S"), :month(4), :time("0:00"), :years(1975..1975)}, {:adjust("0"), :date("12"), :letter("-"), :month(10), :time("0:00"), :years(1975..1975)}, {:adjust("1:00"), :date("15"), :letter("S"), :month(5), :time("0:00"), :years(1976..1976)}, {:adjust("0"), :date("11"), :letter("-"), :month(10), :time("0:00"), :years(1976..1976)}, {:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("S"), :month(4), :time("0:00"), :years(1977..1980)}, {:adjust("0"), :date("25"), :letter("-"), :month(9), :time("0:00"), :years(1977..1977)}, {:adjust("0"), :date("2"), :letter("-"), :month(10), :time("0:00"), :years(1978..1978)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(9), :time("0:00"), :years(1979..1997)}, {:adjust("1:00"), :lastdow(7), :letter("S"), :month(3), :time("0:00"), :years(1981..1998)}],
- 'EUAsia' => $[{:adjust("1:00"), :lastdow(7), :letter("S"), :month(3), :time("1:00u"), :years(1981..Inf)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(9), :time("1:00u"), :years(1979..1995)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(10), :time("1:00u"), :years(1996..Inf)}],
-);
-has @.zonedata = [{:baseoffset("2:15:48"), :rules(""), :until(-1518912000)}, {:baseoffset("2:00"), :rules("Cyprus"), :until(883612800)}, {:baseoffset("2:00"), :rules("EUAsia"), :until(1473292800)}, {:baseoffset("3:00"), :rules(""), :until(1509238800)}, {:baseoffset("2:00"), :rules("EUAsia"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Asia::Famagusta
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Asia/Famagusta') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("2:15:48"),:until(-1518912000))), Map.new((:baseoffset("2:00"),:rule("Cyprus"),:until(904608000))), Map.new((:baseoffset("2:00"),:rule("EUAsia"),:until(1473292800))), Map.new((:baseoffset("3:00"),:until(1509238800))), Map.new((:baseoffset("2:00"),:rule("EUAsia")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Cyprus' => (Map.new((:adjust("1:00"),:date(13),:letter("S"),:month(4),:years(1975))), Map.new((:date(12),:month(10),:years(1975))), Map.new((:adjust("1:00"),:date(15),:letter("S"),:month(5),:years(1976))), Map.new((:date(11),:month(10),:years(1976))), Map.new((:adjust("1:00"),:dow((7, 1)),:letter("S"),:month(4),:years(1977..1980))), Map.new((:date(25),:month(9),:years(1977))), Map.new((:date(2),:month(10),:years(1978))), Map.new((:lastdow(7),:month(9),:years(1979..1997))), Map.new((:adjust("1:00"),:lastdow(7),:letter("S"),:month(3),:years(1981..1998)))),
+          'EUAsia' => (Map.new((:adjust("1:00"),:lastdow(7),:letter("S"),:month(3),:time("1:00u"),:years(1981..Inf))), Map.new((:lastdow(7),:month(9),:time("1:00u"),:years(1979..1995))), Map.new((:lastdow(7),:month(10),:time("1:00u"),:years(1996..Inf)))),
+        )
+    }
+}

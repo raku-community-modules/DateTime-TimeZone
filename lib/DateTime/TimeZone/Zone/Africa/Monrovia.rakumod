@@ -1,5 +1,18 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Africa::Monrovia does DateTime::TimeZone::Zone;
-has %.rules = ( 
-);
-has @.zonedata = [{:baseoffset("-0:43:08"), :rules(""), :until(-2776982400)}, {:baseoffset("-0:43:08"), :rules(""), :until(-1609459200)}, {:baseoffset("-0:44:30"), :rules(""), :until(63590400)}, {:baseoffset("0:00"), :rules(""), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Africa::Monrovia
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Africa/Monrovia') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-0:43:08"),:until(-2776982400))), Map.new((:baseoffset("-0:43:08"),:until(-1604361600))), Map.new((:baseoffset("-0:44:30"),:until(63590400))), Map.new((:baseoffset("0:00")))
+    }
+
+    method rules() {
+        BEGIN Map.new
+    }
+}

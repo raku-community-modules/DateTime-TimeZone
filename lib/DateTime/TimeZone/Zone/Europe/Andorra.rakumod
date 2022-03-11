@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Europe::Andorra does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'EU' => $[{:adjust("1:00"), :dow(${:dow(7), :mindate("1")}), :letter("S"), :month(4), :time("1:00u"), :years(1977..1980)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(9), :time("1:00u"), :years(1977..1977)}, {:adjust("0"), :date("1"), :letter("-"), :month(10), :time("1:00u"), :years(1978..1978)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(9), :time("1:00u"), :years(1979..1995)}, {:adjust("1:00"), :lastdow(7), :letter("S"), :month(3), :time("1:00u"), :years(1981..Inf)}, {:adjust("0"), :lastdow(7), :letter("-"), :month(10), :time("1:00u"), :years(1996..Inf)}],
-);
-has @.zonedata = [{:baseoffset("0:06:04"), :rules(""), :until(-2177452800)}, {:baseoffset("0:00"), :rules(""), :until(-733881600)}, {:baseoffset("1:00"), :rules(""), :until(481082400)}, {:baseoffset("1:00"), :rules("EU"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Europe::Andorra
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Europe/Andorra') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("0:06:04"),:until(-2177452800))), Map.new((:baseoffset("0:00"),:until(-733881600))), Map.new((:baseoffset("1:00"),:until(481082400))), Map.new((:baseoffset("1:00"),:rule("EU")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'EU' => (Map.new((:adjust("1:00"),:dow((7, 1)),:letter("S"),:month(4),:time("1:00u"),:years(1977..1980))), Map.new((:lastdow(7),:month(9),:time("1:00u"),:years(1977))), Map.new((:date(1),:month(10),:time("1:00u"),:years(1978))), Map.new((:lastdow(7),:month(9),:time("1:00u"),:years(1979..1995))), Map.new((:adjust("1:00"),:lastdow(7),:letter("S"),:month(3),:time("1:00u"),:years(1981..Inf))), Map.new((:lastdow(7),:month(10),:time("1:00u"),:years(1996..Inf)))),
+        )
+    }
+}

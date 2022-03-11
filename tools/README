@@ -2,11 +2,10 @@ To regenerate the timezone database do the following:
 
     cd tools
     rm -rf ../lib/DateTime/TimeZone/Zone/*
-    ./gen-all-tzdata.p6
+    ./gen-all-tzdata.raku
     rm -rf ../t/all-zones
-    ./gen-zone-tests.p6
-    ./gen-provides.p6 > new_provides
+    ./gen-zone-tests.raku
+    ./gen-provides.raku > new_provides
 
 Then replace the `provides` section in the `../META6.json` file with the
 contents of `new_provides`. Remove that file afterwards.
-

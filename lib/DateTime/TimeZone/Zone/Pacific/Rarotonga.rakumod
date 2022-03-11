@@ -1,6 +1,20 @@
+#- Generated on 2022-03-11T12:47:05+01:00 by parse.raku
+#- Based on Release 20198 - 2019-03-25 22:01:33 -0700
+
 use DateTime::TimeZone::Zone;
-unit class DateTime::TimeZone::Zone::Pacific::Rarotonga does DateTime::TimeZone::Zone;
-has %.rules = ( 
- 'Cook' => $[{:adjust("0:30"), :date("12"), :letter("-"), :month(11), :time("0:00"), :years(1978..1978)}, {:adjust("0"), :dow(${:dow(7), :mindate("1")}), :letter("-"), :month(3), :time("0:00"), :years(1979..1991)}, {:adjust("0:30"), :lastdow(7), :letter("-"), :month(10), :time("0:00"), :years(1979..1990)}],
-);
-has @.zonedata = [{:baseoffset("-10:39:04"), :rules(""), :until(-2177452800)}, {:baseoffset("-10:30"), :rules(""), :until(279676800)}, {:baseoffset("-10:00"), :rules("Cook"), :until(Inf)}];
+
+class DateTime::TimeZone::Zone::Pacific::Rarotonga
+  does DateTime::TimeZone::Zone
+{
+    method name(--> 'Pacific/Rarotonga') { }
+
+    method zonedata() {
+        BEGIN Map.new((:baseoffset("-10:39:04"),:until(-2177452800))), Map.new((:baseoffset("-10:30"),:until(279676800))), Map.new((:baseoffset("-10:00"),:rule("Cook")))
+    }
+
+    method rules() {
+        BEGIN Map.new: (
+          'Cook' => (Map.new((:adjust("0:30"),:date(12),:month(11),:years(1978))), Map.new((:dow((7, 1)),:month(3),:years(1979..1991))), Map.new((:adjust("0:30"),:lastdow(7),:month(10),:years(1979..1990)))),
+        )
+    }
+}
