@@ -1,6 +1,28 @@
 Revision history for DateTime::TimeZone
 
 {{$NEXT}}
+    - Linked timezones now live in the "parent" class, and
+      are "linked" in the META6.json file.  This reduces the
+      number of source-files (and thus installable modules)
+      by several hundred, while only adding minimal overhead
+      to loading a "parent" class.  But making loading a
+      linked class significantly faster as it now has one
+      level less of indirection in module loading.
+    - Calling the "timezone" sub without any parameters now
+      exposes a Map with timezone => class name pairs.
+    - An "IsTimeZone" subset is now exported, allowing
+      signatures to accept a string that is a valid timezone.
+    - Complete rewrite of timezone data parsing logic
+      - Instead of using a grammar, revert to using a line
+        based approach as the format of the timezone data
+        is line based and *very* simple and all elements
+        are whitespace-delimited, so a simple ".words"
+        can do the job in most situations.
+      - Parsing logic now does almost everything (except
+        checking whether there is a more up-to-date version
+        of the Olson database).  It created the class and
+        test files, updates the META6.json and the valid
+        timezones Map in DateTime::Timezone.
 
 0.10.1  2022-03-04T14:21:11+01:00
     - First version in the zef ecosystem

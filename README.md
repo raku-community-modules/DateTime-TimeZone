@@ -15,9 +15,15 @@ say tz-offset("-01:00");  # -3600
 
 say timezone("Europe/Amsterdam").Int;  # 3600 or 7200, depending on DST
 
+say timezone<Europe/Amsterdam>;  # DateTime::TimeZone::Zone::Europe::Amsterdam
+
 my $dt = DateTime.now;
 say to-timezone("America/Detroit", $dt);
 say $dt.&to-timezone("America/Detroit");
+
+sub frobnicate(IsTimeZone $timezone) {
+    say "$timezone is a valid timezone";
+}
 ```
 
 DESCRIPTION
@@ -32,6 +38,11 @@ tz-offset(Str:D $offset-string) --> Int:D
 -----------------------------------------
 
 Parses common offset strings (such as "01:00" and "-03:00") and returns an `Int` value.
+
+timezone() --> Map:D
+--------------------
+
+Returns a `Map` of the names of the supported timezones, and the name of their associated `DateTime::Timezone::Zone::` class.
 
 timezone(Str:D $name, DateTime:D $datetime?) --> DateTime::TimeZone:D
 ---------------------------------------------------------------------
@@ -53,6 +64,23 @@ to-timezone(DateTime:D $datetime, Str:D $name) --> DateTime:D
 -------------------------------------------------------------
 
 Same as the `Str,DateTime` candidate, but allows being used as a method.
+
+SUBSETS
+=======
+
+```raku
+multi sub frobnicate(IsTimeZone $timezone) {
+    say "$timezone is a valid timezone";
+}
+multi sub frobnicate(Str:D $string) {
+    say "$string is *NOT* a valid timezone";
+}
+```
+
+IsTimeZone
+----------
+
+The `IsTimeZone` subset can be used see if a given parameter is a known timezone.
 
 AUTHORS
 =======
