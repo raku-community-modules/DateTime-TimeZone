@@ -1,6 +1,10 @@
 Revision history for DateTime::TimeZone
 
 {{$NEXT}}
+
+0.10.2  2022-03-13T15:52:02+01:00
+    - Add reference to DateTime::Timezones and
+      Timezones::ZoneInfo
     - Added a "dtz" helper script for converting epoch,
       date or datetime values into a given timezone.
     - Linked timezones now live in the "parent" class, and

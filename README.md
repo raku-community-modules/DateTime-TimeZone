@@ -95,6 +95,13 @@ dtz
 
 The `dtz` script allows you to enter either an epoch value, a YYYY-MM-DD string for midnight on a date, or a YYYY-MM-DDTHH:MM:SS... string for a date/time, and an optional timezone (default: UTC). It outputs the `DateTime` string for that time in that timezone.
 
+SEE ALSO
+========
+
+[DateTime::Timezones](https://raku.land/github:alabamenhu/DateTime::Timezones)
+
+[Timezone::ZoneInfo](https://raku.land/github:alabamenhu/Timezones::ZoneInfo)
+
 AUTHORS
 =======
 

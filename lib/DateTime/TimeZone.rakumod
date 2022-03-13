@@ -737,6 +737,12 @@ string for midnight on a date, or a YYYY-MM-DDTHH:MM:SS... string for a
 date/time, and an optional timezone (default: UTC).  It outputs the
 C<DateTime> string for that time in that timezone.
 
+=head1 SEE ALSO
+
+L<DateTime::Timezones|https://raku.land/github:alabamenhu/DateTime::Timezones>
+
+L<Timezone::ZoneInfo|https://raku.land/github:alabamenhu/Timezones::ZoneInfo>
+
 =head1 AUTHORS
 
 Timothy Totten
