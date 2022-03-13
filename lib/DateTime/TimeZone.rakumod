@@ -1,6 +1,6 @@
 unit module DateTime::TimeZone:ver<0.10.2>:auth<zef:raku-community-modules>;
 
-# this Map is automatically generated
+# this Map is automatically generated from the Olson database
 my %timezones := BEGIN Map.new: (
   "Africa/Abidjan" => "DateTime::TimeZone::Zone::Africa::Abidjan",
   "Africa/Accra" => "DateTime::TimeZone::Zone::Africa::Accra",
@@ -602,6 +602,9 @@ my subset IsTimeZone of Str:D is export where { %timezones.EXISTS-KEY($_) };
 
 proto sub timezone(|) is export {*}
 multi sub timezone() { %timezones }
+multi sub timezone(IsTimeZone $timezone, Numeric:D $epoch) {
+    timezone $timezone, DateTime.new: $epoch
+}
 multi sub timezone(
   IsTimeZone $timezone,
   DateTime:D $datetime = DateTime.new(time)
