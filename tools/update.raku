@@ -254,6 +254,7 @@ class TimeZoneFile {
     method !rule($line --> Nil) {
         my ($, $name, $from, $to, $type, $month, $on, $time, $adjust, $letter)
           = $line.words;
+        $time = $time.chop if $time.ends-with("s");  # Not sure what the "s" means
         my %data;
         %data<years> := $to eq 'only'
           ?? $from.Int

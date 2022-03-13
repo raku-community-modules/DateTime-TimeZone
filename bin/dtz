@@ -1,0 +1,32 @@
+use DateTime::TimeZone;
+
+my $datetime;
+subset IsDateTime of Str:D where {
+    .chars > 10 && so $datetime := DateTime.new($_)
+}
+
+my $date;
+subset IsDate of Str:D where {
+    .chars == 10 && so $date := Date.new($_)
+}
+
+# handle negative epoch values, interpreted as numeric Bools
+multi sub MAIN(*@positionals, *%_) is hidden-from-USAGE {
+    if %_ == 1 {
+        with %_.keys.head.Numeric -> $epoch {
+            return MAIN -$epoch, |@positionals;
+        }
+    }
+    exit note $*USAGE;
+}
+multi sub MAIN(Numeric:D $epoch, IsTimeZone $timezone = "UTC") {
+    say to-timezone $timezone, DateTime.new: $epoch.Numeric;
+}
+multi sub MAIN(IsDateTime, IsTimeZone $timezone = "UTC") {
+    say to-timezone $timezone, $datetime;
+}
+multi sub MAIN(IsDate, IsTimeZone $timezone = "UTC") is default {
+    say to-timezone $timezone, $date.DateTime;
+}
+
+# vim: expandtab shiftwidth=4

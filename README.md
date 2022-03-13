@@ -87,6 +87,14 @@ to-timezone(DateTime:D $datetime, IsTimeZone $name) --> DateTime:D
 
 Same as the `Str,DateTime` candidate, but allows being used as a method.
 
+COMMAND LINE HELPERS
+====================
+
+dtz
+---
+
+The `dtz` script allows you to enter either an epoch value, a YYYY-MM-DD string for midnight on a date, or a YYYY-MM-DDTHH:MM:SS... string for a date/time, and an optional timezone (default: UTC). It outputs the `DateTime` string for that time in that timezone.
+
 AUTHORS
 =======
 

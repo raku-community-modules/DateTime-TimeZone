@@ -618,6 +618,9 @@ multi sub timezone($string, $? --> Nil) {
 }
 
 proto sub to-timezone(|) is export {*}
+multi sub to-timezone(IsTimeZone $name, Numeric:D $epoch) {
+    to-timezone($name, $epoch)
+}
 multi sub to-timezone(IsTimeZone $name, DateTime:D $datetime) {
     $datetime.in-timezone(timezone($name, $datetime).Int)
 }
@@ -724,6 +727,15 @@ A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
 =head2 to-timezone(DateTime:D $datetime, IsTimeZone $name) --> DateTime:D
 
 Same as the C<Str,DateTime> candidate, but allows being used as a method.
+
+=head1 COMMAND LINE HELPERS
+
+=head2 dtz
+
+The C<dtz> script allows you to enter either an epoch value, a YYYY-MM-DD
+string for midnight on a date, or a YYYY-MM-DDTHH:MM:SS... string for a
+date/time, and an optional timezone (default: UTC).  It outputs the
+C<DateTime> string for that time in that timezone.
 
 =head1 AUTHORS
 

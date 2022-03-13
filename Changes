@@ -1,6 +1,8 @@
 Revision history for DateTime::TimeZone
 
 {{$NEXT}}
+    - Added a "dtz" helper script for converting epoch,
+      date or datetime values into a given timezone.
     - Linked timezones now live in the "parent" class, and
       are "linked" in the META6.json file.  This reduces the
       number of source-files (and thus installable modules)
