@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Bishkek
     method name(--> 'Asia/Bishkek') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("4:58:24"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("5:00"),:rule("RussiaAsia"),:until(683604000))), Map.new((:baseoffset("5:00"),:rule("Kyrgyz"),:until(1123804800))), Map.new((:baseoffset("6:00")))
+        BEGIN Map.new((:baseoffset("4:58:24"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("5:00"),:rules("RussiaAsia"),:until(683604000))), Map.new((:baseoffset("5:00"),:rules("Kyrgyz"),:until(1123804800))), Map.new((:baseoffset("6:00")))
     }
 
     method rules() {

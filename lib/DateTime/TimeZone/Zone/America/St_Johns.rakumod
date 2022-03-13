@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::St_Johns
     method name(--> 'America/St_Johns') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:30:52"),:until(-2713910400))), Map.new((:baseoffset("-3:30:52"),:rule("StJohns"),:until(-1640995200))), Map.new((:baseoffset("-3:30:52"),:rule("Canada"),:until(-1609459200))), Map.new((:baseoffset("-3:30:52"),:rule("StJohns"),:until(-1096934400))), Map.new((:baseoffset("-3:30"),:rule("StJohns"),:until(-872380800))), Map.new((:baseoffset("-3:30"),:rule("Canada"),:until(-757382400))), Map.new((:baseoffset("-3:30"),:rule("StJohns"),:until(1320105600))), Map.new((:baseoffset("-3:30"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-3:30:52"),:until(-2713910400))), Map.new((:baseoffset("-3:30:52"),:rules("StJohns"),:until(-1640995200))), Map.new((:baseoffset("-3:30:52"),:rules("Canada"),:until(-1609459200))), Map.new((:baseoffset("-3:30:52"),:rules("StJohns"),:until(-1096934400))), Map.new((:baseoffset("-3:30"),:rules("StJohns"),:until(-872380800))), Map.new((:baseoffset("-3:30"),:rules("Canada"),:until(-757382400))), Map.new((:baseoffset("-3:30"),:rules("StJohns"),:until(1320105600))), Map.new((:baseoffset("-3:30"),:rules("Canada")))
     }
 
     method rules() {

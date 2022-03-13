@@ -63,7 +63,7 @@ method !apply-rules(@rules) {
                     }
                 }
             }
-            elsif %rule<dow> -> :($dow, $mindate) {
+            elsif %rule<dow> -> ($dow, $mindate) {
                 $datetime = DateTime.new: :$year,
                   :month(%rule<month>), :day(1), :$hour, :$minute;
                 my $day-of-week := $datetime.day-of-week;

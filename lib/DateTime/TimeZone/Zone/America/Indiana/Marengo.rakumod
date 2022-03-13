@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Marengo
     method name(--> 'America/Indiana/Marengo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:45:23"),:until(-2717667923))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-599616000))), Map.new((:baseoffset("-6:00"),:rule("Marengo"),:until(-273708000))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(126669600))), Map.new((:baseoffset("-5:00:00"),:until(152071200))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(189302400))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:45:23"),:until(-2717667923))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-599616000))), Map.new((:baseoffset("-6:00"),:rules("Marengo"),:until(-273708000))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(126669600))), Map.new((:baseoffset("-5:00:00"),:until(152071200))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(189302400))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Broken_Hill
     method name(--> 'Australia/Broken_Hill') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:25:48"),:until(-2364076800))), Map.new((:baseoffset("10:00"),:until(-2314915200))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rule("Aus"),:until(31536000))), Map.new((:baseoffset("9:30"),:rule("AN"),:until(946684800))), Map.new((:baseoffset("9:30"),:rule("AS")))
+        BEGIN Map.new((:baseoffset("9:25:48"),:until(-2364076800))), Map.new((:baseoffset("10:00"),:until(-2314915200))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rules("Aus"),:until(31536000))), Map.new((:baseoffset("9:30"),:rules("AN"),:until(946684800))), Map.new((:baseoffset("9:30"),:rules("AS")))
     }
 
     method rules() {

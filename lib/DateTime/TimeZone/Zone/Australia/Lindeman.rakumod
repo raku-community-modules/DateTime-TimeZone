@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Lindeman
     method name(--> 'Australia/Lindeman') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:55:56"),:until(-2366755200))), Map.new((:baseoffset("10:00"),:rule("Aus"),:until(31536000))), Map.new((:baseoffset("10:00"),:rule("AQ"),:until(709948800))), Map.new((:baseoffset("10:00"),:rule("Holiday")))
+        BEGIN Map.new((:baseoffset("9:55:56"),:until(-2366755200))), Map.new((:baseoffset("10:00"),:rules("Aus"),:until(31536000))), Map.new((:baseoffset("10:00"),:rules("AQ"),:until(709948800))), Map.new((:baseoffset("10:00"),:rules("Holiday")))
     }
 
     method rules() {

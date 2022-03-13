@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::New_York
     method name(--> 'America/New_York') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:56:02"),:until(-2717668562))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(-1577923200))), Map.new((:baseoffset("-5:00"),:rule("NYC"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rule("NYC"),:until(-94694400))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-4:56:02"),:until(-2717668562))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(-1577923200))), Map.new((:baseoffset("-5:00"),:rules("NYC"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rules("NYC"),:until(-94694400))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

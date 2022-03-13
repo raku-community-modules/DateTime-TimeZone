@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Costa_Rica
     method name(--> 'America/Costa_Rica') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:36:13"),:until(-2524521600))), Map.new((:baseoffset("-5:36:13"),:until(-1545091200))), Map.new((:baseoffset("-6:00"),:rule("CR")))
+        BEGIN Map.new((:baseoffset("-5:36:13"),:until(-2524521600))), Map.new((:baseoffset("-5:36:13"),:until(-1545091200))), Map.new((:baseoffset("-6:00"),:rules("CR")))
     }
 
     method rules() {

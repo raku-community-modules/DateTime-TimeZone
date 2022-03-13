@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Pangnirtung
     method name(--> 'America/Pangnirtung') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-1546300800))), Map.new((:baseoffset("-4:00"),:rule("NT_YK"),:until(796788000))), Map.new((:baseoffset("-5:00"),:rule("Canada"),:until(941335200))), Map.new((:baseoffset("-6:00"),:rule("Canada"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("0"),:until(-1546300800))), Map.new((:baseoffset("-4:00"),:rules("NT_YK"),:until(796788000))), Map.new((:baseoffset("-5:00"),:rules("Canada"),:until(941335200))), Map.new((:baseoffset("-6:00"),:rules("Canada"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rules("Canada")))
     }
 
     method rules() {

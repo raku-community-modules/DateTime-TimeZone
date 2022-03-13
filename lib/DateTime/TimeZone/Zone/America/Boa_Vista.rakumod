@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Boa_Vista
     method name(--> 'America/Boa_Vista') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:02:40"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00"),:until(938649600))), Map.new((:baseoffset("-4:00"),:rule("Brazil"),:until(971568000))), Map.new((:baseoffset("-4:00")))
+        BEGIN Map.new((:baseoffset("-4:02:40"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00"),:until(938649600))), Map.new((:baseoffset("-4:00"),:rules("Brazil"),:until(971568000))), Map.new((:baseoffset("-4:00")))
     }
 
     method rules() {

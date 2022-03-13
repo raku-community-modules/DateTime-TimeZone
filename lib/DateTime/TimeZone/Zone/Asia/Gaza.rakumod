@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Gaza
     method name(--> 'Asia/Gaza') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:17:52"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rule("Zion"),:until(-682646400))), Map.new((:baseoffset("2:00"),:rule("EgyptAsia"),:until(-81302400))), Map.new((:baseoffset("2:00"),:rule("Zion"),:until(820454400))), Map.new((:baseoffset("2:00"),:rule("Jordan"),:until(915148800))), Map.new((:baseoffset("2:00"),:rule("Palestine"),:until(1219968000))), Map.new((:baseoffset("2:00"),:until(1220227200))), Map.new((:baseoffset("2:00"),:rule("Palestine"),:until(1262304000))), Map.new((:baseoffset("2:00"),:until(1269648060))), Map.new((:baseoffset("2:00"),:rule("Palestine"),:until(1312156800))), Map.new((:baseoffset("2:00"),:until(1325376000))), Map.new((:baseoffset("2:00"),:rule("Palestine")))
+        BEGIN Map.new((:baseoffset("2:17:52"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rules("Zion"),:until(-682646400))), Map.new((:baseoffset("2:00"),:rules("EgyptAsia"),:until(-81302400))), Map.new((:baseoffset("2:00"),:rules("Zion"),:until(820454400))), Map.new((:baseoffset("2:00"),:rules("Jordan"),:until(915148800))), Map.new((:baseoffset("2:00"),:rules("Palestine"),:until(1219968000))), Map.new((:baseoffset("2:00"),:until(1220227200))), Map.new((:baseoffset("2:00"),:rules("Palestine"),:until(1262304000))), Map.new((:baseoffset("2:00"),:until(1269648060))), Map.new((:baseoffset("2:00"),:rules("Palestine"),:until(1312156800))), Map.new((:baseoffset("2:00"),:until(1325376000))), Map.new((:baseoffset("2:00"),:rules("Palestine")))
     }
 
     method rules() {

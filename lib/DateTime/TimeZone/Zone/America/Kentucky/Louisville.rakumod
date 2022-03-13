@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Kentucky::Louisville
     method name(--> 'America/Kentucky/Louisville') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:43:02"),:until(-2717667782))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-1546300800))), Map.new((:baseoffset("-6:00"),:rule("Louisville"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Louisville"),:until(-266450400))), Map.new((:baseoffset("-5:00"),:until(-63158400))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(126669600))), Map.new((:baseoffset("-5:00:00"),:until(152071200))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:43:02"),:until(-2717667782))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-1546300800))), Map.new((:baseoffset("-6:00"),:rules("Louisville"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Louisville"),:until(-266450400))), Map.new((:baseoffset("-5:00"),:until(-63158400))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(126669600))), Map.new((:baseoffset("-5:00:00"),:until(152071200))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

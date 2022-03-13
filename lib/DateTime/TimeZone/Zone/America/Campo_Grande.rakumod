@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Campo_Grande
     method name(--> 'America/Campo_Grande') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:38:28"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rule("Brazil")))
+        BEGIN Map.new((:baseoffset("-3:38:28"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rules("Brazil")))
     }
 
     method rules() {

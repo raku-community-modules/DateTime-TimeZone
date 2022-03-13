@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Apia
     method name(--> 'Pacific/Apia') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("12:33:04"),:until(-2445379200))), Map.new((:baseoffset("-11:26:56"),:until(-1861920000))), Map.new((:baseoffset("-11:30"),:until(-631152000))), Map.new((:baseoffset("-11:00"),:rule("WS"),:until(1325203200))), Map.new((:baseoffset("13:00"),:rule("WS")))
+        BEGIN Map.new((:baseoffset("12:33:04"),:until(-2445379200))), Map.new((:baseoffset("-11:26:56"),:until(-1861920000))), Map.new((:baseoffset("-11:30"),:until(-631152000))), Map.new((:baseoffset("-11:00"),:rules("WS"),:until(1325203200))), Map.new((:baseoffset("13:00"),:rules("WS")))
     }
 
     method rules() {

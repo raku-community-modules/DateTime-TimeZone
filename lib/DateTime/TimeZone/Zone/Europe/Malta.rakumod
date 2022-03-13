@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Malta
     method name(--> 'Europe/Malta') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:58:04"),:until(-2403475200))), Map.new((:baseoffset("1:00"),:rule("Italy"),:until(102384000))), Map.new((:baseoffset("1:00"),:rule("Malta"),:until(347155200))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:58:04"),:until(-2403475200))), Map.new((:baseoffset("1:00"),:rules("Italy"),:until(102384000))), Map.new((:baseoffset("1:00"),:rules("Malta"),:until(347155200))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

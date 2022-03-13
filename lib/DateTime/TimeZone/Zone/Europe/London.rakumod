@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::London
     method name(--> 'Europe/London') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:01:15"),:until(-3852662400))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(-37238400))), Map.new((:baseoffset("1:00"),:until(57722400))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(820454400))), Map.new((:baseoffset("0:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:01:15"),:until(-3852662400))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(-37238400))), Map.new((:baseoffset("1:00"),:until(57722400))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(820454400))), Map.new((:baseoffset("0:00"),:rules("EU")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Danmarkshavn
     method name(--> 'America/Danmarkshavn') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-1:14:40"),:until(-1686096000))), Map.new((:baseoffset("-3:00"),:until(323834400))), Map.new((:baseoffset("-3:00"),:rule("EU"),:until(820454400))), Map.new((:baseoffset("0:00")))
+        BEGIN Map.new((:baseoffset("-1:14:40"),:until(-1686096000))), Map.new((:baseoffset("-3:00"),:until(323834400))), Map.new((:baseoffset("-3:00"),:rules("EU"),:until(820454400))), Map.new((:baseoffset("0:00")))
     }
 
     method rules() {

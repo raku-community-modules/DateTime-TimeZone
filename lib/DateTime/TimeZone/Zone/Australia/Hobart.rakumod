@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Hobart
     method name(--> 'Australia/Hobart') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:49:16"),:until(-2345760000))), Map.new((:baseoffset("10:00"),:until(-1680472800))), Map.new((:baseoffset("11:00:00"),:until(-1669852800))), Map.new((:baseoffset("10:00"),:rule("Aus"),:until(-94694400))), Map.new((:baseoffset("10:00"),:rule("AT")))
+        BEGIN Map.new((:baseoffset("9:49:16"),:until(-2345760000))), Map.new((:baseoffset("10:00"),:until(-1680472800))), Map.new((:baseoffset("11:00:00"),:until(-1669852800))), Map.new((:baseoffset("10:00"),:rules("Aus"),:until(-94694400))), Map.new((:baseoffset("10:00"),:rules("AT")))
     }
 
     method rules() {

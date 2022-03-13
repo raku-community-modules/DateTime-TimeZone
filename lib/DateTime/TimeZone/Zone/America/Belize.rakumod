@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Belize
     method name(--> 'America/Belize') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:52:48"),:until(-1822521600))), Map.new((:baseoffset("-6:00"),:rule("Belize")))
+        BEGIN Map.new((:baseoffset("-5:52:48"),:until(-1822521600))), Map.new((:baseoffset("-6:00"),:rules("Belize")))
     }
 
     method rules() {

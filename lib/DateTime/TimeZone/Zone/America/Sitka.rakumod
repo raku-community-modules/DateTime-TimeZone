@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Sitka
     method name(--> 'America/Sitka') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("14:58:47"),:until(-3225169800))), Map.new((:baseoffset("-9:01:13"),:until(-2188987200))), Map.new((:baseoffset("-8:00"),:until(-883612800))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-31536000))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(436327200))), Map.new((:baseoffset("-9:00"),:rule("US"),:until(438998400))), Map.new((:baseoffset("-9:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("14:58:47"),:until(-3225169800))), Map.new((:baseoffset("-9:01:13"),:until(-2188987200))), Map.new((:baseoffset("-8:00"),:until(-883612800))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-31536000))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(436327200))), Map.new((:baseoffset("-9:00"),:rules("US"),:until(438998400))), Map.new((:baseoffset("-9:00"),:rules("US")))
     }
 
     method rules() {

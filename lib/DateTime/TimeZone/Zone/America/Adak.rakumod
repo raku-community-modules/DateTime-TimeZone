@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Adak
     method name(--> 'America/Adak') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("12:13:22"),:until(-3225179725))), Map.new((:baseoffset("-11:46:38"),:until(-2188987200))), Map.new((:baseoffset("-11:00"),:until(-883612800))), Map.new((:baseoffset("-11:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-11:00"),:until(-86918400))), Map.new((:baseoffset("-11:00"),:until(-31536000))), Map.new((:baseoffset("-11:00"),:rule("US"),:until(436327200))), Map.new((:baseoffset("-10:00"),:rule("US"),:until(438998400))), Map.new((:baseoffset("-10:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("12:13:22"),:until(-3225179725))), Map.new((:baseoffset("-11:46:38"),:until(-2188987200))), Map.new((:baseoffset("-11:00"),:until(-883612800))), Map.new((:baseoffset("-11:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-11:00"),:until(-86918400))), Map.new((:baseoffset("-11:00"),:until(-31536000))), Map.new((:baseoffset("-11:00"),:rules("US"),:until(436327200))), Map.new((:baseoffset("-10:00"),:rules("US"),:until(438998400))), Map.new((:baseoffset("-10:00"),:rules("US")))
     }
 
     method rules() {

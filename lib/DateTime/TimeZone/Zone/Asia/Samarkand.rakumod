@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Samarkand
     method name(--> 'Asia/Samarkand') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("4:27:53"),:until(-1441152000))), Map.new((:baseoffset("4:00"),:until(-1247529600))), Map.new((:baseoffset("5:00"),:until(354931200))), Map.new((:baseoffset("6:00:00"),:until(370742400))), Map.new((:baseoffset("6:00"),:until(386467200))), Map.new((:baseoffset("5:00"),:rule("RussiaAsia"),:until(694224000))), Map.new((:baseoffset("5:00")))
+        BEGIN Map.new((:baseoffset("4:27:53"),:until(-1441152000))), Map.new((:baseoffset("4:00"),:until(-1247529600))), Map.new((:baseoffset("5:00"),:until(354931200))), Map.new((:baseoffset("6:00:00"),:until(370742400))), Map.new((:baseoffset("6:00"),:until(386467200))), Map.new((:baseoffset("5:00"),:rules("RussiaAsia"),:until(694224000))), Map.new((:baseoffset("5:00")))
     }
 
     method rules() {

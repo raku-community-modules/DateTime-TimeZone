@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Seoul
     method name(--> 'Asia/Seoul') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:27:52"),:until(-1948752000))), Map.new((:baseoffset("8:30"),:until(-1830384000))), Map.new((:baseoffset("9:00"),:until(-767318400))), Map.new((:baseoffset("9:00"),:until(-498096000))), Map.new((:baseoffset("8:30"),:rule("ROK"),:until(-264902400))), Map.new((:baseoffset("9:00"),:rule("ROK")))
+        BEGIN Map.new((:baseoffset("8:27:52"),:until(-1948752000))), Map.new((:baseoffset("8:30"),:until(-1830384000))), Map.new((:baseoffset("9:00"),:until(-767318400))), Map.new((:baseoffset("9:00"),:until(-498096000))), Map.new((:baseoffset("8:30"),:rules("ROK"),:until(-264902400))), Map.new((:baseoffset("9:00"),:rules("ROK")))
     }
 
     method rules() {

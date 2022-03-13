@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Guatemala
     method name(--> 'America/Guatemala') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:02:04"),:until(-1617062400))), Map.new((:baseoffset("-6:00"),:rule("Guat")))
+        BEGIN Map.new((:baseoffset("-6:02:04"),:until(-1617062400))), Map.new((:baseoffset("-6:00"),:rules("Guat")))
     }
 
     method rules() {

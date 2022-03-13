@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Vevay
     method name(--> 'America/Indiana/Vevay') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:40:16"),:until(-2717667616))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-495064800))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(94694400))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:40:16"),:until(-2717667616))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-495064800))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(94694400))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Amsterdam
     method name(--> 'Europe/Amsterdam') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:19:32"),:until(-4260211200))), Map.new((:baseoffset("0:19:32"),:rule("Neth"),:until(-1025740800))), Map.new((:baseoffset("0:20"),:rule("Neth"),:until(-935020800))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rule("Neth"),:until(220924800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:19:32"),:until(-4260211200))), Map.new((:baseoffset("0:19:32"),:rules("Neth"),:until(-1025740800))), Map.new((:baseoffset("0:20"),:rules("Neth"),:until(-935020800))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rules("Neth"),:until(220924800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

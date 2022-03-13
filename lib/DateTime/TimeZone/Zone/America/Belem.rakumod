@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Belem
     method name(--> 'America/Belem') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:13:56"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-3:13:56"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Santo_Domingo
     method name(--> 'America/Santo_Domingo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:39:36"),:until(-2524521600))), Map.new((:baseoffset("-4:40"),:until(-1159790400))), Map.new((:baseoffset("-5:00"),:rule("DR"),:until(152064000))), Map.new((:baseoffset("-4:00"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(975805200))), Map.new((:baseoffset("-4:00")))
+        BEGIN Map.new((:baseoffset("-4:39:36"),:until(-2524521600))), Map.new((:baseoffset("-4:40"),:until(-1159790400))), Map.new((:baseoffset("-5:00"),:rules("DR"),:until(152064000))), Map.new((:baseoffset("-4:00"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(975805200))), Map.new((:baseoffset("-4:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Jamaica
     method name(--> 'America/Jamaica') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:07:10"),:until(-2524521600))), Map.new((:baseoffset("-5:07:10"),:until(-1827705600))), Map.new((:baseoffset("-5:00"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(441763200))), Map.new((:baseoffset("-5:00")))
+        BEGIN Map.new((:baseoffset("-5:07:10"),:until(-2524521600))), Map.new((:baseoffset("-5:07:10"),:until(-1827705600))), Map.new((:baseoffset("-5:00"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(441763200))), Map.new((:baseoffset("-5:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Fortaleza
     method name(--> 'America/Fortaleza') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-2:34:00"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(938649600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(972172800))), Map.new((:baseoffset("-3:00"),:until(1000339200))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1033430400))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-2:34:00"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(938649600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(972172800))), Map.new((:baseoffset("-3:00"),:until(1000339200))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1033430400))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Antarctica::Macquarie
     method name(--> 'Antarctica/Macquarie') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-2214259200))), Map.new((:baseoffset("10:00"),:until(-1680472800))), Map.new((:baseoffset("11:00:00"),:until(-1669852800))), Map.new((:baseoffset("10:00"),:rule("Aus"),:until(-1601683200))), Map.new((:baseoffset("0"),:until(-687052800))), Map.new((:baseoffset("10:00"),:rule("Aus"),:until(-94694400))), Map.new((:baseoffset("10:00"),:rule("AT"),:until(1270350000))), Map.new((:baseoffset("11:00")))
+        BEGIN Map.new((:baseoffset("0"),:until(-2214259200))), Map.new((:baseoffset("10:00"),:until(-1680472800))), Map.new((:baseoffset("11:00:00"),:until(-1669852800))), Map.new((:baseoffset("10:00"),:rules("Aus"),:until(-1601683200))), Map.new((:baseoffset("0"),:until(-687052800))), Map.new((:baseoffset("10:00"),:rules("Aus"),:until(-94694400))), Map.new((:baseoffset("10:00"),:rules("AT"),:until(1270350000))), Map.new((:baseoffset("11:00")))
     }
 
     method rules() {

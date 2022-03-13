@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Indian::Mauritius
     method name(--> 'Indian/Mauritius') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:50:00"),:until(-1988150400))), Map.new((:baseoffset("4:00"),:rule("Mauritius")))
+        BEGIN Map.new((:baseoffset("3:50:00"),:until(-1988150400))), Map.new((:baseoffset("4:00"),:rules("Mauritius")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Swift_Current
     method name(--> 'America/Swift_Current') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:11:20"),:until(-2030227200))), Map.new((:baseoffset("-7:00"),:rule("Canada"),:until(-747266400))), Map.new((:baseoffset("-7:00"),:rule("Regina"),:until(-631152000))), Map.new((:baseoffset("-7:00"),:rule("Swift"),:until(73447200))), Map.new((:baseoffset("-6:00")))
+        BEGIN Map.new((:baseoffset("-7:11:20"),:until(-2030227200))), Map.new((:baseoffset("-7:00"),:rules("Canada"),:until(-747266400))), Map.new((:baseoffset("-7:00"),:rules("Regina"),:until(-631152000))), Map.new((:baseoffset("-7:00"),:rules("Swift"),:until(73447200))), Map.new((:baseoffset("-6:00")))
     }
 
     method rules() {

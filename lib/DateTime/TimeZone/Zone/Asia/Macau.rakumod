@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Macau
     method name(--> 'Asia/Macau') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("7:34:10"),:until(-2056665600))), Map.new((:baseoffset("8:00"),:until(-884480400))), Map.new((:baseoffset("9:00"),:rule("Macau"),:until(-765331200))), Map.new((:baseoffset("8:00"),:rule("Macau")))
+        BEGIN Map.new((:baseoffset("7:34:10"),:until(-2056665600))), Map.new((:baseoffset("8:00"),:until(-884480400))), Map.new((:baseoffset("9:00"),:rules("Macau"),:until(-765331200))), Map.new((:baseoffset("8:00"),:rules("Macau")))
     }
 
     method rules() {

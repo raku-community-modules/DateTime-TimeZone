@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Metlakatla
     method name(--> 'America/Metlakatla') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("15:13:42"),:until(-3225168905))), Map.new((:baseoffset("-8:46:18"),:until(-2188987200))), Map.new((:baseoffset("-8:00"),:until(-883612800))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-31536000))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(436327200))), Map.new((:baseoffset("-8:00"),:until(1446343200))), Map.new((:baseoffset("-9:00"),:rule("US"),:until(1541296800))), Map.new((:baseoffset("-8:00"),:until(1547949600))), Map.new((:baseoffset("-9:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("15:13:42"),:until(-3225168905))), Map.new((:baseoffset("-8:46:18"),:until(-2188987200))), Map.new((:baseoffset("-8:00"),:until(-883612800))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-31536000))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(436327200))), Map.new((:baseoffset("-8:00"),:until(1446343200))), Map.new((:baseoffset("-9:00"),:rules("US"),:until(1541296800))), Map.new((:baseoffset("-8:00"),:until(1547949600))), Map.new((:baseoffset("-9:00"),:rules("US")))
     }
 
     method rules() {

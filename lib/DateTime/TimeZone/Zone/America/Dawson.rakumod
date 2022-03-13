@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Dawson
     method name(--> 'America/Dawson') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-9:17:40"),:until(-2189030400))), Map.new((:baseoffset("-9:00"),:rule("NT_YK"),:until(120614400))), Map.new((:baseoffset("-8:00"),:rule("NT_YK"),:until(315532800))), Map.new((:baseoffset("-8:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-9:17:40"),:until(-2189030400))), Map.new((:baseoffset("-9:00"),:rules("NT_YK"),:until(120614400))), Map.new((:baseoffset("-8:00"),:rules("NT_YK"),:until(315532800))), Map.new((:baseoffset("-8:00"),:rules("Canada")))
     }
 
     method rules() {

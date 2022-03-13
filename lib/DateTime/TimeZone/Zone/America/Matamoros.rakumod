@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Matamoros
     method name(--> 'America/Matamoros') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:40:00"),:until(-1514767200))), Map.new((:baseoffset("-6:00"),:until(567993600))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(599616000))), Map.new((:baseoffset("-6:00"),:rule("Mexico"),:until(1262304000))), Map.new((:baseoffset("-6:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-6:40:00"),:until(-1514767200))), Map.new((:baseoffset("-6:00"),:until(567993600))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(599616000))), Map.new((:baseoffset("-6:00"),:rules("Mexico"),:until(1262304000))), Map.new((:baseoffset("-6:00"),:rules("US")))
     }
 
     method rules() {

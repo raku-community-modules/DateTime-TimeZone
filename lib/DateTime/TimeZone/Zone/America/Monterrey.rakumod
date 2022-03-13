@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Monterrey
     method name(--> 'America/Monterrey') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:41:16"),:until(-1514767276))), Map.new((:baseoffset("-6:00"),:until(567993600))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(599616000))), Map.new((:baseoffset("-6:00"),:rule("Mexico")))
+        BEGIN Map.new((:baseoffset("-6:41:16"),:until(-1514767276))), Map.new((:baseoffset("-6:00"),:until(567993600))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(599616000))), Map.new((:baseoffset("-6:00"),:rules("Mexico")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Madrid
     method name(--> 'Europe/Madrid') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:14:44"),:until(-2177453684))), Map.new((:baseoffset("0:00"),:rule("Spain"),:until(-940208400))), Map.new((:baseoffset("1:00"),:rule("Spain"),:until(283996800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:14:44"),:until(-2177453684))), Map.new((:baseoffset("0:00"),:rules("Spain"),:until(-940208400))), Map.new((:baseoffset("1:00"),:rules("Spain"),:until(283996800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

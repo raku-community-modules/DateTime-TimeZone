@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Thunder_Bay
     method name(--> 'America/Thunder_Bay') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:57:00"),:until(-2366755200))), Map.new((:baseoffset("-6:00"),:until(-1893456000))), Map.new((:baseoffset("-5:00"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rule("Canada"),:until(0))), Map.new((:baseoffset("-5:00"),:rule("Toronto"),:until(94694400))), Map.new((:baseoffset("-5:00"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-5:57:00"),:until(-2366755200))), Map.new((:baseoffset("-6:00"),:until(-1893456000))), Map.new((:baseoffset("-5:00"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rules("Canada"),:until(0))), Map.new((:baseoffset("-5:00"),:rules("Toronto"),:until(94694400))), Map.new((:baseoffset("-5:00"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rules("Canada")))
     }
 
     method rules() {

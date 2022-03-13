@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Cairo
     method name(--> 'Africa/Cairo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:05:09"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rule("Egypt")))
+        BEGIN Map.new((:baseoffset("2:05:09"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rules("Egypt")))
     }
 
     method rules() {

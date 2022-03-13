@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Noumea
     method name(--> 'Pacific/Noumea') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("11:05:48"),:until(-1829347200))), Map.new((:baseoffset("11:00"),:rule("NC")))
+        BEGIN Map.new((:baseoffset("11:05:48"),:until(-1829347200))), Map.new((:baseoffset("11:00"),:rules("NC")))
     }
 
     method rules() {

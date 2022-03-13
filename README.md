@@ -31,40 +31,6 @@ DESCRIPTION
 
 `DateTime::TimeZone` is an app-facing set of friendly subroutines for working with timezones.
 
-SUBROUTINES
-===========
-
-tz-offset(Str:D $offset-string) --> Int:D
------------------------------------------
-
-Parses common offset strings (such as "01:00" and "-03:00") and returns an `Int` value.
-
-timezone() --> Map:D
---------------------
-
-Returns a `Map` of the names of the supported timezones, and the name of their associated `DateTime::Timezone::Zone::` class.
-
-timezone(Str:D $name, DateTime:D $datetime?) --> DateTime::TimeZone:D
----------------------------------------------------------------------
-
-Returns a `DateTime::TimeZone` object representing the zone passed to it. These objects provide an `.Int` call, so they may be used directly as the `:timezone` parameter for a `DateTime` object.
-
-This will support any timezone listed in the Olson database.
-
-The $datetime is used to calculate the offset depending on Daylight Savings Time rules for the given Time Zone.
-
-If $datetime is not passed, it assumes `DateTime.now()`;
-
-to-timezone(Str:D $name, DateTime:D $datetime) --> DateTime:D
--------------------------------------------------------------
-
-A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
-
-to-timezone(DateTime:D $datetime, Str:D $name) --> DateTime:D
--------------------------------------------------------------
-
-Same as the `Str,DateTime` candidate, but allows being used as a method.
-
 SUBSETS
 =======
 
@@ -81,6 +47,45 @@ IsTimeZone
 ----------
 
 The `IsTimeZone` subset can be used see if a given parameter is a known timezone.
+
+SUBROUTINES
+===========
+
+tz-offset(Str:D $offset-string) --> Int:D
+-----------------------------------------
+
+Parses common offset strings (such as "01:00" and "-03:00") and returns an `Int` value.
+
+timezone() --> Map:D
+--------------------
+
+Returns a `Map` of the names of the supported timezones, and the name of their associated `DateTime::Timezone::Zone::` class.
+
+timezone(IsTimeZone $name, DateTime:D $datetime?) --> DateTime::TimeZone:D
+--------------------------------------------------------------------------
+
+Returns a `DateTime::TimeZone` object representing the zone passed to it. These objects provide an `.Int` call, so they may be used directly as the `:timezone` parameter for a `DateTime` object.
+
+This will support any timezone listed in the Olson database.
+
+The $datetime is used to calculate the offset depending on Daylight Savings Time rules for the given Time Zone.
+
+If $datetime is not passed, it assumes `DateTime.now()`;
+
+timezone(IsTimeZone $name, Numeric:D $epoch) --> DateTime::TimeZone:D
+---------------------------------------------------------------------
+
+Returns a `DateTime::TimeZone` object representing the zone passed to it for the given `epoch` value.
+
+to-timezone(IsTimeZone $name, DateTime:D $datetime) --> DateTime:D
+------------------------------------------------------------------
+
+A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
+
+to-timezone(DateTime:D $datetime, IsTimeZone $name) --> DateTime:D
+------------------------------------------------------------------
+
+Same as the `Str,DateTime` candidate, but allows being used as a method.
 
 AUTHORS
 =======

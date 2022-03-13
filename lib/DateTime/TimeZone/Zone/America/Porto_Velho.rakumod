@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Porto_Velho
     method name(--> 'America/Porto_Velho') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:15:36"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00")))
+        BEGIN Map.new((:baseoffset("-4:15:36"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00")))
     }
 
     method rules() {

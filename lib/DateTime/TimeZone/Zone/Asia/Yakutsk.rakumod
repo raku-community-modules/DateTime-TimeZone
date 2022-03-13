@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Yakutsk
     method name(--> 'Asia/Yakutsk') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:38:58"),:until(-1579392000))), Map.new((:baseoffset("8:00"),:until(-1247529600))), Map.new((:baseoffset("9:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("8:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("9:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("10:00"),:until(1414288800))), Map.new((:baseoffset("9:00")))
+        BEGIN Map.new((:baseoffset("8:38:58"),:until(-1579392000))), Map.new((:baseoffset("8:00"),:until(-1247529600))), Map.new((:baseoffset("9:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("8:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("9:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("10:00"),:until(1414288800))), Map.new((:baseoffset("9:00")))
     }
 
     method rules() {

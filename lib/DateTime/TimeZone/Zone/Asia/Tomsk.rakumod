@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Tomsk
     method name(--> 'Asia/Tomsk') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("5:39:51"),:until(-1578787200))), Map.new((:baseoffset("6:00"),:until(-1247529600))), Map.new((:baseoffset("7:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("6:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("7:00"),:rule("Russia"),:until(1020222000))), Map.new((:baseoffset("6:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("7:00"),:until(1414288800))), Map.new((:baseoffset("6:00"),:until(1464487200))), Map.new((:baseoffset("7:00")))
+        BEGIN Map.new((:baseoffset("5:39:51"),:until(-1578787200))), Map.new((:baseoffset("6:00"),:until(-1247529600))), Map.new((:baseoffset("7:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("6:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("7:00"),:rules("Russia"),:until(1020222000))), Map.new((:baseoffset("6:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("7:00"),:until(1414288800))), Map.new((:baseoffset("6:00"),:until(1464487200))), Map.new((:baseoffset("7:00")))
     }
 
     method rules() {

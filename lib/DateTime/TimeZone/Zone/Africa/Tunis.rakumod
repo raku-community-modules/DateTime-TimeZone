@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Tunis
     method name(--> 'Africa/Tunis') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:40:44"),:until(-2797200000))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("1:00"),:rule("Tunisia")))
+        BEGIN Map.new((:baseoffset("0:40:44"),:until(-2797200000))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("1:00"),:rules("Tunisia")))
     }
 
     method rules() {

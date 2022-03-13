@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Dawson_Creek
     method name(--> 'America/Dawson_Creek') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-8:00:56"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rule("Canada"),:until(-725846400))), Map.new((:baseoffset("-8:00"),:rule("Vanc"),:until(83988000))), Map.new((:baseoffset("-7:00")))
+        BEGIN Map.new((:baseoffset("-8:00:56"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rules("Canada"),:until(-725846400))), Map.new((:baseoffset("-8:00"),:rules("Vanc"),:until(83988000))), Map.new((:baseoffset("-7:00")))
     }
 
     method rules() {

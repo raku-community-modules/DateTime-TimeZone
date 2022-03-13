@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Chisinau
     method name(--> 'Europe/Chisinau') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:55:20"),:until(-2840140800))), Map.new((:baseoffset("1:55"),:until(-1637107200))), Map.new((:baseoffset("1:44:24"),:until(-1213142400))), Map.new((:baseoffset("2:00"),:rule("Romania"),:until(-927158400))), Map.new((:baseoffset("3:00:00"),:until(-898128000))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-800150400))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(641959200))), Map.new((:baseoffset("2:00"),:rule("Russia"),:until(694224000))), Map.new((:baseoffset("2:00"),:rule("E-Eur"),:until(852076800))), Map.new((:baseoffset("2:00"),:rule("Moldova")))
+        BEGIN Map.new((:baseoffset("1:55:20"),:until(-2840140800))), Map.new((:baseoffset("1:55"),:until(-1637107200))), Map.new((:baseoffset("1:44:24"),:until(-1213142400))), Map.new((:baseoffset("2:00"),:rules("Romania"),:until(-927158400))), Map.new((:baseoffset("3:00:00"),:until(-898128000))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-800150400))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(641959200))), Map.new((:baseoffset("2:00"),:rules("Russia"),:until(694224000))), Map.new((:baseoffset("2:00"),:rules("E-Eur"),:until(852076800))), Map.new((:baseoffset("2:00"),:rules("Moldova")))
     }
 
     method rules() {

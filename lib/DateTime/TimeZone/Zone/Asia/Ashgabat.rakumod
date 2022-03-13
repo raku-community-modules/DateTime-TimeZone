@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Ashgabat
     method name(--> 'Asia/Ashgabat') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:53:32"),:until(-1441152000))), Map.new((:baseoffset("4:00"),:until(-1247529600))), Map.new((:baseoffset("5:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("4:00"),:rule("RussiaAsia"),:until(695786400))), Map.new((:baseoffset("5:00")))
+        BEGIN Map.new((:baseoffset("3:53:32"),:until(-1441152000))), Map.new((:baseoffset("4:00"),:until(-1247529600))), Map.new((:baseoffset("5:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("4:00"),:rules("RussiaAsia"),:until(695786400))), Map.new((:baseoffset("5:00")))
     }
 
     method rules() {

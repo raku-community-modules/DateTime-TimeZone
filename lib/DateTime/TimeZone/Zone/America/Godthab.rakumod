@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Godthab
     method name(--> 'America/Godthab') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:26:56"),:until(-1686096000))), Map.new((:baseoffset("-3:00"),:until(323834400))), Map.new((:baseoffset("-3:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-3:26:56"),:until(-1686096000))), Map.new((:baseoffset("-3:00"),:until(323834400))), Map.new((:baseoffset("-3:00"),:rules("EU")))
     }
 
     method rules() {

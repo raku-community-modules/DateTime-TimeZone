@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Eirunepe
     method name(--> 'America/Eirunepe') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:39:28"),:until(-1767225600))), Map.new((:baseoffset("-5:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-5:00"),:until(749174400))), Map.new((:baseoffset("-5:00"),:rule("Brazil"),:until(780192000))), Map.new((:baseoffset("-5:00"),:until(1214265600))), Map.new((:baseoffset("-4:00"),:until(1384041600))), Map.new((:baseoffset("-5:00")))
+        BEGIN Map.new((:baseoffset("-4:39:28"),:until(-1767225600))), Map.new((:baseoffset("-5:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-5:00"),:until(749174400))), Map.new((:baseoffset("-5:00"),:rules("Brazil"),:until(780192000))), Map.new((:baseoffset("-5:00"),:until(1214265600))), Map.new((:baseoffset("-4:00"),:until(1384041600))), Map.new((:baseoffset("-5:00")))
     }
 
     method rules() {

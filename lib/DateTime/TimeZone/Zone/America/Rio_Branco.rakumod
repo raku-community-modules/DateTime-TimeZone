@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Rio_Branco
     method name(--> 'America/Rio_Branco') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:31:12"),:until(-1767225600))), Map.new((:baseoffset("-5:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-5:00"),:until(1214265600))), Map.new((:baseoffset("-4:00"),:until(1384041600))), Map.new((:baseoffset("-5:00")))
+        BEGIN Map.new((:baseoffset("-4:31:12"),:until(-1767225600))), Map.new((:baseoffset("-5:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-5:00"),:until(1214265600))), Map.new((:baseoffset("-4:00"),:until(1384041600))), Map.new((:baseoffset("-5:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Copenhagen
     method name(--> 'Europe/Copenhagen') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:50:20"),:until(-2524521600))), Map.new((:baseoffset("0:50:20"),:until(-2398291200))), Map.new((:baseoffset("1:00"),:rule("Denmark"),:until(-857253600))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rule("Denmark"),:until(315532800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:50:20"),:until(-2524521600))), Map.new((:baseoffset("0:50:20"),:until(-2398291200))), Map.new((:baseoffset("1:00"),:rules("Denmark"),:until(-857253600))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rules("Denmark"),:until(315532800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

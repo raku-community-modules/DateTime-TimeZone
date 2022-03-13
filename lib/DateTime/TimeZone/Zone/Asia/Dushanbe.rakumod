@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Dushanbe
     method name(--> 'Asia/Dushanbe') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("4:35:12"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("6:00:00"),:until(684381600))), Map.new((:baseoffset("5:00")))
+        BEGIN Map.new((:baseoffset("4:35:12"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("6:00:00"),:until(684381600))), Map.new((:baseoffset("5:00")))
     }
 
     method rules() {

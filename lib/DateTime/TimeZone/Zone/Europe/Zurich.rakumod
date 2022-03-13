@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Zurich
     method name(--> 'Europe/Zurich') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:34:08"),:until(-3675196800))), Map.new((:baseoffset("0:29:46"),:until(-2385244800))), Map.new((:baseoffset("1:00"),:rule("Swiss"),:until(347155200))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:34:08"),:until(-3675196800))), Map.new((:baseoffset("0:29:46"),:until(-2385244800))), Map.new((:baseoffset("1:00"),:rules("Swiss"),:until(347155200))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

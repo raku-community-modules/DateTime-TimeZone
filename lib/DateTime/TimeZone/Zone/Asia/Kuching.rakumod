@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Kuching
     method name(--> 'Asia/Kuching') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("7:21:20"),:until(-1383436800))), Map.new((:baseoffset("7:30"),:until(-1167609600))), Map.new((:baseoffset("8:00"),:rule("NBorneo"),:until(-879638400))), Map.new((:baseoffset("9:00"),:until(-766972800))), Map.new((:baseoffset("8:00")))
+        BEGIN Map.new((:baseoffset("7:21:20"),:until(-1383436800))), Map.new((:baseoffset("7:30"),:until(-1167609600))), Map.new((:baseoffset("8:00"),:rules("NBorneo"),:until(-879638400))), Map.new((:baseoffset("9:00"),:until(-766972800))), Map.new((:baseoffset("8:00")))
     }
 
     method rules() {

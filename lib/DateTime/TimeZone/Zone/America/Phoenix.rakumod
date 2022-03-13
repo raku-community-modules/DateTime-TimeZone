@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Phoenix
     method name(--> 'America/Phoenix') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:28:18"),:until(-2717670498))), Map.new((:baseoffset("-7:00"),:rule("US"),:until(-820540740))), Map.new((:baseoffset("-7:00"),:until(-812678340))), Map.new((:baseoffset("-7:00"),:rule("US"),:until(-796867140))), Map.new((:baseoffset("-7:00"),:until(-94694400))), Map.new((:baseoffset("-7:00"),:rule("US"),:until(-56246400))), Map.new((:baseoffset("-7:00")))
+        BEGIN Map.new((:baseoffset("-7:28:18"),:until(-2717670498))), Map.new((:baseoffset("-7:00"),:rules("US"),:until(-820540740))), Map.new((:baseoffset("-7:00"),:until(-812678340))), Map.new((:baseoffset("-7:00"),:rules("US"),:until(-796867140))), Map.new((:baseoffset("-7:00"),:until(-94694400))), Map.new((:baseoffset("-7:00"),:rules("US"),:until(-56246400))), Map.new((:baseoffset("-7:00")))
     }
 
     method rules() {

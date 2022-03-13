@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Santarem
     method name(--> 'America/Santarem') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:38:48"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rule("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00"),:until(1214265600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-3:38:48"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rules("Brazil"),:until(590025600))), Map.new((:baseoffset("-4:00"),:until(1214265600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

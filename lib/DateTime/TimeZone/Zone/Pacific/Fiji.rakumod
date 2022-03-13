@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Fiji
     method name(--> 'Pacific/Fiji') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("11:55:44"),:until(-1709942400))), Map.new((:baseoffset("12:00"),:rule("Fiji")))
+        BEGIN Map.new((:baseoffset("11:55:44"),:until(-1709942400))), Map.new((:baseoffset("12:00"),:rules("Fiji")))
     }
 
     method rules() {

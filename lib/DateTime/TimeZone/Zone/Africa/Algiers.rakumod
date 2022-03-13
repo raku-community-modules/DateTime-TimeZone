@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Algiers
     method name(--> 'Africa/Algiers') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:12:12"),:until(-2486678340))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("0:00"),:rule("Algeria"),:until(-942012000))), Map.new((:baseoffset("1:00"),:rule("Algeria"),:until(-733276800))), Map.new((:baseoffset("0:00"),:until(-439430400))), Map.new((:baseoffset("1:00"),:until(-212025600))), Map.new((:baseoffset("0:00"),:rule("Algeria"),:until(246240000))), Map.new((:baseoffset("1:00"),:rule("Algeria"),:until(309744000))), Map.new((:baseoffset("0:00"),:rule("Algeria"),:until(357523200))), Map.new((:baseoffset("1:00")))
+        BEGIN Map.new((:baseoffset("0:12:12"),:until(-2486678340))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("0:00"),:rules("Algeria"),:until(-942012000))), Map.new((:baseoffset("1:00"),:rules("Algeria"),:until(-733276800))), Map.new((:baseoffset("0:00"),:until(-439430400))), Map.new((:baseoffset("1:00"),:until(-212025600))), Map.new((:baseoffset("0:00"),:rules("Algeria"),:until(246240000))), Map.new((:baseoffset("1:00"),:rules("Algeria"),:until(309744000))), Map.new((:baseoffset("0:00"),:rules("Algeria"),:until(357523200))), Map.new((:baseoffset("1:00")))
     }
 
     method rules() {

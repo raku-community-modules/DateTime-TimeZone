@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Bahia_Banderas
     method name(--> 'America/Bahia_Banderas') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:01:00"),:until(-1514764860))), Map.new((:baseoffset("-7:00"),:until(-1343091600))), Map.new((:baseoffset("-6:00"),:until(-1234828800))), Map.new((:baseoffset("-7:00"),:until(-1220317200))), Map.new((:baseoffset("-6:00"),:until(-1207180800))), Map.new((:baseoffset("-7:00"),:until(-1191369600))), Map.new((:baseoffset("-6:00"),:until(-873849600))), Map.new((:baseoffset("-7:00"),:until(-661564800))), Map.new((:baseoffset("-8:00"),:until(0))), Map.new((:baseoffset("-7:00"),:rule("Mexico"),:until(1270346400))), Map.new((:baseoffset("-6:00"),:rule("Mexico")))
+        BEGIN Map.new((:baseoffset("-7:01:00"),:until(-1514764860))), Map.new((:baseoffset("-7:00"),:until(-1343091600))), Map.new((:baseoffset("-6:00"),:until(-1234828800))), Map.new((:baseoffset("-7:00"),:until(-1220317200))), Map.new((:baseoffset("-6:00"),:until(-1207180800))), Map.new((:baseoffset("-7:00"),:until(-1191369600))), Map.new((:baseoffset("-6:00"),:until(-873849600))), Map.new((:baseoffset("-7:00"),:until(-661564800))), Map.new((:baseoffset("-8:00"),:until(0))), Map.new((:baseoffset("-7:00"),:rules("Mexico"),:until(1270346400))), Map.new((:baseoffset("-6:00"),:rules("Mexico")))
     }
 
     method rules() {

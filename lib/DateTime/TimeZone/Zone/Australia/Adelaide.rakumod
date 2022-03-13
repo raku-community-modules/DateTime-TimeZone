@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Adelaide
     method name(--> 'Australia/Adelaide') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:14:20"),:until(-2364076800))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rule("Aus"),:until(31536000))), Map.new((:baseoffset("9:30"),:rule("AS")))
+        BEGIN Map.new((:baseoffset("9:14:20"),:until(-2364076800))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rules("Aus"),:until(31536000))), Map.new((:baseoffset("9:30"),:rules("AS")))
     }
 
     method rules() {

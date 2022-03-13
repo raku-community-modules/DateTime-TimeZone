@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Astrakhan
     method name(--> 'Europe/Astrakhan') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:12:12"),:until(-1441238400))), Map.new((:baseoffset("3:00"),:until(-1247529600))), Map.new((:baseoffset("4:00"),:rule("Russia"),:until(606880800))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("4:00"),:until(701834400))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("4:00"),:until(1414288800))), Map.new((:baseoffset("3:00"),:until(1459044000))), Map.new((:baseoffset("4:00")))
+        BEGIN Map.new((:baseoffset("3:12:12"),:until(-1441238400))), Map.new((:baseoffset("3:00"),:until(-1247529600))), Map.new((:baseoffset("4:00"),:rules("Russia"),:until(606880800))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("4:00"),:until(701834400))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("4:00"),:until(1414288800))), Map.new((:baseoffset("3:00"),:until(1459044000))), Map.new((:baseoffset("4:00")))
     }
 
     method rules() {

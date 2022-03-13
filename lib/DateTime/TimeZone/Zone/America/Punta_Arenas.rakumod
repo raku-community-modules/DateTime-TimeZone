@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Punta_Arenas
     method name(--> 'America/Punta_Arenas') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:43:40"),:until(-2524521600))), Map.new((:baseoffset("-4:42:46"),:until(-1892678400))), Map.new((:baseoffset("-5:00"),:until(-1688428800))), Map.new((:baseoffset("-4:42:46"),:until(-1619222400))), Map.new((:baseoffset("-4:00"),:until(-1593820800))), Map.new((:baseoffset("-4:42:46"),:until(-1336003200))), Map.new((:baseoffset("-5:00"),:rule("Chile"),:until(-1178150400))), Map.new((:baseoffset("-4:00"),:until(-870566400))), Map.new((:baseoffset("-5:00"),:until(-865296000))), Map.new((:baseoffset("-4:00"),:until(-718070400))), Map.new((:baseoffset("-5:00"),:until(-713667600))), Map.new((:baseoffset("-4:00"),:rule("Chile"),:until(1480809600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-4:43:40"),:until(-2524521600))), Map.new((:baseoffset("-4:42:46"),:until(-1892678400))), Map.new((:baseoffset("-5:00"),:until(-1688428800))), Map.new((:baseoffset("-4:42:46"),:until(-1619222400))), Map.new((:baseoffset("-4:00"),:until(-1593820800))), Map.new((:baseoffset("-4:42:46"),:until(-1336003200))), Map.new((:baseoffset("-5:00"),:rules("Chile"),:until(-1178150400))), Map.new((:baseoffset("-4:00"),:until(-870566400))), Map.new((:baseoffset("-5:00"),:until(-865296000))), Map.new((:baseoffset("-4:00"),:until(-718070400))), Map.new((:baseoffset("-5:00"),:until(-713667600))), Map.new((:baseoffset("-4:00"),:rules("Chile"),:until(1480809600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

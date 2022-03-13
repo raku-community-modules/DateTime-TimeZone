@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Galapagos
     method name(--> 'Pacific/Galapagos') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:58:24"),:until(-1230768000))), Map.new((:baseoffset("-5:00"),:until(504921600))), Map.new((:baseoffset("-6:00"),:rule("Ecuador")))
+        BEGIN Map.new((:baseoffset("-5:58:24"),:until(-1230768000))), Map.new((:baseoffset("-5:00"),:until(504921600))), Map.new((:baseoffset("-6:00"),:rules("Ecuador")))
     }
 
     method rules() {

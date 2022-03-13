@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::MST7MDT
     method name(--> 'MST7MDT') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:00"),:rule("US"))),
+        BEGIN Map.new((:baseoffset("-7:00"),:rules("US"))),
     }
 
     method rules() {

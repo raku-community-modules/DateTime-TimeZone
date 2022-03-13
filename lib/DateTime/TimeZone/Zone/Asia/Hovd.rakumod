@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Hovd
     method name(--> 'Asia/Hovd') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("6:06:36"),:until(-2032905600))), Map.new((:baseoffset("6:00"),:until(252460800))), Map.new((:baseoffset("7:00"),:rule("Mongol")))
+        BEGIN Map.new((:baseoffset("6:06:36"),:until(-2032905600))), Map.new((:baseoffset("6:00"),:until(252460800))), Map.new((:baseoffset("7:00"),:rules("Mongol")))
     }
 
     method rules() {

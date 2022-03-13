@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::El_Salvador
     method name(--> 'America/El_Salvador') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:56:48"),:until(-1546300800))), Map.new((:baseoffset("-6:00"),:rule("Salv")))
+        BEGIN Map.new((:baseoffset("-5:56:48"),:until(-1546300800))), Map.new((:baseoffset("-6:00"),:rules("Salv")))
     }
 
     method rules() {

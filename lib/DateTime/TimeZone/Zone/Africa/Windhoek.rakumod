@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Windhoek
     method name(--> 'Africa/Windhoek') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:08:24"),:until(-2458166400))), Map.new((:baseoffset("1:30"),:until(-2109283200))), Map.new((:baseoffset("2:00"),:until(-860968800))), Map.new((:baseoffset("3:00:00"),:until(-845244000))), Map.new((:baseoffset("2:00"),:until(637977600))), Map.new((:baseoffset("2:00"),:rule("Namibia")))
+        BEGIN Map.new((:baseoffset("1:08:24"),:until(-2458166400))), Map.new((:baseoffset("1:30"),:until(-2109283200))), Map.new((:baseoffset("2:00"),:until(-860968800))), Map.new((:baseoffset("3:00:00"),:until(-845244000))), Map.new((:baseoffset("2:00"),:until(637977600))), Map.new((:baseoffset("2:00"),:rules("Namibia")))
     }
 
     method rules() {

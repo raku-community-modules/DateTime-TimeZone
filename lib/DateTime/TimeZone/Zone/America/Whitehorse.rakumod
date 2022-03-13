@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Whitehorse
     method name(--> 'America/Whitehorse') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-9:00:12"),:until(-2189030400))), Map.new((:baseoffset("-9:00"),:rule("NT_YK"),:until(-81993600))), Map.new((:baseoffset("-8:00"),:rule("NT_YK"),:until(315532800))), Map.new((:baseoffset("-8:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-9:00:12"),:until(-2189030400))), Map.new((:baseoffset("-9:00"),:rules("NT_YK"),:until(-81993600))), Map.new((:baseoffset("-8:00"),:rules("NT_YK"),:until(315532800))), Map.new((:baseoffset("-8:00"),:rules("Canada")))
     }
 
     method rules() {

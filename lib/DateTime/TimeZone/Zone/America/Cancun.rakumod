@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Cancun
     method name(--> 'America/Cancun') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:47:04"),:until(-1514764024))), Map.new((:baseoffset("-6:00"),:until(377913600))), Map.new((:baseoffset("-5:00"),:rule("Mexico"),:until(902023200))), Map.new((:baseoffset("-6:00"),:rule("Mexico"),:until(1422756000))), Map.new((:baseoffset("-5:00")))
+        BEGIN Map.new((:baseoffset("-5:47:04"),:until(-1514764024))), Map.new((:baseoffset("-6:00"),:until(377913600))), Map.new((:baseoffset("-5:00"),:rules("Mexico"),:until(902023200))), Map.new((:baseoffset("-6:00"),:rules("Mexico"),:until(1422756000))), Map.new((:baseoffset("-5:00")))
     }
 
     method rules() {

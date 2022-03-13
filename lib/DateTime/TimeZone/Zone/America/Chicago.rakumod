@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Chicago
     method name(--> 'America/Chicago') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:50:36"),:until(-2717668236))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-1577923200))), Map.new((:baseoffset("-6:00"),:rule("Chicago"),:until(-1067810400))), Map.new((:baseoffset("-5:00"),:until(-1045432800))), Map.new((:baseoffset("-6:00"),:rule("Chicago"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Chicago"),:until(-94694400))), Map.new((:baseoffset("-6:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:50:36"),:until(-2717668236))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-1577923200))), Map.new((:baseoffset("-6:00"),:rules("Chicago"),:until(-1067810400))), Map.new((:baseoffset("-5:00"),:until(-1045432800))), Map.new((:baseoffset("-6:00"),:rules("Chicago"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Chicago"),:until(-94694400))), Map.new((:baseoffset("-6:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Shanghai
     method name(--> 'Asia/Shanghai') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:05:43"),:until(-2177452800))), Map.new((:baseoffset("8:00"),:rule("Shang"),:until(-649987200))), Map.new((:baseoffset("8:00"),:rule("PRC")))
+        BEGIN Map.new((:baseoffset("8:05:43"),:until(-2177452800))), Map.new((:baseoffset("8:00"),:rules("Shang"),:until(-649987200))), Map.new((:baseoffset("8:00"),:rules("PRC")))
     }
 
     method rules() {

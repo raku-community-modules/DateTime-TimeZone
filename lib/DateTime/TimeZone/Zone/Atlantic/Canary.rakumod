@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Atlantic::Canary
     method name(--> 'Atlantic/Canary') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-1:01:36"),:until(-1509667200))), Map.new((:baseoffset("-1:00"),:until(-733878000))), Map.new((:baseoffset("0:00"),:until(323827200))), Map.new((:baseoffset("1:00:00"),:until(338950800))), Map.new((:baseoffset("0:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-1:01:36"),:until(-1509667200))), Map.new((:baseoffset("-1:00"),:until(-733878000))), Map.new((:baseoffset("0:00"),:until(323827200))), Map.new((:baseoffset("1:00:00"),:until(338950800))), Map.new((:baseoffset("0:00"),:rules("EU")))
     }
 
     method rules() {

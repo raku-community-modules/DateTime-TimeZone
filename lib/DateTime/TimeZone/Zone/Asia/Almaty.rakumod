@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Almaty
     method name(--> 'Asia/Almaty') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("5:07:48"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("5:00"),:rule("RussiaAsia"),:until(695786400))), Map.new((:baseoffset("6:00"),:rule("RussiaAsia"),:until(1099188000))), Map.new((:baseoffset("6:00")))
+        BEGIN Map.new((:baseoffset("5:07:48"),:until(-1441152000))), Map.new((:baseoffset("5:00"),:until(-1247529600))), Map.new((:baseoffset("6:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("5:00"),:rules("RussiaAsia"),:until(695786400))), Map.new((:baseoffset("6:00"),:rules("RussiaAsia"),:until(1099188000))), Map.new((:baseoffset("6:00")))
     }
 
     method rules() {

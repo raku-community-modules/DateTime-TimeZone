@@ -1,36 +1,32 @@
-# General update script for DateTime::TimeZone.  Running this script in
-# the tools/ directory, will:
-#
-#  1. Fetch the most up-to-date Olson database
-#  2. Remove all DateTime/TimeZone/Zone/* files
-#  3. Remove all tests in xt/
-#  4. Generate all necessary classes at the appropriate location
-#  5. Generate all tests for all generated classes in xt/
-#  6. Update the "provides" section in META6.json
-#  7. Update the Map with valid timezones in DateTime::TimeZone
-#
-# DateTime::TimeZone::Zone::* modules are generated with a "rules" method
-# (returning a Map with rules information) and a "zonedata" method (returning
-# a List of Maps).
-#
-# Linked classes are generated into the file that they depend on, and are
-# added into the META6.json referring to the file they depend on.  For
-# instance: the
-#     DateTime::TimeZone::Zone::Zulu
-# class is generated in the
-#     DateTime::TimeZone::Zone::Etc::UTC
-# class, and the META6.json entry for
-#     DateTime::TimeZone::Zone::Zulu
-# points to:
-#     lib/DateTime/TimeZone/Zone/ETC/UTC.rakumod
-# allowing for a much smaller disk and memory footprint, especially when
-# handling many different timezones in a single process, that are
-# geographically or conceptually close to be synonyms.  And since binary
-# code loading is lazy, the additional "burden" of loading additional classes
-# is offset by not needing to re-load another compunit pretty quickly.
-#
 #-------------------------------------------------------------------------------
-# Some handy lookups
+# Set up / sanity check
+my $TZDATA-DIR := 'tzdata'.IO;
+my $CLASS-DIR  := '../lib/DateTime/TimeZone/Zone/'.IO;
+my $TESTS-DIR  := '../xt'.IO;
+
+die "Please run this from the tools/ directory."
+    unless $TZDATA-DIR.d;
+
+my $generator := $*PROGRAM-NAME;
+my $release   := "tzdata/NEWS".IO.lines.first: *.starts-with: 'Release';
+
+my @tzfiles := <
+  africa
+  antarctica
+  asia
+  australasia
+  europe
+  northamerica
+  southamerica
+  etcetera
+  factory
+  backward
+  systemv
+  pacificnew
+>.map({ $TZDATA-DIR.child($_) }).List;
+
+#-------------------------------------------------------------------------------
+# Some handy lookups / subs
 
 my %month-to-int = (
     Jan => 1,
@@ -57,67 +53,6 @@ my %day-to-int = (
     Sun => 7
 );
 
-#-------------------------------------------------------------------------------
-# Grammar used to parse timezone file
-
-#use Grammar::Tracer;
-grammar TZData {
-    token TOP {
-        ^ [ <comment> | <rule> | <zone> | <link> ] * $
-    }
-    token comment {
-        \s*'#'\N*\s*
-    }
-    token rule {
-        Rule
-          \s+ <name>
-          \s+ <from>
-          \s+ <to-time>
-          \s+ <type>
-          \s+ <in>
-          \s+ <on>
-          \s+ <at>
-          \s+ <save>
-          \s+<letter>
-          <comment>?
-          \s*
-    }
-    token zone {
-        Zone \s+ <name> <zonedata>+
-    }
-    token zonedata {
-        \h*
-          <!before Rule>
-          <!before Link>
-          <!before Zone>
-          <!before '#'>
-          <gmtoff>
-            \s+ <rules>
-            \s+ <format> [\h+ <until>]?
-            <comment>*
-            \s*
-    }
-    token link {
-        Link \s+ <parent> \s+ <child> <comment>? \s*
-    }
-    token until { <-[#\n]>+ }
-
-    token name    { \S+ }
-    token from    { \S+ }
-    token to-time { \S+ }
-    token type    { \S+ }
-    token in      { \S+ }
-    token on      { \S+ }
-    token at      { \S+ }
-    token save    { \S+ }
-    token letter  { \S+ }
-    token gmtoff  { \S+ }
-    token rules   { \S+ }
-    token format  { \S+ }
-    token parent  { \S+ }
-    token child   { \S+ }
-}
-
 my sub timezone2name(Str:D $timezone --> Str:D) {
     $timezone
       .subst('+', '_plus_', :g)
@@ -125,178 +60,424 @@ my sub timezone2name(Str:D $timezone --> Str:D) {
 }
 
 my sub name2file(Str:D $name --> Str:D) {
-    "lib/$name.subst('::', '/', :g).rakumod"
+    "$name.subst('::', '/', :g).rakumod"
+}
+
+my sub name2test(Str:D $name --> Str:D) {
+    "$name.subst('::', '-', :g).subst('/', '-', :g).rakutest"
 }
 
 my sub name2class(Str:D $name --> Str:D) {
-    'DateTime::TimeZone::Zone::' ~ $name
+    'DateTime::TimeZone::Zone::' ~ $name.subst('/', '::', :g)
+}
+
+my sub timezone2file(Str:D $timezone --> Str:D) {
+    name2file timezone2name $timezone
+}
+
+my sub timezone2test(Str:D $timezone --> Str:D) {
+    name2test timezone2name $timezone
+}
+
+my sub timezone2class(Str:D $timezone --> Str:D) {
+    name2class timezone2name $timezone
 }
 
 #-------------------------------------------------------------------------------
-# Class for collecting data about a timezone, so that we can more easily
-# manage code / test creation and META6.json updates.
+# Class collecting timezone data from a file
 
-my class TimeZone is implementation-detail {
-    has $.source   is built(:bind);
-    has $.name     is built(False);
-    has $.filename is built(False);
-    has @.linked;  is built(False);
+class TimeZoneFile {
+    has IO() $.file;
+    has %.rules    is built(False);  # rules available in this file
+    has %.zones    is built(False);  # data on given timezone
+    has %.children is built(False);  # children of given timezone
 
-    method TWEAK(:$name, :@linked) {
-        $!name     := timezone2name($!name);
-        $!filename := name2file($!name);
-        @!linked   := @linked.List;
-    }
-}
+    method TWEAK() {
+        my $zone-name;
+        my @zone-data;
+        my sub finish-zone() {
+            %!zones{$zone-name} := @zone-data.List;
+            $zone-name = Nil;
+            @zone-data = ();
+        }
 
-#-------------------------------------------------------------------------------
-# Sub for creating a stream of TimeZone objects
+        # cache year -> posix lookups
+        my @year-posix;
+        my sub year-posix(Int:D $year) {
+            @year-posix[$year] //= DateTime.new(:$year).posix
+        }
 
-my sub parse-tzdata($file) {
-    die "Could not parse $file"
-      unless my $parsed := TZData.parse(slurp $file);
-
-    my %ruledata;
-    for $parsed<rule> -> $rule {
-        my $year-from := $rule<from>.Int;
-        my $year-to   := $rule<to-time>.Str;
-        my %data =
-          years  => $year-to eq 'only'
-            ?? $year-from
-            !! $year-to eq 'max'
-              ?? $year-from .. Inf
-              !! $year-from .. $year-to.Int,
-          month  => %month-to-int($rule<in>),
-          time   => $rule<at>.Str,
-          adjust => $rule<save>.Str,
-          letter => $rule<letter>.Str,
-        ;
-
-        my $on := $rule<on>.Str;
-        if $on.contains(/\D/) {
-            if $on.starts-with('last') {
-                %data<lastdow> = %day-to-int($on.substr(4));
+        # turn anything like a timestamp onto hour/minute/second
+        my sub split-hh-mm-ss($hh-mm-ss) {
+            if $hh-mm-ss {
+                my Int() $hour   is default(0);
+                my Int() $minute is default(0);
+                my Int() $second is default(0);
+                ($hour, $minute, $second) = $hh-mm-ss.split(":")
             }
             else {
-                my ($dow, $mindate) = $rule.split('>=').map;
-                %data<dow> = Map.new: (
-                  dow => %day-to-int($dow),
-                  mindate => $mindate.Int,
+                (0,0,0)
+            }
+        }
+
+        # turn hour/minute/second into hh:mm:ss without sprintf overhead
+        my sub make-hh-mm-ss($hour, $minute, $second) {
+            "$hour:"
+              ~ ($minute < 10 ?? "0$minute" !! $minute)
+              ~ ":"
+              ~ ($second < 10 ?? "0$second" !! $second)
+        }
+
+        # process line of data of a zone
+        sub process-zone-data($gmtoff, $rule, $format, *@until) {
+            my %data;
+            if @until.elems == 1 {
+                %data<until> := year-posix(@until.head.Int);
+            }
+            elsif @until.elems >= 2  {
+                my $year    := @until[0].Int;
+                my $month   := %month-to-int{@until[1]};
+                my $day      = @until[2] // "1";
+                my $hh-mm-ss = @until[3];
+
+                # TODO: I don't know what these characters represent.
+                # TODO: I should find out, since they're probably important.
+                if $hh-mm-ss {
+                    $hh-mm-ss .= chop if $hh-mm-ss.ends-with($_) for <u s>;
+                }
+
+                my ($hour, $minute, $second) = split-hh-mm-ss($hh-mm-ss);
+                my int $seconds;  # additional seconds to add to posix
+
+                # last weekday of a month
+                if $day.starts-with('last') {
+                    my $weekday := %day-to-int{$day.substr(4)};
+                    my $date := Date.new($year, $month, 1)  # XXX s/1/*/
+                      .last-date-in-month;                   # instead of this
+                    $day = $date.day - (($date.day-of-week - $weekday) mod 7);
+                }
+
+                # e.g. 'Sun>=1' meaning first Sunday with a day >= 1
+                elsif %day-to-int{$day.substr(0,3)} -> $weekday {
+                    my $date  := Date.new($year, $month, 1);
+                    my $first := 1 +
+                      ($weekday - Date.new($year,$month,1).day-of-week + 7) % 7;
+                    if $day.substr(3).match( /^ (\W+) (\d+) / ) {
+                        $day = $first;
+                        my &op    := ::('&infix:«' ~ $0 ~ '»');
+                        my $value := $1.Int;
+                        $day = $day + 7 until op($day, $value);
+                    }
+                    else {
+                        $day = $first;
+                    }
+                }
+                # next day
+                elsif $hour == 24 {
+                    $hour    = 0;
+                    $seconds = 24 * 60 * 60;
+                }
+
+                %data<until> := DateTime.new(
+                  $year, $month, $day, $hour, $minute, $second
+                ).posix + $seconds;
+            }
+            # huh?
+            elsif @until {
+                die @until;
+            }
+
+            # no rule, just hour/minute
+            if $rule.match(/^ (\d+) ':' (\d+) /) -> (
+              Int() $hour , Str() $minute
+            ) {
+                my ($gmt-hour, $gmt-minute, $gmt-second) =
+                  split-hh-mm-ss($gmtoff);
+                %data<baseoffset> := make-hh-mm-ss(
+                  $gmt-hour + $hour, $gmt-minute + $minute, $gmt-second
                 );
+            }
+
+            # just GMT plus an optional rule
+            else {
+                %data<baseoffset> := $gmtoff;
+                %data<rules>      := $rule if $rule ne "-";
+            }
+
+            @zone-data.push: %data.Map if %data;
+        }
+
+        # Show where it fails if it fails
+        my int $line-nr = -1;
+        CATCH {
+            note "$!file, $line-nr: $!file.lines.skip($line-nr).head()";
+        }
+
+        # run through the timezone data line by line
+        for $!file.lines.map(-> $line {
+            ++$line-nr;
+            with $line.index('#') -> $index {
+                $line.substr(0,$index).trim-trailing || Empty
+            }
+            else {
+                $line || Empty
+            }
+        }) -> $line {
+            # continuation of zone
+            if $line.contains(/ ^ \s /) {
+                 process-zone-data(|$line.words)
+            }
+
+            # something else
+            else {
+                finish-zone if $zone-name;
+                if $line.starts-with('Zone') {
+                    ($, $zone-name, my @data) = $line.words;
+                    process-zone-data(|@data);
+                }
+                elsif $line.starts-with('Rule') {
+                    self!rule($line);
+                }
+                elsif $line.starts-with('Link') {
+                    self!link($line);
+                }
+                else {
+                    die "Unrecognized line";
+                }
+            }
+        }
+        finish-zone if $zone-name;
+        %!rules{.key} := .value.List for %!rules;
+    }
+
+    # process a rule
+    method !rule($line --> Nil) {
+        my ($, $name, $from, $to, $type, $month, $on, $time, $adjust, $letter)
+          = $line.words;
+        my %data;
+        %data<years> := $to eq 'only'
+          ?? $from.Int
+          !! $to eq 'max'
+            ?? $from.Int .. Inf
+            !! $from.Int .. $to.Int;
+        %data<month>  := %month-to-int{$month};
+        %data<time>   := $time   if $time   ne '0:00';
+        %data<adjust> := $adjust if $adjust ne '0';
+        %data<letter> := $letter if $letter ne '-';
+
+        if $on.contains(/ \D /) {
+            if $on.starts-with('last') {
+                %data<lastdow> := %day-to-int{$on.substr(4)};
+            }
+            else {
+                my ($dow, $mindate) = $on.split('>=');
+                %data<dow> := %day-to-int{$dow}, $mindate.Int;
             }
         }
         else {
-            %data<date> = $on.Int;
+            %data<date> := $on.Int;
         }
-
-        %ruledata{$rule<name>}.push: %data.Map;
+        %!rules{$name}.push: %data.Map;
     }
-    %ruledata{.key} := .value.List for %ruledata;
 
-    for $parsed<zone> -> $zone {
-        my $name  := timezone2name $zone<name>.Str;
-        my $class := name2class $name;
-        my str @parts =
-          'use DateTime::TimeZone::Zone;',
-          "class $class",
-          '  does DateTime::TimeZone::Zone {',
-        ;
+    # process a link
+    method !link($line --> Nil) {
+        my ($, $parent, $child) = $line.words;
+        %!children{$parent}.push: $child;
+    }
+}
 
-        my @rules;
-        my @zonedata;
-        for @zone<zonedata> -> $zone-entry {
-            my $rule := $zone-entry<rules>.Str;
-            if $rule eq "-" {
-                $rule := "";
-            }
-            elsif !$rule.contains: /^ \d+ ':' \d+/ {
-                @rules.push($rule);
-                $rule := "";
-            }
+#-------------------------------------------------------------------------------
+# setup logic
 
-            my $until := $zone-entry<until>.Str;
-            if $until {
-                my @tmp = $until.words;
-                my @tmp_t;
-                if @tmp[3] -> $time {
-                    @tmp_t = split(':', $time);
-                    # TODO: I don't know what these characters represent.
-                    # TODO: I should find out, since they're probably important.
-                    .chop if .ends-with('u') || .ends-with('s')
-                      given @tmp_t[1];
-                }
-                @tmp[1] = %month-to-int{@tmp[1]} if @tmp[1];
+# clean out old stuff
+run 'rm', '-rf', $CLASS-DIR;
+$CLASS-DIR.mkdir;
+run 'rm', '-rf', $TESTS-DIR;
+$TESTS-DIR.mkdir;
 
-                my $until_dt;
-# TODO: handle lastSun (we ignore it for now simply because I don't want to deal
-# with it yet)
-                if @tmp[3] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
-                    my $nudge-date = False;
-                    if @tmp_t[0].Int == 24 {
-                        @tmp_t[0] -= 24;
-                        $nudge-date++;
-                    }
+# parse the data files
+my @tzs = @tzfiles
+  .race(batch => 1)
+  .map: -> $file { TimeZoneFile.new(:$file) }
 
-                    $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]), :hour(+@tmp_t[0]), :minute(+@tmp_t[1]));
+# set up global data structures
+my %zones is Map = @tzs.map: *.zones.Slip;
+my %rules is Map = @tzs.map: *.rules.Slip;
+my %children;
+for @tzs -> $tz {
+    %children{.key}.append(.value.Slip) for $tz.children;
+}
+%children{.key} := .value.List for %children;
+my %timezone2class := Map.new(provide-pairs);
 
-                    $until_dt += Duration.new(:days(1)) if $nudge-date;
-                }
-                elsif @tmp[2] && @tmp[2] ne 'lastSat' && @tmp[2] ne 'lastSun' && @tmp[2] ne 'Sun>=1' {
-                    $until_dt = DateTime.new(:year(+@tmp[0]), :month(+@tmp[1]), :day(+@tmp[2]));
-                }
-                else {
-                    $until_dt = DateTime.new(:year(+@tmp[0]));
-                }
-                $until = $until_dt.posix;
-            }
-            else {
-                $until := Inf;
-            }
-            my $data;
-            if $rule ~~ /^\d+\:\d+/ {
-                my @rule = split(/\:/, $rule);
-                my @gmtoff = split(/\:/, ~$zoneentry<gmtoff>);
-                @gmtoff[0] += @rule[0];
+await
+  start { produce-class-files($CLASS-DIR) },
+  start { produce-test-files($TESTS-DIR) },
+  start { update-provides },
+  start { update-timezones }
 
-                my $gmt_final = @gmtoff[0] ~ ':' ~ sprintf('%02d', @gmtoff[1]);
-                if @gmtoff[2] {
-                    $gmt_final ~= ':' ~ sprintf('%02d', @gmtoff[2]);
-                }
+#-------------------------------------------------------------------------------
+# actual production logic
 
-                $data = ( until => $until, baseoffset => @gmtoff[0] ~ ':' ~ @gmtoff[1], rules => "" ).hash;
-            }
-            else {
-                $data = ( until => $until, baseoffset => ~$zoneentry<gmtoff>, rules => $rule ).hash;
-            }
-            @zonedata.push($data);
-        }
+# write class file to the given directory
+sub write-class-file(IO() $dir, $timezone --> Nil) {
+    my @zone-data := %zones{$timezone};
+    my $class     := timezone2class($timezone);
+    my $io        := $dir.child(timezone2file($timezone));
+    $io.parent.mkdir;
 
-        @rules = @rules.sort.squish;
-        @parts.push: '    method rules() {';
+    my str @parts = qq:to/CODE/.chomp;
+#- Generated by $generator
+#- Based on $release
+
+use DateTime::TimeZone::Zone;
+
+class $class
+  does DateTime::TimeZone::Zone
+\{
+    method name(--> '$timezone') \{ \}
+
+    method zonedata() \{
+CODE
+
+    @parts.push: "        "
+      ~ (@zone-data
+           ?? "BEGIN @zone-data.raku.substr(1,*-1)"
+           !! "Empty"
+        );
+    @parts.push: q:to/CODE/.chomp;
+    }
+
+    method rules() {
+CODE
+
+    if @zone-data.map(-> %map {
+        $_ with %map<rules>
+    }).unique.sort -> @rules {
         @parts.push: '        BEGIN Map.new: (';
-        for @rules -> $rule {
-            @parts.push: "      '$rule' => %ruledata{$rule}.raku(),";
-        }
+        @parts.push: "          '$_' => %rules{$_}.raku(),"
+          for @rules;
         @parts.push: '        )';
-        @parts.push: '    }';
-        @parts.push: '';
-
-        @parts.push: '    method zonedata() { ';
-        @parts.push: "        BEGIN @zonedata.List.raku(),";
-        @parts.push: '    }';
-        @parts.push: '';
-
-        my @links;
-        for $parsed<link> -> $link {
-            my $parent := timezone2name($link<parent>.Str);
-            my $child  := timezone2name($link<child>.Str);
-
-            @parts.push: "class &name2class($child) is &name2class($parent) \{ \}"
-            @links.push: $child;
-        }
-
-        say "done";
     }
+    else {
+        @parts.push: '        BEGIN Map.new';
+    }
+
+    @parts.push: qq:to/CODE/.chomp;
+    }
+}
+CODE
+
+    if %children{$timezone} -> @children {
+        @parts.push: '';
+        @parts.push: qq:to/CODE/ for @children;
+class &timezone2class($_)
+  is $class \{
+    method name(--> '$_') \{ \}
+\}
+CODE
+    }
+    @parts.push: '';
+
+    $io.spurt: @parts.join: "\n";
+}
+
+# produce all class files in the given directory
+sub produce-class-files(IO() $dir --> Nil) {
+    write-class-file($dir, $_) for %zones.keys;
+}
+
+# write test file for timezone to the given directory
+sub write-test-file($dir, $timezone --> Nil) {
+    my $class := timezone2class($timezone);
+    $dir.child(timezone2test($timezone)).spurt: qq:to/CODE/;
+#- Generated by $generator
+#- Based on $release
+
+use Test;
+use $class;
+
+plan 4;
+
+my \$tz := $class.new;
+
+isa-ok \$tz, $class;
+is \$tz.name, '$timezone', "is it named $timezone";
+isa-ok \$tz.zonedata, List, 'is the zonedata a List';
+isa-ok \$tz.rules, Map, 'are the rules a Map';
+CODE
+}
+
+# produce all the test files in the given directory
+sub produce-test-files(IO() $dir --> Nil) {
+    for %zones.keys -> $timezone {
+        write-test-file($dir, $timezone);
+        if %children{$timezone} -> @children {
+            write-test-file($dir, $_) for @children;
+        }
+    }
+}
+
+# provide pairs of timezone -> timezone mapping.  Note that
+# because linked timezones live in their parent's class file,
+# a linked timezone will map to the parent's class file.
+sub provide-pairs() {
+    %zones.keys.map: -> $timezone {
+        my $pair := $timezone => $timezone;
+
+        if %children{$timezone} -> @children {
+            ( $pair,
+              @children.map(-> $child {
+                  $child => $timezone
+              }).Slip
+            ).Slip
+        }
+        else {
+            $pair
+        }
+    }
+}
+
+# update META6.json
+sub update-provides(
+  IO() $meta = "../META6.json"
+--> Nil) {
+    my $dir := $CLASS-DIR.substr(3);
+    $meta.spurt: $meta.slurp.subst: / '  "provides": {' <( <-[}]>+ /, {
+        q:to/JSON/.chomp
+
+        "DateTime::TimeZone": "lib/DateTime/TimeZone.rakumod",
+        "DateTime::TimeZone::Zone": "lib/DateTime/TimeZone/Zone.rakumod"
+    JSON
+        ~ %timezone2class.sort(*.key).map({
+            ",\n"
+              ~ '    "'
+              ~ timezone2class(.key)
+              ~ '": "'
+              ~ $dir
+              ~ timezone2file(.value)
+              ~ '"'
+          }).join
+        ~ "\n  "
+    }
+}
+
+# update time zones in DateTime::TimeZone module
+sub update-timezones(
+  IO() $source = "../lib/DateTime/TimeZone.rakumod"
+--> Nil) {
+    $source.spurt:
+      $source.slurp.subst: / 'our %timezones := BEGIN Map.new: (' <( <-[;]>+ /,  {
+          "\n"
+           ~ %timezone2class.sort(*.key).map({
+                 "  "
+                   ~ .key.raku
+                   ~ ' => '
+                   ~ timezone2class(.value).raku
+             }).join(",\n")
+           ~ "\n)"
+      }
 }
 
 # vim: expandtab shiftwidth=4

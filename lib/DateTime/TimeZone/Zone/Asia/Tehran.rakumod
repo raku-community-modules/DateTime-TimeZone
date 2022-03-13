@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Tehran
     method name(--> 'Asia/Tehran') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:25:44"),:until(-1704153600))), Map.new((:baseoffset("3:25:44"),:until(-757382400))), Map.new((:baseoffset("3:30"),:until(247190400))), Map.new((:baseoffset("4:00"),:rule("Iran"),:until(283996800))), Map.new((:baseoffset("3:30"),:rule("Iran")))
+        BEGIN Map.new((:baseoffset("3:25:44"),:until(-1704153600))), Map.new((:baseoffset("3:25:44"),:until(-757382400))), Map.new((:baseoffset("3:30"),:until(247190400))), Map.new((:baseoffset("4:00"),:rules("Iran"),:until(283996800))), Map.new((:baseoffset("3:30"),:rules("Iran")))
     }
 
     method rules() {

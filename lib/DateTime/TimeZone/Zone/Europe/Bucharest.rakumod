@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Bucharest
     method name(--> 'Europe/Bucharest') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:44:24"),:until(-2469398400))), Map.new((:baseoffset("1:44:24"),:until(-1213142400))), Map.new((:baseoffset("2:00"),:rule("Romania"),:until(354679200))), Map.new((:baseoffset("2:00"),:rule("C-Eur"),:until(662688000))), Map.new((:baseoffset("2:00"),:rule("Romania"),:until(757382400))), Map.new((:baseoffset("2:00"),:rule("E-Eur"),:until(852076800))), Map.new((:baseoffset("2:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:44:24"),:until(-2469398400))), Map.new((:baseoffset("1:44:24"),:until(-1213142400))), Map.new((:baseoffset("2:00"),:rules("Romania"),:until(354679200))), Map.new((:baseoffset("2:00"),:rules("C-Eur"),:until(662688000))), Map.new((:baseoffset("2:00"),:rules("Romania"),:until(757382400))), Map.new((:baseoffset("2:00"),:rules("E-Eur"),:until(852076800))), Map.new((:baseoffset("2:00"),:rules("EU")))
     }
 
     method rules() {

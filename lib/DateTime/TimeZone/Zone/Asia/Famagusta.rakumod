@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Famagusta
     method name(--> 'Asia/Famagusta') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:15:48"),:until(-1518912000))), Map.new((:baseoffset("2:00"),:rule("Cyprus"),:until(904608000))), Map.new((:baseoffset("2:00"),:rule("EUAsia"),:until(1473292800))), Map.new((:baseoffset("3:00"),:until(1509238800))), Map.new((:baseoffset("2:00"),:rule("EUAsia")))
+        BEGIN Map.new((:baseoffset("2:15:48"),:until(-1518912000))), Map.new((:baseoffset("2:00"),:rules("Cyprus"),:until(904608000))), Map.new((:baseoffset("2:00"),:rules("EUAsia"),:until(1473292800))), Map.new((:baseoffset("3:00"),:until(1509238800))), Map.new((:baseoffset("2:00"),:rules("EUAsia")))
     }
 
     method rules() {

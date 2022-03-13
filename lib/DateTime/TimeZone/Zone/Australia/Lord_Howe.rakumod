@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Lord_Howe
     method name(--> 'Australia/Lord_Howe') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("10:36:20"),:until(-2364076800))), Map.new((:baseoffset("10:00"),:until(352252800))), Map.new((:baseoffset("10:30"),:rule("LH"),:until(489024000))), Map.new((:baseoffset("10:30"),:rule("LH")))
+        BEGIN Map.new((:baseoffset("10:36:20"),:until(-2364076800))), Map.new((:baseoffset("10:00"),:until(352252800))), Map.new((:baseoffset("10:30"),:rules("LH"),:until(489024000))), Map.new((:baseoffset("10:30"),:rules("LH")))
     }
 
     method rules() {

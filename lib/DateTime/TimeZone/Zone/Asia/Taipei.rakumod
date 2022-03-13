@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Taipei
     method name(--> 'Asia/Taipei') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:06:00"),:until(-2335219200))), Map.new((:baseoffset("8:00"),:until(-1017792000))), Map.new((:baseoffset("9:00"),:until(-766191600))), Map.new((:baseoffset("8:00"),:rule("Taiwan")))
+        BEGIN Map.new((:baseoffset("8:06:00"),:until(-2335219200))), Map.new((:baseoffset("8:00"),:until(-1017792000))), Map.new((:baseoffset("9:00"),:until(-766191600))), Map.new((:baseoffset("8:00"),:rules("Taiwan")))
     }
 
     method rules() {

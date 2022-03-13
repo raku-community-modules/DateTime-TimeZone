@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Bogota
     method name(--> 'America/Bogota') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:56:16"),:until(-2707689600))), Map.new((:baseoffset("-4:56:16"),:until(-1739059200))), Map.new((:baseoffset("-5:00"),:rule("CO")))
+        BEGIN Map.new((:baseoffset("-4:56:16"),:until(-2707689600))), Map.new((:baseoffset("-4:56:16"),:until(-1739059200))), Map.new((:baseoffset("-5:00"),:rules("CO")))
     }
 
     method rules() {

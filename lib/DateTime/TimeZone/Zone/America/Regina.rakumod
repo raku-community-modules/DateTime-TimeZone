@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Regina
     method name(--> 'America/Regina') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:58:36"),:until(-2030227200))), Map.new((:baseoffset("-7:00"),:rule("Regina"),:until(-305762400))), Map.new((:baseoffset("-6:00")))
+        BEGIN Map.new((:baseoffset("-6:58:36"),:until(-2030227200))), Map.new((:baseoffset("-7:00"),:rules("Regina"),:until(-305762400))), Map.new((:baseoffset("-6:00")))
     }
 
     method rules() {

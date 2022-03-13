@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Antarctica::Troll
     method name(--> 'Antarctica/Troll') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(1108166400))), Map.new((:baseoffset("0:00"),:rule("Troll")))
+        BEGIN Map.new((:baseoffset("0"),:until(1108166400))), Map.new((:baseoffset("0:00"),:rules("Troll")))
     }
 
     method rules() {

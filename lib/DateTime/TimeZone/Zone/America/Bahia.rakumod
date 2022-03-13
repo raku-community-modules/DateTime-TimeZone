@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Bahia
     method name(--> 'America/Bahia') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-2:34:04"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1064361600))), Map.new((:baseoffset("-3:00"),:until(1318723200))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1350777600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-2:34:04"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1064361600))), Map.new((:baseoffset("-3:00"),:until(1318723200))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1350777600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

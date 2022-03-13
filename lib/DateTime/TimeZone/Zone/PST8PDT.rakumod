@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::PST8PDT
     method name(--> 'PST8PDT') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-8:00"),:rule("US"))),
+        BEGIN Map.new((:baseoffset("-8:00"),:rules("US"))),
     }
 
     method rules() {

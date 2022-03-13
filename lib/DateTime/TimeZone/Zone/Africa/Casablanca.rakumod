@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Casablanca
     method name(--> 'Africa/Casablanca') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:30:20"),:until(-1773014400))), Map.new((:baseoffset("0:00"),:rule("Morocco"),:until(448243200))), Map.new((:baseoffset("1:00"),:until(504921600))), Map.new((:baseoffset("0:00"),:rule("Morocco"),:until(1540695600))), Map.new((:baseoffset("1:00"),:rule("Morocco")))
+        BEGIN Map.new((:baseoffset("-0:30:20"),:until(-1773014400))), Map.new((:baseoffset("0:00"),:rules("Morocco"),:until(448243200))), Map.new((:baseoffset("1:00"),:until(504921600))), Map.new((:baseoffset("0:00"),:rules("Morocco"),:until(1540695600))), Map.new((:baseoffset("1:00"),:rules("Morocco")))
     }
 
     method rules() {

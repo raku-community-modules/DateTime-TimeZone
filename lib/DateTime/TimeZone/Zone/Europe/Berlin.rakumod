@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Berlin
     method name(--> 'Europe/Berlin') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:53:28"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-776556000))), Map.new((:baseoffset("1:00"),:rule("SovietZone"),:until(-757382400))), Map.new((:baseoffset("1:00"),:rule("Germany"),:until(315532800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:53:28"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-776556000))), Map.new((:baseoffset("1:00"),:rules("SovietZone"),:until(-757382400))), Map.new((:baseoffset("1:00"),:rules("Germany"),:until(315532800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

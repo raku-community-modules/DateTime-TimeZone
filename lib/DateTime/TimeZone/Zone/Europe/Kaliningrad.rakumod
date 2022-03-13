@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Kaliningrad
     method name(--> 'Europe/Kaliningrad') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:22:00"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-788918400))), Map.new((:baseoffset("2:00"),:rule("Poland"),:until(-757382400))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(606880800))), Map.new((:baseoffset("2:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("3:00"),:until(1414288800))), Map.new((:baseoffset("2:00")))
+        BEGIN Map.new((:baseoffset("1:22:00"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-788918400))), Map.new((:baseoffset("2:00"),:rules("Poland"),:until(-757382400))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(606880800))), Map.new((:baseoffset("2:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("3:00"),:until(1414288800))), Map.new((:baseoffset("2:00")))
     }
 
     method rules() {

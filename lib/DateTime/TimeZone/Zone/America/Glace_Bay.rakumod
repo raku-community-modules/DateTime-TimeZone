@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Glace_Bay
     method name(--> 'America/Glace_Bay') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:59:48"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(-536457600))), Map.new((:baseoffset("-4:00"),:rule("Halifax"),:until(-504921600))), Map.new((:baseoffset("-4:00"),:until(63072000))), Map.new((:baseoffset("-4:00"),:rule("Halifax"),:until(126230400))), Map.new((:baseoffset("-4:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-3:59:48"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(-536457600))), Map.new((:baseoffset("-4:00"),:rules("Halifax"),:until(-504921600))), Map.new((:baseoffset("-4:00"),:until(63072000))), Map.new((:baseoffset("-4:00"),:rules("Halifax"),:until(126230400))), Map.new((:baseoffset("-4:00"),:rules("Canada")))
     }
 
     method rules() {

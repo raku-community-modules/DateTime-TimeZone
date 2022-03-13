@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Los_Angeles
     method name(--> 'America/Los_Angeles') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:52:58"),:until(-2717668378))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:rule("CA"),:until(-94694400))), Map.new((:baseoffset("-8:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-7:52:58"),:until(-2717668378))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:rules("CA"),:until(-94694400))), Map.new((:baseoffset("-8:00"),:rules("US")))
     }
 
     method rules() {

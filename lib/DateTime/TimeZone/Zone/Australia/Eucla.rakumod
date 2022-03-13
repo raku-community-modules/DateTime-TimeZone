@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Eucla
     method name(--> 'Australia/Eucla') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:35:28"),:until(-2337897600))), Map.new((:baseoffset("8:45"),:rule("Aus"),:until(-836438400))), Map.new((:baseoffset("8:45"),:rule("AW")))
+        BEGIN Map.new((:baseoffset("8:35:28"),:until(-2337897600))), Map.new((:baseoffset("8:45"),:rules("Aus"),:until(-836438400))), Map.new((:baseoffset("8:45"),:rules("AW")))
     }
 
     method rules() {

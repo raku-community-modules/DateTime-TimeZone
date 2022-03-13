@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Dhaka
     method name(--> 'Asia/Dhaka') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("6:01:40"),:until(-2524521600))), Map.new((:baseoffset("5:53:20"),:until(-891561600))), Map.new((:baseoffset("6:30"),:until(-872035200))), Map.new((:baseoffset("5:30"),:until(-862617600))), Map.new((:baseoffset("6:30"),:until(-576115200))), Map.new((:baseoffset("6:00"),:until(1230768000))), Map.new((:baseoffset("6:00"),:rule("Dhaka")))
+        BEGIN Map.new((:baseoffset("6:01:40"),:until(-2524521600))), Map.new((:baseoffset("5:53:20"),:until(-891561600))), Map.new((:baseoffset("6:30"),:until(-872035200))), Map.new((:baseoffset("5:30"),:until(-862617600))), Map.new((:baseoffset("6:30"),:until(-576115200))), Map.new((:baseoffset("6:00"),:until(1230768000))), Map.new((:baseoffset("6:00"),:rules("Dhaka")))
     }
 
     method rules() {

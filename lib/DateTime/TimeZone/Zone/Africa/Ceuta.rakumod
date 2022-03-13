@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Ceuta
     method name(--> 'Africa/Ceuta') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:21:16"),:until(-2177454076))), Map.new((:baseoffset("0:00"),:until(-1630112400))), Map.new((:baseoffset("1:00:00"),:until(-1616806800))), Map.new((:baseoffset("0:00"),:until(-1451692800))), Map.new((:baseoffset("0:00"),:rule("Spain"),:until(-1293840000))), Map.new((:baseoffset("0:00"),:until(-94694400))), Map.new((:baseoffset("0:00"),:rule("SpainAfrica"),:until(448243200))), Map.new((:baseoffset("1:00"),:until(504921600))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:21:16"),:until(-2177454076))), Map.new((:baseoffset("0:00"),:until(-1630112400))), Map.new((:baseoffset("1:00:00"),:until(-1616806800))), Map.new((:baseoffset("0:00"),:until(-1451692800))), Map.new((:baseoffset("0:00"),:rules("Spain"),:until(-1293840000))), Map.new((:baseoffset("0:00"),:until(-94694400))), Map.new((:baseoffset("0:00"),:rules("SpainAfrica"),:until(448243200))), Map.new((:baseoffset("1:00"),:until(504921600))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

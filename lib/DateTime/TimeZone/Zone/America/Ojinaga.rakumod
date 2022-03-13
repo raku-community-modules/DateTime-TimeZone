@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Ojinaga
     method name(--> 'America/Ojinaga') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:57:40"),:until(-1514764660))), Map.new((:baseoffset("-7:00"),:until(-1343091600))), Map.new((:baseoffset("-6:00"),:until(-1234828800))), Map.new((:baseoffset("-7:00"),:until(-1220317200))), Map.new((:baseoffset("-6:00"),:until(-1207180800))), Map.new((:baseoffset("-7:00"),:until(-1191369600))), Map.new((:baseoffset("-6:00"),:until(820454400))), Map.new((:baseoffset("-6:00"),:rule("Mexico"),:until(883612800))), Map.new((:baseoffset("-6:00"),:until(891745200))), Map.new((:baseoffset("-7:00"),:rule("Mexico"),:until(1262304000))), Map.new((:baseoffset("-7:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-6:57:40"),:until(-1514764660))), Map.new((:baseoffset("-7:00"),:until(-1343091600))), Map.new((:baseoffset("-6:00"),:until(-1234828800))), Map.new((:baseoffset("-7:00"),:until(-1220317200))), Map.new((:baseoffset("-6:00"),:until(-1207180800))), Map.new((:baseoffset("-7:00"),:until(-1191369600))), Map.new((:baseoffset("-6:00"),:until(820454400))), Map.new((:baseoffset("-6:00"),:rules("Mexico"),:until(883612800))), Map.new((:baseoffset("-6:00"),:until(891745200))), Map.new((:baseoffset("-7:00"),:rules("Mexico"),:until(1262304000))), Map.new((:baseoffset("-7:00"),:rules("US")))
     }
 
     method rules() {

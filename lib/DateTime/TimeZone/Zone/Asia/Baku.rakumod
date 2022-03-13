@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Baku
     method name(--> 'Asia/Baku') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:19:24"),:until(-1441152000))), Map.new((:baseoffset("3:00"),:until(-405129600))), Map.new((:baseoffset("4:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("3:00"),:rule("RussiaAsia"),:until(717559200))), Map.new((:baseoffset("4:00"),:until(820454400))), Map.new((:baseoffset("4:00"),:rule("EUAsia"),:until(852076800))), Map.new((:baseoffset("4:00"),:rule("Azer")))
+        BEGIN Map.new((:baseoffset("3:19:24"),:until(-1441152000))), Map.new((:baseoffset("3:00"),:until(-405129600))), Map.new((:baseoffset("4:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("3:00"),:rules("RussiaAsia"),:until(717559200))), Map.new((:baseoffset("4:00"),:until(820454400))), Map.new((:baseoffset("4:00"),:rules("EUAsia"),:until(852076800))), Map.new((:baseoffset("4:00"),:rules("Azer")))
     }
 
     method rules() {

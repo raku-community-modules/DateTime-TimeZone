@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Managua
     method name(--> 'America/Managua') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:45:08"),:until(-2524521600))), Map.new((:baseoffset("-5:45:12"),:until(-1121126400))), Map.new((:baseoffset("-6:00"),:until(105062400))), Map.new((:baseoffset("-5:00"),:until(161740800))), Map.new((:baseoffset("-6:00"),:rule("Nic"),:until(694238400))), Map.new((:baseoffset("-5:00"),:until(717292800))), Map.new((:baseoffset("-6:00"),:until(725846400))), Map.new((:baseoffset("-5:00"),:until(852076800))), Map.new((:baseoffset("-6:00"),:rule("Nic")))
+        BEGIN Map.new((:baseoffset("-5:45:08"),:until(-2524521600))), Map.new((:baseoffset("-5:45:12"),:until(-1121126400))), Map.new((:baseoffset("-6:00"),:until(105062400))), Map.new((:baseoffset("-5:00"),:until(161740800))), Map.new((:baseoffset("-6:00"),:rules("Nic"),:until(694238400))), Map.new((:baseoffset("-5:00"),:until(717292800))), Map.new((:baseoffset("-6:00"),:until(725846400))), Map.new((:baseoffset("-5:00"),:until(852076800))), Map.new((:baseoffset("-6:00"),:rules("Nic")))
     }
 
     method rules() {

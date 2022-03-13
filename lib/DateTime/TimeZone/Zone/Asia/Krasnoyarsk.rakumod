@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Krasnoyarsk
     method name(--> 'Asia/Krasnoyarsk') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("6:11:26"),:until(-1577491200))), Map.new((:baseoffset("6:00"),:until(-1247529600))), Map.new((:baseoffset("7:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("6:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("7:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("8:00"),:until(1414288800))), Map.new((:baseoffset("7:00")))
+        BEGIN Map.new((:baseoffset("6:11:26"),:until(-1577491200))), Map.new((:baseoffset("6:00"),:until(-1247529600))), Map.new((:baseoffset("7:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("6:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("7:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("8:00"),:until(1414288800))), Map.new((:baseoffset("7:00")))
     }
 
     method rules() {

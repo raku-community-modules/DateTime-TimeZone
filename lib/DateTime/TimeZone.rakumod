@@ -606,10 +606,10 @@ multi sub timezone(IsTimeZone $timezone, Numeric:D $epoch) {
     timezone $timezone, DateTime.new: $epoch
 }
 multi sub timezone(
-  IsTimeZone $timezone,
+  IsTimeZone $name,
   DateTime:D $datetime = DateTime.new(time)
 ) {
-    my $namespace := %timezones{$timezone};
+    my $namespace := %timezones{$name};
     require ::($namespace);
     ::($namespace).new(:$datetime)
 }
@@ -618,10 +618,10 @@ multi sub timezone($string, $? --> Nil) {
 }
 
 proto sub to-timezone(|) is export {*}
-multi sub to-timezone(Str:D $name, DateTime:D $datetime) {
+multi sub to-timezone(IsTimeZone $name, DateTime:D $datetime) {
     $datetime.in-timezone(timezone($name, $datetime).Int)
 }
-multi sub to-timezone(DateTime:D $datetime, Str:D $name) {
+multi sub to-timezone(DateTime:D $datetime, IsTimeZone $name) {
     $datetime.in-timezone(timezone($name, $datetime).Int)
 }
 
@@ -669,39 +669,6 @@ sub frobnicate(IsTimeZone $timezone) {
 C<DateTime::TimeZone> is an app-facing set of friendly subroutines for
 working with timezones.
 
-=head1 SUBROUTINES
-
-=head2 tz-offset(Str:D $offset-string) --> Int:D
-
-Parses common offset strings (such as "01:00" and "-03:00") and returns
-an C<Int> value.
-
-=head2 timezone() --> Map:D
-
-Returns a C<Map> of the names of the supported timezones, and the name of
-their associated C<DateTime::Timezone::Zone::> class.
-
-=head2 timezone(Str:D $name, DateTime:D $datetime?) --> DateTime::TimeZone:D
-
-Returns a C<DateTime::TimeZone> object representing the zone passed to it.
-These objects provide an C<.Int> call, so they may be used directly as
-the C<:timezone> parameter for a C<DateTime> object.
-
-This will support any timezone listed in the Olson database.
-
-The $datetime is used to calculate the offset depending on Daylight Savings
-Time rules for the given Time Zone.
-
-If $datetime is not passed, it assumes C<DateTime.now()>;
-
-=head2 to-timezone(Str:D $name, DateTime:D $datetime) --> DateTime:D
-
-A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
-
-=head2 to-timezone(DateTime:D $datetime, Str:D $name) --> DateTime:D
-
-Same as the C<Str,DateTime> candidate, but allows being used as a method.
-
 =head1 SUBSETS
 
 =begin code :lang<raku>
@@ -719,6 +686,44 @@ multi sub frobnicate(Str:D $string) {
 
 The C<IsTimeZone> subset can be used see if a given parameter is a known
 timezone.
+
+=head1 SUBROUTINES
+
+=head2 tz-offset(Str:D $offset-string) --> Int:D
+
+Parses common offset strings (such as "01:00" and "-03:00") and returns
+an C<Int> value.
+
+=head2 timezone() --> Map:D
+
+Returns a C<Map> of the names of the supported timezones, and the name of
+their associated C<DateTime::Timezone::Zone::> class.
+
+=head2 timezone(IsTimeZone $name, DateTime:D $datetime?) --> DateTime::TimeZone:D
+
+Returns a C<DateTime::TimeZone> object representing the zone passed to it.
+These objects provide an C<.Int> call, so they may be used directly as
+the C<:timezone> parameter for a C<DateTime> object.
+
+This will support any timezone listed in the Olson database.
+
+The $datetime is used to calculate the offset depending on Daylight Savings
+Time rules for the given Time Zone.
+
+If $datetime is not passed, it assumes C<DateTime.now()>;
+
+=head2 timezone(IsTimeZone $name, Numeric:D $epoch) --> DateTime::TimeZone:D
+
+Returns a C<DateTime::TimeZone> object representing the zone passed to it
+for the given C<epoch> value.
+
+=head2 to-timezone(IsTimeZone $name, DateTime:D $datetime) --> DateTime:D
+
+A shortcut for: $datetime.in-timezone(timezone($name, $datetime));
+
+=head2 to-timezone(DateTime:D $datetime, IsTimeZone $name) --> DateTime:D
+
+Same as the C<Str,DateTime> candidate, but allows being used as a method.
 
 =head1 AUTHORS
 

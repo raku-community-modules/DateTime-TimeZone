@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Rainy_River
     method name(--> 'America/Rainy_River') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:18:16"),:until(-2366755200))), Map.new((:baseoffset("-6:00"),:rule("Canada"),:until(-923270400))), Map.new((:baseoffset("-5:00:00"),:until(-880236000))), Map.new((:baseoffset("-6:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-6:18:16"),:until(-2366755200))), Map.new((:baseoffset("-6:00"),:rules("Canada"),:until(-923270400))), Map.new((:baseoffset("-5:00:00"),:until(-880236000))), Map.new((:baseoffset("-6:00"),:rules("Canada")))
     }
 
     method rules() {

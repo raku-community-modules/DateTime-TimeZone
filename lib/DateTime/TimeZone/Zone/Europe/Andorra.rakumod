@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Andorra
     method name(--> 'Europe/Andorra') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:06:04"),:until(-2177452800))), Map.new((:baseoffset("0:00"),:until(-733881600))), Map.new((:baseoffset("1:00"),:until(481082400))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:06:04"),:until(-2177452800))), Map.new((:baseoffset("0:00"),:until(-733881600))), Map.new((:baseoffset("1:00"),:until(481082400))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

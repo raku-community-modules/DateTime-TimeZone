@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Atlantic::Reykjavik
     method name(--> 'Atlantic/Reykjavik') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-1:28"),:until(-1956614400))), Map.new((:baseoffset("-1:00"),:rule("Iceland"),:until(-54774000))), Map.new((:baseoffset("0:00")))
+        BEGIN Map.new((:baseoffset("-1:28"),:until(-1956614400))), Map.new((:baseoffset("-1:00"),:rules("Iceland"),:until(-54774000))), Map.new((:baseoffset("0:00")))
     }
 
     method rules() {

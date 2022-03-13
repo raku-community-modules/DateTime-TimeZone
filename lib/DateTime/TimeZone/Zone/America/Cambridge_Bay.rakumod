@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Cambridge_Bay
     method name(--> 'America/Cambridge_Bay') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-1577923200))), Map.new((:baseoffset("-7:00"),:rule("NT_YK"),:until(941335200))), Map.new((:baseoffset("-6:00"),:rule("Canada"),:until(972784800))), Map.new((:baseoffset("-5:00"),:until(973382400))), Map.new((:baseoffset("-6:00"),:until(986094000))), Map.new((:baseoffset("-7:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("0"),:until(-1577923200))), Map.new((:baseoffset("-7:00"),:rules("NT_YK"),:until(941335200))), Map.new((:baseoffset("-6:00"),:rules("Canada"),:until(972784800))), Map.new((:baseoffset("-5:00"),:until(973382400))), Map.new((:baseoffset("-6:00"),:until(986094000))), Map.new((:baseoffset("-7:00"),:rules("Canada")))
     }
 
     method rules() {

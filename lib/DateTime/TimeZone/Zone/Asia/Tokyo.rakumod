@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Tokyo
     method name(--> 'Asia/Tokyo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:18:59"),:until(-2587712400))), Map.new((:baseoffset("9:00"),:rule("Japan")))
+        BEGIN Map.new((:baseoffset("9:18:59"),:until(-2587712400))), Map.new((:baseoffset("9:00"),:rules("Japan")))
     }
 
     method rules() {

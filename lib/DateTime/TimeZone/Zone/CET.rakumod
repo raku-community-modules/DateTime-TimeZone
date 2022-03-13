@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::CET
     method name(--> 'CET') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:00"),:rule("C-Eur"))),
+        BEGIN Map.new((:baseoffset("1:00"),:rules("C-Eur"))),
     }
 
     method rules() {

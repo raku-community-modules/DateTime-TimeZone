@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::CST6CDT
     method name(--> 'CST6CDT') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:00"),:rule("US"))),
+        BEGIN Map.new((:baseoffset("-6:00"),:rules("US"))),
     }
 
     method rules() {

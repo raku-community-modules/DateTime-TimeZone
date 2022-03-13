@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Atlantic::Bermuda
     method name(--> 'Atlantic/Bermuda') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:19:18"),:until(-1262296800))), Map.new((:baseoffset("-4:00"),:until(136346400))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(189302400))), Map.new((:baseoffset("-4:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-4:19:18"),:until(-1262296800))), Map.new((:baseoffset("-4:00"),:until(136346400))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(189302400))), Map.new((:baseoffset("-4:00"),:rules("US")))
     }
 
     method rules() {

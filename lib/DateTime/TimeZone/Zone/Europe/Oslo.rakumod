@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Oslo
     method name(--> 'Europe/Oslo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:43:00"),:until(-2366755200))), Map.new((:baseoffset("1:00"),:rule("Norway"),:until(-927507600))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rule("Norway"),:until(315532800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:43:00"),:until(-2366755200))), Map.new((:baseoffset("1:00"),:rules("Norway"),:until(-927507600))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-781048800))), Map.new((:baseoffset("1:00"),:rules("Norway"),:until(315532800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

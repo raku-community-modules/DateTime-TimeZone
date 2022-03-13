@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Sakhalin
     method name(--> 'Asia/Sakhalin') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:30:48"),:until(-2031004800))), Map.new((:baseoffset("9:00"),:until(-768528000))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(859687200))), Map.new((:baseoffset("10:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("11:00"),:until(1414288800))), Map.new((:baseoffset("10:00"),:until(1459044000))), Map.new((:baseoffset("11:00")))
+        BEGIN Map.new((:baseoffset("9:30:48"),:until(-2031004800))), Map.new((:baseoffset("9:00"),:until(-768528000))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(859687200))), Map.new((:baseoffset("10:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("11:00"),:until(1414288800))), Map.new((:baseoffset("10:00"),:until(1459044000))), Map.new((:baseoffset("11:00")))
     }
 
     method rules() {

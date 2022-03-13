@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Tripoli
     method name(--> 'Africa/Tripoli') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:52:44"),:until(-1577923200))), Map.new((:baseoffset("1:00"),:rule("Libya"),:until(-347155200))), Map.new((:baseoffset("2:00"),:until(378691200))), Map.new((:baseoffset("1:00"),:rule("Libya"),:until(641779200))), Map.new((:baseoffset("2:00"),:until(844041600))), Map.new((:baseoffset("1:00"),:rule("Libya"),:until(875923200))), Map.new((:baseoffset("2:00"),:until(1352512800))), Map.new((:baseoffset("1:00"),:rule("Libya"),:until(1382666400))), Map.new((:baseoffset("2:00")))
+        BEGIN Map.new((:baseoffset("0:52:44"),:until(-1577923200))), Map.new((:baseoffset("1:00"),:rules("Libya"),:until(-347155200))), Map.new((:baseoffset("2:00"),:until(378691200))), Map.new((:baseoffset("1:00"),:rules("Libya"),:until(641779200))), Map.new((:baseoffset("2:00"),:until(844041600))), Map.new((:baseoffset("1:00"),:rules("Libya"),:until(875923200))), Map.new((:baseoffset("2:00"),:until(1352512800))), Map.new((:baseoffset("1:00"),:rules("Libya"),:until(1382666400))), Map.new((:baseoffset("2:00")))
     }
 
     method rules() {

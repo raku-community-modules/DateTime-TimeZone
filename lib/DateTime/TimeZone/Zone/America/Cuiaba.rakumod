@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Cuiaba
     method name(--> 'America/Cuiaba') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:44:20"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rule("Brazil"),:until(1064361600))), Map.new((:baseoffset("-4:00"),:until(1096588800))), Map.new((:baseoffset("-4:00"),:rule("Brazil")))
+        BEGIN Map.new((:baseoffset("-3:44:20"),:until(-1767225600))), Map.new((:baseoffset("-4:00"),:rules("Brazil"),:until(1064361600))), Map.new((:baseoffset("-4:00"),:until(1096588800))), Map.new((:baseoffset("-4:00"),:rules("Brazil")))
     }
 
     method rules() {

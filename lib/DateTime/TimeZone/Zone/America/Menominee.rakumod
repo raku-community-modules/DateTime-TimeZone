@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Menominee
     method name(--> 'America/Menominee') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:50:27"),:until(-2659780800))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Menominee"),:until(-21506400))), Map.new((:baseoffset("-5:00"),:until(104896800))), Map.new((:baseoffset("-6:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:50:27"),:until(-2659780800))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Menominee"),:until(-21506400))), Map.new((:baseoffset("-5:00"),:until(104896800))), Map.new((:baseoffset("-6:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Accra
     method name(--> 'Africa/Accra') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:00:52"),:until(-1640995200))), Map.new((:baseoffset("0:00"),:rule("Ghana")))
+        BEGIN Map.new((:baseoffset("-0:00:52"),:until(-1640995200))), Map.new((:baseoffset("0:00"),:rules("Ghana")))
     }
 
     method rules() {

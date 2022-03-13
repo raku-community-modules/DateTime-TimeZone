@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Winnipeg
     method name(--> 'America/Winnipeg') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:28:36"),:until(-2602281600))), Map.new((:baseoffset("-6:00"),:rule("Winn"),:until(1136073600))), Map.new((:baseoffset("-6:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-6:28:36"),:until(-2602281600))), Map.new((:baseoffset("-6:00"),:rules("Winn"),:until(1136073600))), Map.new((:baseoffset("-6:00"),:rules("Canada")))
     }
 
     method rules() {

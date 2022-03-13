@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Thule
     method name(--> 'America/Thule') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:35:08"),:until(-1686096000))), Map.new((:baseoffset("-4:00"),:rule("Thule")))
+        BEGIN Map.new((:baseoffset("-4:35:08"),:until(-1686096000))), Map.new((:baseoffset("-4:00"),:rules("Thule")))
     }
 
     method rules() {

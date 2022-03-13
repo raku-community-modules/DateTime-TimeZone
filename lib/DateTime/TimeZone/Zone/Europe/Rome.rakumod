@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Rome
     method name(--> 'Europe/Rome') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:49:56"),:until(-3259094400))), Map.new((:baseoffset("0:49:56"),:until(-2403562204))), Map.new((:baseoffset("1:00"),:rule("Italy"),:until(-830304000))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-807148800))), Map.new((:baseoffset("1:00"),:rule("Italy"),:until(315532800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:49:56"),:until(-3259094400))), Map.new((:baseoffset("0:49:56"),:until(-2403562204))), Map.new((:baseoffset("1:00"),:rules("Italy"),:until(-830304000))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-807148800))), Map.new((:baseoffset("1:00"),:rules("Italy"),:until(315532800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

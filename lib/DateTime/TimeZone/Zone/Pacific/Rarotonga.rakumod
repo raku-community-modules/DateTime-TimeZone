@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Rarotonga
     method name(--> 'Pacific/Rarotonga') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-10:39:04"),:until(-2177452800))), Map.new((:baseoffset("-10:30"),:until(279676800))), Map.new((:baseoffset("-10:00"),:rule("Cook")))
+        BEGIN Map.new((:baseoffset("-10:39:04"),:until(-2177452800))), Map.new((:baseoffset("-10:30"),:until(279676800))), Map.new((:baseoffset("-10:00"),:rules("Cook")))
     }
 
     method rules() {

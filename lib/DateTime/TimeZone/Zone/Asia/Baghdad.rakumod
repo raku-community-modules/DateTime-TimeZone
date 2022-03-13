@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Baghdad
     method name(--> 'Asia/Baghdad') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:57:40"),:until(-2524521600))), Map.new((:baseoffset("2:57:36"),:until(-1640995200))), Map.new((:baseoffset("3:00"),:until(389059200))), Map.new((:baseoffset("3:00"),:rule("Iraq")))
+        BEGIN Map.new((:baseoffset("2:57:40"),:until(-2524521600))), Map.new((:baseoffset("2:57:36"),:until(-1640995200))), Map.new((:baseoffset("3:00"),:until(389059200))), Map.new((:baseoffset("3:00"),:rules("Iraq")))
     }
 
     method rules() {

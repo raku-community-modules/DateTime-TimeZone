@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Tirane
     method name(--> 'Europe/Tirane') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:19:20"),:until(-1767225600))), Map.new((:baseoffset("1:00"),:until(-932342400))), Map.new((:baseoffset("1:00"),:rule("Albania"),:until(457488000))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:19:20"),:until(-1767225600))), Map.new((:baseoffset("1:00"),:until(-932342400))), Map.new((:baseoffset("1:00"),:rules("Albania"),:until(457488000))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

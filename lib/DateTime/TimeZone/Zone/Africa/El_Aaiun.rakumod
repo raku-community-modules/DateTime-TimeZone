@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::El_Aaiun
     method name(--> 'Africa/El_Aaiun') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:52:48"),:until(-1136073600))), Map.new((:baseoffset("-1:00"),:until(198288000))), Map.new((:baseoffset("0:00"),:rule("Morocco"),:until(1540695600))), Map.new((:baseoffset("1:00"),:rule("Morocco")))
+        BEGIN Map.new((:baseoffset("-0:52:48"),:until(-1136073600))), Map.new((:baseoffset("-1:00"),:until(198288000))), Map.new((:baseoffset("0:00"),:rules("Morocco"),:until(1540695600))), Map.new((:baseoffset("1:00"),:rules("Morocco")))
     }
 
     method rules() {

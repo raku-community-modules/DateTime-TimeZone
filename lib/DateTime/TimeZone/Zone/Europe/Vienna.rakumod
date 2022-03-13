@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Vienna
     method name(--> 'Europe/Vienna') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:05:21"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-1577923200))), Map.new((:baseoffset("1:00"),:rule("Austria"),:until(-938901600))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-781048800))), Map.new((:baseoffset("2:00:00"),:until(-780184800))), Map.new((:baseoffset("1:00"),:until(-757382400))), Map.new((:baseoffset("1:00"),:rule("Austria"),:until(347155200))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:05:21"),:until(-2422051200))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-1577923200))), Map.new((:baseoffset("1:00"),:rules("Austria"),:until(-938901600))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-781048800))), Map.new((:baseoffset("2:00:00"),:until(-780184800))), Map.new((:baseoffset("1:00"),:until(-757382400))), Map.new((:baseoffset("1:00"),:rules("Austria"),:until(347155200))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

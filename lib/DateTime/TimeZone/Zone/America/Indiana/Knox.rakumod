@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Knox
     method name(--> 'America/Indiana/Knox') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:46:30"),:until(-2717667990))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-725846400))), Map.new((:baseoffset("-6:00"),:rule("Starke"),:until(-242258400))), Map.new((:baseoffset("-5:00"),:until(-195084000))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(688528800))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:46:30"),:until(-2717667990))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-725846400))), Map.new((:baseoffset("-6:00"),:rules("Starke"),:until(-242258400))), Map.new((:baseoffset("-5:00"),:until(-195084000))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(688528800))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rules("US")))
     }
 
     method rules() {

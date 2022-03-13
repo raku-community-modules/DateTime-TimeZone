@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Chatham
     method name(--> 'Pacific/Chatham') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("12:13:48"),:until(-3192393600))), Map.new((:baseoffset("12:15"),:until(-757382400))), Map.new((:baseoffset("12:45"),:rule("Chatham")))
+        BEGIN Map.new((:baseoffset("12:13:48"),:until(-3192393600))), Map.new((:baseoffset("12:15"),:until(-757382400))), Map.new((:baseoffset("12:45"),:rules("Chatham")))
     }
 
     method rules() {

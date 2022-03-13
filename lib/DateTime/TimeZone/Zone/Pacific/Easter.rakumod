@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Easter
     method name(--> 'Pacific/Easter') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:17:28"),:until(-2524521600))), Map.new((:baseoffset("-7:17:28"),:until(-1178150400))), Map.new((:baseoffset("-7:00"),:rule("Chile"),:until(384922800))), Map.new((:baseoffset("-6:00"),:rule("Chile")))
+        BEGIN Map.new((:baseoffset("-7:17:28"),:until(-2524521600))), Map.new((:baseoffset("-7:17:28"),:until(-1178150400))), Map.new((:baseoffset("-7:00"),:rules("Chile"),:until(384922800))), Map.new((:baseoffset("-6:00"),:rules("Chile")))
     }
 
     method rules() {

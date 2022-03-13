@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Blanc_dash_Sablon
     method name(--> 'America/Blanc-Sablon') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:48:28"),:until(-2713910400))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(0))), Map.new((:baseoffset("-4:00")))
+        BEGIN Map.new((:baseoffset("-3:48:28"),:until(-2713910400))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(0))), Map.new((:baseoffset("-4:00")))
     }
 
     method rules() {

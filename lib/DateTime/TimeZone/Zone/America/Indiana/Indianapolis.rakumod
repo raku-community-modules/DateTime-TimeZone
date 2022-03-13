@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Indianapolis
     method name(--> 'America/Indiana/Indianapolis') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:44:38"),:until(-2717667878))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-1577923200))), Map.new((:baseoffset("-6:00"),:rule("Indianapolis"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Indianapolis"),:until(-463615200))), Map.new((:baseoffset("-5:00"),:until(-386805600))), Map.new((:baseoffset("-6:00"),:until(-368661600))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:44:38"),:until(-2717667878))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-1577923200))), Map.new((:baseoffset("-6:00"),:rules("Indianapolis"),:until(-883612800))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Indianapolis"),:until(-463615200))), Map.new((:baseoffset("-5:00"),:until(-386805600))), Map.new((:baseoffset("-6:00"),:until(-368661600))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1136073600))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

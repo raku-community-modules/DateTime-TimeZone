@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Darwin
     method name(--> 'Australia/Darwin') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("8:43:20"),:until(-2364076800))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rule("Aus")))
+        BEGIN Map.new((:baseoffset("8:43:20"),:until(-2364076800))), Map.new((:baseoffset("9:00"),:until(-2230156800))), Map.new((:baseoffset("9:30"),:rules("Aus")))
     }
 
     method rules() {

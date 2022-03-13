@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Helsinki
     method name(--> 'Europe/Helsinki') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:39:49"),:until(-2890252800))), Map.new((:baseoffset("1:39:49"),:until(-1535932800))), Map.new((:baseoffset("2:00"),:rule("Finland"),:until(410227200))), Map.new((:baseoffset("2:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:39:49"),:until(-2890252800))), Map.new((:baseoffset("1:39:49"),:until(-1535932800))), Map.new((:baseoffset("2:00"),:rules("Finland"),:until(410227200))), Map.new((:baseoffset("2:00"),:rules("EU")))
     }
 
     method rules() {

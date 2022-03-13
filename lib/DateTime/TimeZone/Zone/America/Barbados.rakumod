@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Barbados
     method name(--> 'America/Barbados') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:58:29"),:until(-1451692800))), Map.new((:baseoffset("-3:58:29"),:until(-1199232000))), Map.new((:baseoffset("-4:00"),:rule("Barb")))
+        BEGIN Map.new((:baseoffset("-3:58:29"),:until(-1451692800))), Map.new((:baseoffset("-3:58:29"),:until(-1199232000))), Map.new((:baseoffset("-4:00"),:rules("Barb")))
     }
 
     method rules() {

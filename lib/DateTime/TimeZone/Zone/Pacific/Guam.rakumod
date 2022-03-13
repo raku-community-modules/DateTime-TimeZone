@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Guam
     method name(--> 'Pacific/Guam') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-14:21:00"),:until(-3944678400))), Map.new((:baseoffset("9:39:00"),:until(-2177452800))), Map.new((:baseoffset("10:00"),:until(-885513600))), Map.new((:baseoffset("9:00"),:until(-802224000))), Map.new((:baseoffset("10:00"),:rule("Guam"),:until(977529600))), Map.new((:baseoffset("10:00")))
+        BEGIN Map.new((:baseoffset("-14:21:00"),:until(-3944678400))), Map.new((:baseoffset("9:39:00"),:until(-2177452800))), Map.new((:baseoffset("10:00"),:until(-885513600))), Map.new((:baseoffset("9:00"),:until(-802224000))), Map.new((:baseoffset("10:00"),:rules("Guam"),:until(977529600))), Map.new((:baseoffset("10:00")))
     }
 
     method rules() {

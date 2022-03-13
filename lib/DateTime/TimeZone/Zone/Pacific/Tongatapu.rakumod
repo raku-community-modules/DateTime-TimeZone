@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Tongatapu
     method name(--> 'Pacific/Tongatapu') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("12:19:20"),:until(-2177452800))), Map.new((:baseoffset("12:20"),:until(-915148800))), Map.new((:baseoffset("13:00"),:until(915148800))), Map.new((:baseoffset("13:00"),:rule("Tonga")))
+        BEGIN Map.new((:baseoffset("12:19:20"),:until(-2177452800))), Map.new((:baseoffset("12:20"),:until(-915148800))), Map.new((:baseoffset("13:00"),:until(915148800))), Map.new((:baseoffset("13:00"),:rules("Tonga")))
     }
 
     method rules() {

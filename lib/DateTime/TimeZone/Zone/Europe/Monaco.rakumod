@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Monaco
     method name(--> 'Europe/Monaco') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:29:32"),:until(-2486678400))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("0:00"),:rule("France"),:until(-766616400))), Map.new((:baseoffset("1:00"),:rule("France"),:until(220924800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:29:32"),:until(-2486678400))), Map.new((:baseoffset("0:09:21"),:until(-1855958400))), Map.new((:baseoffset("0:00"),:rules("France"),:until(-766616400))), Map.new((:baseoffset("1:00"),:rules("France"),:until(220924800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

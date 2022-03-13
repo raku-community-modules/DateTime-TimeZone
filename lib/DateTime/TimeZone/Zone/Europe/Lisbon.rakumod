@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Lisbon
     method name(--> 'Europe/Lisbon') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:36:45"),:until(-2713910400))), Map.new((:baseoffset("-0:36:45"),:until(-1830384000))), Map.new((:baseoffset("0:00"),:rule("Port"),:until(-118274400))), Map.new((:baseoffset("1:00"),:until(212547600))), Map.new((:baseoffset("0:00"),:rule("Port"),:until(433299600))), Map.new((:baseoffset("0:00"),:rule("W-Eur"),:until(717555600))), Map.new((:baseoffset("1:00"),:rule("EU"),:until(828234000))), Map.new((:baseoffset("0:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:36:45"),:until(-2713910400))), Map.new((:baseoffset("-0:36:45"),:until(-1830384000))), Map.new((:baseoffset("0:00"),:rules("Port"),:until(-118274400))), Map.new((:baseoffset("1:00"),:until(212547600))), Map.new((:baseoffset("0:00"),:rules("Port"),:until(433299600))), Map.new((:baseoffset("0:00"),:rules("W-Eur"),:until(717555600))), Map.new((:baseoffset("1:00"),:rules("EU"),:until(828234000))), Map.new((:baseoffset("0:00"),:rules("EU")))
     }
 
     method rules() {

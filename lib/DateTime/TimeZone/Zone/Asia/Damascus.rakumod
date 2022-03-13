@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Damascus
     method name(--> 'Asia/Damascus') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:25:12"),:until(-1577923200))), Map.new((:baseoffset("2:00"),:rule("Syria")))
+        BEGIN Map.new((:baseoffset("2:25:12"),:until(-1577923200))), Map.new((:baseoffset("2:00"),:rules("Syria")))
     }
 
     method rules() {

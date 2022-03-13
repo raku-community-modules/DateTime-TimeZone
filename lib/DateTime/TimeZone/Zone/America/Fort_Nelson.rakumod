@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Fort_Nelson
     method name(--> 'America/Fort_Nelson') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-8:10:47"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rule("Vanc"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-725846400))), Map.new((:baseoffset("-8:00"),:rule("Vanc"),:until(536457600))), Map.new((:baseoffset("-8:00"),:rule("Canada"),:until(1425780000))), Map.new((:baseoffset("-7:00")))
+        BEGIN Map.new((:baseoffset("-8:10:47"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rules("Vanc"),:until(-757382400))), Map.new((:baseoffset("-8:00"),:until(-725846400))), Map.new((:baseoffset("-8:00"),:rules("Vanc"),:until(536457600))), Map.new((:baseoffset("-8:00"),:rules("Canada"),:until(1425780000))), Map.new((:baseoffset("-7:00")))
     }
 
     method rules() {

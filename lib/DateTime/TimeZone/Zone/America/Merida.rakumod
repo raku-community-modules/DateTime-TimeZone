@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Merida
     method name(--> 'America/Merida') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:58:28"),:until(-1514764708))), Map.new((:baseoffset("-6:00"),:until(377913600))), Map.new((:baseoffset("-5:00"),:until(407635200))), Map.new((:baseoffset("-6:00"),:rule("Mexico")))
+        BEGIN Map.new((:baseoffset("-5:58:28"),:until(-1514764708))), Map.new((:baseoffset("-6:00"),:until(377913600))), Map.new((:baseoffset("-5:00"),:until(407635200))), Map.new((:baseoffset("-6:00"),:rules("Mexico")))
     }
 
     method rules() {

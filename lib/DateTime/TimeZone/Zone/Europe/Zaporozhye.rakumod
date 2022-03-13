@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Zaporozhye
     method name(--> 'Europe/Zaporozhye') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:20:40"),:until(-2840140800))), Map.new((:baseoffset("2:20"),:until(-1441152000))), Map.new((:baseoffset("2:00"),:until(-1247529600))), Map.new((:baseoffset("3:00"),:until(-894758400))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-826416000))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("2:00"),:rule("E-Eur"),:until(788918400))), Map.new((:baseoffset("2:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("2:20:40"),:until(-2840140800))), Map.new((:baseoffset("2:20"),:until(-1441152000))), Map.new((:baseoffset("2:00"),:until(-1247529600))), Map.new((:baseoffset("3:00"),:until(-894758400))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-826416000))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("2:00"),:rules("E-Eur"),:until(788918400))), Map.new((:baseoffset("2:00"),:rules("EU")))
     }
 
     method rules() {

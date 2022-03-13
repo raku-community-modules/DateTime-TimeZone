@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Juba
     method name(--> 'Africa/Juba') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:06:28"),:until(-1230768000))), Map.new((:baseoffset("2:00"),:rule("Sudan"),:until(947937600))), Map.new((:baseoffset("3:00")))
+        BEGIN Map.new((:baseoffset("2:06:28"),:until(-1230768000))), Map.new((:baseoffset("2:00"),:rules("Sudan"),:until(947937600))), Map.new((:baseoffset("3:00")))
     }
 
     method rules() {

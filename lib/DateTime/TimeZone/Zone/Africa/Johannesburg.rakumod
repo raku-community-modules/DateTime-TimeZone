@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Africa::Johannesburg
     method name(--> 'Africa/Johannesburg') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:52:00"),:until(-2458166400))), Map.new((:baseoffset("1:30"),:until(-2109283200))), Map.new((:baseoffset("2:00"),:rule("SA")))
+        BEGIN Map.new((:baseoffset("1:52:00"),:until(-2458166400))), Map.new((:baseoffset("1:30"),:until(-2109283200))), Map.new((:baseoffset("2:00"),:rules("SA")))
     }
 
     method rules() {

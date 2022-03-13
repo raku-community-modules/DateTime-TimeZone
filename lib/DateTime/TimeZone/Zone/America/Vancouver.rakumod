@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Vancouver
     method name(--> 'America/Vancouver') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-8:12:28"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rule("Vanc"),:until(536457600))), Map.new((:baseoffset("-8:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-8:12:28"),:until(-2713910400))), Map.new((:baseoffset("-8:00"),:rules("Vanc"),:until(536457600))), Map.new((:baseoffset("-8:00"),:rules("Canada")))
     }
 
     method rules() {

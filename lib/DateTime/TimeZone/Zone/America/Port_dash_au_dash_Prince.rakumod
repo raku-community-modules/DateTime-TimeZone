@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Port_dash_au_dash_Prince
     method name(--> 'America/Port-au-Prince') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:49:20"),:until(-2524521600))), Map.new((:baseoffset("-4:49"),:until(-1670500800))), Map.new((:baseoffset("-5:00"),:rule("Haiti")))
+        BEGIN Map.new((:baseoffset("-4:49:20"),:until(-2524521600))), Map.new((:baseoffset("-4:49"),:until(-1670500800))), Map.new((:baseoffset("-5:00"),:rules("Haiti")))
     }
 
     method rules() {

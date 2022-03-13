@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Athens
     method name(--> 'Europe/Athens') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:34:52"),:until(-2344636800))), Map.new((:baseoffset("1:34:52"),:until(-1686095940))), Map.new((:baseoffset("2:00"),:rule("Greece"),:until(-904867200))), Map.new((:baseoffset("1:00"),:rule("Greece"),:until(-812419200))), Map.new((:baseoffset("2:00"),:rule("Greece"),:until(347155200))), Map.new((:baseoffset("2:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:34:52"),:until(-2344636800))), Map.new((:baseoffset("1:34:52"),:until(-1686095940))), Map.new((:baseoffset("2:00"),:rules("Greece"),:until(-904867200))), Map.new((:baseoffset("1:00"),:rules("Greece"),:until(-812419200))), Map.new((:baseoffset("2:00"),:rules("Greece"),:until(347155200))), Map.new((:baseoffset("2:00"),:rules("EU")))
     }
 
     method rules() {

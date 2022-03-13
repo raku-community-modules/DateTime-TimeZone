@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Kentucky::Monticello
     method name(--> 'America/Kentucky/Monticello') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:39:24"),:until(-2717667564))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:until(-63158400))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:39:24"),:until(-2717667564))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:until(-63158400))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(972784800))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Manila
     method name(--> 'Asia/Manila') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-15:56:00"),:until(-3944678400))), Map.new((:baseoffset("8:04:00"),:until(-2229292800))), Map.new((:baseoffset("8:00"),:rule("Phil"),:until(-873244800))), Map.new((:baseoffset("9:00"),:until(-794188800))), Map.new((:baseoffset("8:00"),:rule("Phil")))
+        BEGIN Map.new((:baseoffset("-15:56:00"),:until(-3944678400))), Map.new((:baseoffset("8:04:00"),:until(-2229292800))), Map.new((:baseoffset("8:00"),:rules("Phil"),:until(-873244800))), Map.new((:baseoffset("9:00"),:until(-794188800))), Map.new((:baseoffset("8:00"),:rules("Phil")))
     }
 
     method rules() {

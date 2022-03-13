@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Ust_dash_Nera
     method name(--> 'Asia/Ust-Nera') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("9:32:54"),:until(-1579392000))), Map.new((:baseoffset("8:00"),:until(-1247529600))), Map.new((:baseoffset("9:00"),:rule("Russia"),:until(354931200))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00"),:until(1315872000))), Map.new((:baseoffset("11:00"),:until(1414288800))), Map.new((:baseoffset("10:00")))
+        BEGIN Map.new((:baseoffset("9:32:54"),:until(-1579392000))), Map.new((:baseoffset("8:00"),:until(-1247529600))), Map.new((:baseoffset("9:00"),:rules("Russia"),:until(354931200))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00"),:until(1315872000))), Map.new((:baseoffset("11:00"),:until(1414288800))), Map.new((:baseoffset("10:00")))
     }
 
     method rules() {

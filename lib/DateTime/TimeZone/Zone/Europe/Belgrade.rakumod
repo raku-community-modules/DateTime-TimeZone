@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Belgrade
     method name(--> 'Europe/Belgrade') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:22:00"),:until(-2713910400))), Map.new((:baseoffset("1:00"),:until(-905821200))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-788918400))), Map.new((:baseoffset("1:00"),:until(-777938400))), Map.new((:baseoffset("2:00:00"),:until(-766620000))), Map.new((:baseoffset("1:00"),:until(407203200))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:22:00"),:until(-2713910400))), Map.new((:baseoffset("1:00"),:until(-905821200))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-788918400))), Map.new((:baseoffset("1:00"),:until(-777938400))), Map.new((:baseoffset("2:00:00"),:until(-766620000))), Map.new((:baseoffset("1:00"),:until(407203200))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Havana
     method name(--> 'America/Havana') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:29:28"),:until(-2524521600))), Map.new((:baseoffset("-5:29:36"),:until(-1402833600))), Map.new((:baseoffset("-5:00"),:rule("Cuba")))
+        BEGIN Map.new((:baseoffset("-5:29:28"),:until(-2524521600))), Map.new((:baseoffset("-5:29:36"),:until(-1402833600))), Map.new((:baseoffset("-5:00"),:rules("Cuba")))
     }
 
     method rules() {

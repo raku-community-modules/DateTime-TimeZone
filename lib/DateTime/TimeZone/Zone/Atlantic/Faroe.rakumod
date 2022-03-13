@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Atlantic::Faroe
     method name(--> 'Atlantic/Faroe') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:27:04"),:until(-1955750400))), Map.new((:baseoffset("0:00"),:until(347155200))), Map.new((:baseoffset("0:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:27:04"),:until(-1955750400))), Map.new((:baseoffset("0:00"),:until(347155200))), Map.new((:baseoffset("0:00"),:rules("EU")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Vincennes
     method name(--> 'America/Indiana/Vincennes') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:50:07"),:until(-2717668207))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Vincennes"),:until(-179359200))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(1194141600))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:50:07"),:until(-2717668207))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Vincennes"),:until(-179359200))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(1194141600))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

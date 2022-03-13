@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Hebron
     method name(--> 'Asia/Hebron') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:20:23"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rule("Zion"),:until(-682646400))), Map.new((:baseoffset("2:00"),:rule("EgyptAsia"),:until(-81302400))), Map.new((:baseoffset("2:00"),:rule("Zion"),:until(820454400))), Map.new((:baseoffset("2:00"),:rule("Jordan"),:until(915148800))), Map.new((:baseoffset("2:00"),:rule("Palestine")))
+        BEGIN Map.new((:baseoffset("2:20:23"),:until(-2185401600))), Map.new((:baseoffset("2:00"),:rules("Zion"),:until(-682646400))), Map.new((:baseoffset("2:00"),:rules("EgyptAsia"),:until(-81302400))), Map.new((:baseoffset("2:00"),:rules("Zion"),:until(820454400))), Map.new((:baseoffset("2:00"),:rules("Jordan"),:until(915148800))), Map.new((:baseoffset("2:00"),:rules("Palestine")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Scoresbysund
     method name(--> 'America/Scoresbysund') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-1:27:52"),:until(-1686096000))), Map.new((:baseoffset("-2:00"),:until(323834400))), Map.new((:baseoffset("-2:00"),:rule("C-Eur"),:until(354672000))), Map.new((:baseoffset("-1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-1:27:52"),:until(-1686096000))), Map.new((:baseoffset("-2:00"),:until(323834400))), Map.new((:baseoffset("-2:00"),:rules("C-Eur"),:until(354672000))), Map.new((:baseoffset("-1:00"),:rules("EU")))
     }
 
     method rules() {

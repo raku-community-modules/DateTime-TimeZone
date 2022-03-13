@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Araguaina
     method name(--> 'America/Araguaina') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:12:48"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(811036800))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1064361600))), Map.new((:baseoffset("-3:00"),:until(1350777600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1377993600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-3:12:48"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(811036800))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1064361600))), Map.new((:baseoffset("-3:00"),:until(1350777600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1377993600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

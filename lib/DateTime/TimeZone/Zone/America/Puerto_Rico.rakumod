@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Puerto_Rico
     method name(--> 'America/Puerto_Rico') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:24:25"),:until(-2233051200))), Map.new((:baseoffset("-4:00"),:until(-873072000))), Map.new((:baseoffset("-4:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-4:00")))
+        BEGIN Map.new((:baseoffset("-4:24:25"),:until(-2233051200))), Map.new((:baseoffset("-4:00"),:until(-873072000))), Map.new((:baseoffset("-4:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-4:00")))
     }
 
     method rules() {

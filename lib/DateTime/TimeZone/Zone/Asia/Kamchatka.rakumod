@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Kamchatka
     method name(--> 'Asia/Kamchatka') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("10:34:36"),:until(-1487721600))), Map.new((:baseoffset("11:00"),:until(-1247529600))), Map.new((:baseoffset("12:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("12:00"),:rule("Russia"),:until(1269741600))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00")))
+        BEGIN Map.new((:baseoffset("10:34:36"),:until(-1487721600))), Map.new((:baseoffset("11:00"),:until(-1247529600))), Map.new((:baseoffset("12:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("12:00"),:rules("Russia"),:until(1269741600))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00")))
     }
 
     method rules() {

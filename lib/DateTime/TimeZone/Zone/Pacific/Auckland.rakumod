@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Auckland
     method name(--> 'Pacific/Auckland') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("11:39:04"),:until(-3192393600))), Map.new((:baseoffset("11:30"),:rule("NZ"),:until(-757382400))), Map.new((:baseoffset("12:00"),:rule("NZ")))
+        BEGIN Map.new((:baseoffset("11:39:04"),:until(-3192393600))), Map.new((:baseoffset("11:30"),:rules("NZ"),:until(-757382400))), Map.new((:baseoffset("12:00"),:rules("NZ")))
     }
 
     method rules() {

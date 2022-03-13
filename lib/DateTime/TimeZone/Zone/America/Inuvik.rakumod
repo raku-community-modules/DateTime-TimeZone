@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Inuvik
     method name(--> 'America/Inuvik') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-536457600))), Map.new((:baseoffset("-8:00"),:rule("NT_YK"),:until(294199200))), Map.new((:baseoffset("-7:00"),:rule("NT_YK"),:until(315532800))), Map.new((:baseoffset("-7:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("0"),:until(-536457600))), Map.new((:baseoffset("-8:00"),:rules("NT_YK"),:until(294199200))), Map.new((:baseoffset("-7:00"),:rules("NT_YK"),:until(315532800))), Map.new((:baseoffset("-7:00"),:rules("Canada")))
     }
 
     method rules() {

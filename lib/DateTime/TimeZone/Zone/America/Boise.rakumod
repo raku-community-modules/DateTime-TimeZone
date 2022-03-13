@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Boise
     method name(--> 'America/Boise') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:44:49"),:until(-2717667889))), Map.new((:baseoffset("-8:00"),:rule("US"),:until(-1471816800))), Map.new((:baseoffset("-7:00"),:rule("US"),:until(126230400))), Map.new((:baseoffset("-7:00"),:until(129088800))), Map.new((:baseoffset("-7:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-7:44:49"),:until(-2717667889))), Map.new((:baseoffset("-8:00"),:rules("US"),:until(-1471816800))), Map.new((:baseoffset("-7:00"),:rules("US"),:until(126230400))), Map.new((:baseoffset("-7:00"),:until(129088800))), Map.new((:baseoffset("-7:00"),:rules("US")))
     }
 
     method rules() {

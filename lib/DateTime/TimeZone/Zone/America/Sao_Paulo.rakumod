@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Sao_Paulo
     method name(--> 'America/Sao_Paulo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:06:28"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(-195436800))), Map.new((:baseoffset("-2:00:00"),:until(-189388800))), Map.new((:baseoffset("-3:00"),:rule("Brazil")))
+        BEGIN Map.new((:baseoffset("-3:06:28"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(-195436800))), Map.new((:baseoffset("-2:00:00"),:until(-189388800))), Map.new((:baseoffset("-3:00"),:rules("Brazil")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::North_Dakota::New_Salem
     method name(--> 'America/North_Dakota/New_Salem') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-6:45:39"),:until(-2717667939))), Map.new((:baseoffset("-7:00"),:rule("US"),:until(1067133600))), Map.new((:baseoffset("-6:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-6:45:39"),:until(-2717667939))), Map.new((:baseoffset("-7:00"),:rules("US"),:until(1067133600))), Map.new((:baseoffset("-6:00"),:rules("US")))
     }
 
     method rules() {

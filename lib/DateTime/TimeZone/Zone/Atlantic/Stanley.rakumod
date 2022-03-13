@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Atlantic::Stanley
     method name(--> 'Atlantic/Stanley') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:51:24"),:until(-2524521600))), Map.new((:baseoffset("-3:51:24"),:until(-1824249600))), Map.new((:baseoffset("-4:00"),:rule("Falk"),:until(420595200))), Map.new((:baseoffset("-3:00"),:rule("Falk"),:until(495590400))), Map.new((:baseoffset("-4:00"),:rule("Falk"),:until(1283652000))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-3:51:24"),:until(-2524521600))), Map.new((:baseoffset("-3:51:24"),:until(-1824249600))), Map.new((:baseoffset("-4:00"),:rules("Falk"),:until(420595200))), Map.new((:baseoffset("-3:00"),:rules("Falk"),:until(495590400))), Map.new((:baseoffset("-4:00"),:rules("Falk"),:until(1283652000))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

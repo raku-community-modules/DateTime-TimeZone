@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Nassau
     method name(--> 'America/Nassau') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:09:30"),:until(-1825113600))), Map.new((:baseoffset("-5:00"),:rule("Bahamas"),:until(189302400))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:09:30"),:until(-1825113600))), Map.new((:baseoffset("-5:00"),:rules("Bahamas"),:until(189302400))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

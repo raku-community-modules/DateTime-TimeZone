@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Antarctica::Palmer
     method name(--> 'Antarctica/Palmer') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-157766400))), Map.new((:baseoffset("-4:00"),:rule("Arg"),:until(-7603200))), Map.new((:baseoffset("-3:00"),:rule("Arg"),:until(389059200))), Map.new((:baseoffset("-4:00"),:rule("Chile"),:until(1480809600))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("0"),:until(-157766400))), Map.new((:baseoffset("-4:00"),:rules("Arg"),:until(-7603200))), Map.new((:baseoffset("-3:00"),:rules("Arg"),:until(389059200))), Map.new((:baseoffset("-4:00"),:rules("Chile"),:until(1480809600))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

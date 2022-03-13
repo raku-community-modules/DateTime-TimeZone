@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Budapest
     method name(--> 'Europe/Budapest') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:16:20"),:until(-2500934400))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-1640995200))), Map.new((:baseoffset("1:00"),:rule("Hungary"),:until(-906768000))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-788918400))), Map.new((:baseoffset("1:00"),:rule("Hungary"),:until(338954400))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:16:20"),:until(-2500934400))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-1640995200))), Map.new((:baseoffset("1:00"),:rules("Hungary"),:until(-906768000))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-788918400))), Map.new((:baseoffset("1:00"),:rules("Hungary"),:until(338954400))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

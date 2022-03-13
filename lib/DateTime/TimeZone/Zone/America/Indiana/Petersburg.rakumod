@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Petersburg
     method name(--> 'America/Indiana/Petersburg') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:49:07"),:until(-2717668147))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-473385600))), Map.new((:baseoffset("-6:00"),:rule("Pike"),:until(-147909600))), Map.new((:baseoffset("-5:00"),:until(-100130400))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(247024800))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(1194141600))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:49:07"),:until(-2717668147))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-473385600))), Map.new((:baseoffset("-6:00"),:rules("Pike"),:until(-147909600))), Map.new((:baseoffset("-5:00"),:until(-100130400))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(247024800))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(1194141600))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

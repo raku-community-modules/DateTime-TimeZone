@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Australia::Brisbane
     method name(--> 'Australia/Brisbane') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("10:12:08"),:until(-2366755200))), Map.new((:baseoffset("10:00"),:rule("Aus"),:until(31536000))), Map.new((:baseoffset("10:00"),:rule("AQ")))
+        BEGIN Map.new((:baseoffset("10:12:08"),:until(-2366755200))), Map.new((:baseoffset("10:00"),:rules("Aus"),:until(31536000))), Map.new((:baseoffset("10:00"),:rules("AQ")))
     }
 
     method rules() {

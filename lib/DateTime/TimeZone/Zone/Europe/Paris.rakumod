@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Paris
     method name(--> 'Europe/Paris') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:09:21"),:until(-2486678340))), Map.new((:baseoffset("0:09:21"),:until(-1855958340))), Map.new((:baseoffset("0:00"),:rule("France"),:until(-932432400))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-800064000))), Map.new((:baseoffset("0:00"),:rule("France"),:until(-766616400))), Map.new((:baseoffset("1:00"),:rule("France"),:until(220924800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:09:21"),:until(-2486678340))), Map.new((:baseoffset("0:09:21"),:until(-1855958340))), Map.new((:baseoffset("0:00"),:rules("France"),:until(-932432400))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-800064000))), Map.new((:baseoffset("0:00"),:rules("France"),:until(-766616400))), Map.new((:baseoffset("1:00"),:rules("France"),:until(220924800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

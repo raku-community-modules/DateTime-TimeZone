@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Stockholm
     method name(--> 'Europe/Stockholm') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("1:12:12"),:until(-2871676800))), Map.new((:baseoffset("1:00:14"),:until(-2208988800))), Map.new((:baseoffset("1:00"),:until(-1692493200))), Map.new((:baseoffset("2:00:00"),:until(-1680476400))), Map.new((:baseoffset("1:00"),:until(315532800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("1:12:12"),:until(-2871676800))), Map.new((:baseoffset("1:00:14"),:until(-2208988800))), Map.new((:baseoffset("1:00"),:until(-1692493200))), Map.new((:baseoffset("2:00:00"),:until(-1680476400))), Map.new((:baseoffset("1:00"),:until(315532800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

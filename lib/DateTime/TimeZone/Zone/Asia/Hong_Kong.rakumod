@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Hong_Kong
     method name(--> 'Asia/Hong_Kong') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("7:36:42"),:until(-2056663398))), Map.new((:baseoffset("8:00"),:until(-900880200))), Map.new((:baseoffset("9:00:00"),:until(-891547200))), Map.new((:baseoffset("8:30"),:until(-884217600))), Map.new((:baseoffset("9:00"),:until(-766627200))), Map.new((:baseoffset("8:00"),:rule("HK")))
+        BEGIN Map.new((:baseoffset("7:36:42"),:until(-2056663398))), Map.new((:baseoffset("8:00"),:until(-900880200))), Map.new((:baseoffset("9:00:00"),:until(-891547200))), Map.new((:baseoffset("8:30"),:until(-884217600))), Map.new((:baseoffset("9:00"),:until(-766627200))), Map.new((:baseoffset("8:00"),:rules("HK")))
     }
 
     method rules() {

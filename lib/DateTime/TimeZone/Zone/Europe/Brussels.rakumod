@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Brussels
     method name(--> 'Europe/Brussels') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:17:30"),:until(-2840140800))), Map.new((:baseoffset("0:17:30"),:until(-2450952000))), Map.new((:baseoffset("0:00"),:until(-1740355200))), Map.new((:baseoffset("1:00"),:until(-1693699200))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-1613826000))), Map.new((:baseoffset("0:00"),:rule("Belgium"),:until(-934668000))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-799286400))), Map.new((:baseoffset("1:00"),:rule("Belgium"),:until(220924800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:17:30"),:until(-2840140800))), Map.new((:baseoffset("0:17:30"),:until(-2450952000))), Map.new((:baseoffset("0:00"),:until(-1740355200))), Map.new((:baseoffset("1:00"),:until(-1693699200))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-1613826000))), Map.new((:baseoffset("0:00"),:rules("Belgium"),:until(-934668000))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-799286400))), Map.new((:baseoffset("1:00"),:rules("Belgium"),:until(220924800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

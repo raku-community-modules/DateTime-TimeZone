@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Guayaquil
     method name(--> 'America/Guayaquil') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:19:20"),:until(-2524521600))), Map.new((:baseoffset("-5:14:00"),:until(-1230768000))), Map.new((:baseoffset("-5:00"),:rule("Ecuador")))
+        BEGIN Map.new((:baseoffset("-5:19:20"),:until(-2524521600))), Map.new((:baseoffset("-5:14:00"),:until(-1230768000))), Map.new((:baseoffset("-5:00"),:rules("Ecuador")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Rankin_Inlet
     method name(--> 'America/Rankin_Inlet') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0"),:until(-410227200))), Map.new((:baseoffset("-6:00"),:rule("NT_YK"),:until(972784800))), Map.new((:baseoffset("-5:00"),:until(986094000))), Map.new((:baseoffset("-6:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("0"),:until(-410227200))), Map.new((:baseoffset("-6:00"),:rules("NT_YK"),:until(972784800))), Map.new((:baseoffset("-5:00"),:until(986094000))), Map.new((:baseoffset("-6:00"),:rules("Canada")))
     }
 
     method rules() {

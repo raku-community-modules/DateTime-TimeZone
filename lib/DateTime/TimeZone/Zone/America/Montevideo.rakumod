@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Montevideo
     method name(--> 'America/Montevideo') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:44:51"),:until(-1942704000))), Map.new((:baseoffset("-3:44:51"),:until(-1567468800))), Map.new((:baseoffset("-4:00"),:until(-1459641600))), Map.new((:baseoffset("-3:30"),:rule("Uruguay"),:until(-853632000))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(-315619200))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(-63158400))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(0))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(126230400))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(132105600))), Map.new((:baseoffset("-3:00"),:rule("Uruguay"),:until(156902400))), Map.new((:baseoffset("-3:00"),:rule("Uruguay")))
+        BEGIN Map.new((:baseoffset("-3:44:51"),:until(-1942704000))), Map.new((:baseoffset("-3:44:51"),:until(-1567468800))), Map.new((:baseoffset("-4:00"),:until(-1459641600))), Map.new((:baseoffset("-3:30"),:rules("Uruguay"),:until(-853632000))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(-315619200))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(-63158400))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(0))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(126230400))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(132105600))), Map.new((:baseoffset("-3:00"),:rules("Uruguay"),:until(156902400))), Map.new((:baseoffset("-3:00"),:rules("Uruguay")))
     }
 
     method rules() {

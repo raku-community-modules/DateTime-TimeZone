@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Nicosia
     method name(--> 'Asia/Nicosia') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:13:28"),:until(-1518912000))), Map.new((:baseoffset("2:00"),:rule("Cyprus"),:until(904608000))), Map.new((:baseoffset("2:00"),:rule("EUAsia")))
+        BEGIN Map.new((:baseoffset("2:13:28"),:until(-1518912000))), Map.new((:baseoffset("2:00"),:rules("Cyprus"),:until(904608000))), Map.new((:baseoffset("2:00"),:rules("EUAsia")))
     }
 
     method rules() {

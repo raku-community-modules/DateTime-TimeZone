@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Saratov
     method name(--> 'Europe/Saratov') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("3:04:18"),:until(-1593820800))), Map.new((:baseoffset("3:00"),:until(-1247529600))), Map.new((:baseoffset("4:00"),:rule("Russia"),:until(575431200))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("4:00"),:until(701834400))), Map.new((:baseoffset("3:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("4:00"),:until(1414288800))), Map.new((:baseoffset("3:00"),:until(1480816800))), Map.new((:baseoffset("4:00")))
+        BEGIN Map.new((:baseoffset("3:04:18"),:until(-1593820800))), Map.new((:baseoffset("3:00"),:until(-1247529600))), Map.new((:baseoffset("4:00"),:rules("Russia"),:until(575431200))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("4:00"),:until(701834400))), Map.new((:baseoffset("3:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("4:00"),:until(1414288800))), Map.new((:baseoffset("3:00"),:until(1480816800))), Map.new((:baseoffset("4:00")))
     }
 
     method rules() {

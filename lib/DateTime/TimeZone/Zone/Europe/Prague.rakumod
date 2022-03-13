@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Prague
     method name(--> 'Europe/Prague') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:57:44"),:until(-3786825600))), Map.new((:baseoffset("0:57:44"),:until(-2469398400))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-777859200))), Map.new((:baseoffset("1:00"),:rule("Czech"),:until(-728514000))), Map.new((:baseoffset("1:00"),:rule("-1:00"),:until(-721260000))), Map.new((:baseoffset("1:00"),:rule("Czech"),:until(283996800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:57:44"),:until(-3786825600))), Map.new((:baseoffset("0:57:44"),:until(-2469398400))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-777859200))), Map.new((:baseoffset("1:00"),:rules("Czech"),:until(-728514000))), Map.new((:baseoffset("1:00"),:rules("-1:00"),:until(-721260000))), Map.new((:baseoffset("1:00"),:rules("Czech"),:until(283996800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

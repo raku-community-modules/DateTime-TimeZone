@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Luxembourg
     method name(--> 'Europe/Luxembourg') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:24:36"),:until(-2069712000))), Map.new((:baseoffset("1:00"),:rule("Lux"),:until(-1612656000))), Map.new((:baseoffset("0:00"),:rule("Lux"),:until(-1269813600))), Map.new((:baseoffset("0:00"),:rule("Belgium"),:until(-935182800))), Map.new((:baseoffset("1:00"),:rule("C-Eur"),:until(-797979600))), Map.new((:baseoffset("1:00"),:rule("Belgium"),:until(220924800))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("0:24:36"),:until(-2069712000))), Map.new((:baseoffset("1:00"),:rules("Lux"),:until(-1612656000))), Map.new((:baseoffset("0:00"),:rules("Lux"),:until(-1269813600))), Map.new((:baseoffset("0:00"),:rules("Belgium"),:until(-935182800))), Map.new((:baseoffset("1:00"),:rules("C-Eur"),:until(-797979600))), Map.new((:baseoffset("1:00"),:rules("Belgium"),:until(220924800))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

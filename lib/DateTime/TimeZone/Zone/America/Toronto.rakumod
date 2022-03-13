@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Toronto
     method name(--> 'America/Toronto') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:17:32"),:until(-2366755200))), Map.new((:baseoffset("-5:00"),:rule("Canada"),:until(-1609459200))), Map.new((:baseoffset("-5:00"),:rule("Toronto"),:until(-880236000))), Map.new((:baseoffset("-5:00"),:rule("Canada"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rule("Toronto"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-5:17:32"),:until(-2366755200))), Map.new((:baseoffset("-5:00"),:rules("Canada"),:until(-1609459200))), Map.new((:baseoffset("-5:00"),:rules("Toronto"),:until(-880236000))), Map.new((:baseoffset("-5:00"),:rules("Canada"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rules("Toronto"),:until(126230400))), Map.new((:baseoffset("-5:00"),:rules("Canada")))
     }
 
     method rules() {

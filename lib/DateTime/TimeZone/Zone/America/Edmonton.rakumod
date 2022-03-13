@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Edmonton
     method name(--> 'America/Edmonton') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-7:33:52"),:until(-1998691200))), Map.new((:baseoffset("-7:00"),:rule("Edm"),:until(536457600))), Map.new((:baseoffset("-7:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-7:33:52"),:until(-1998691200))), Map.new((:baseoffset("-7:00"),:rules("Edm"),:until(536457600))), Map.new((:baseoffset("-7:00"),:rules("Canada")))
     }
 
     method rules() {

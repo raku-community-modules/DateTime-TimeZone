@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Indiana::Winamac
     method name(--> 'America/Indiana/Winamac') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:46:25"),:until(-2717667985))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rule("Pulaski"),:until(-273708000))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rule("US"),:until(1173578400))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:46:25"),:until(-2717667985))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-6:00"),:rules("Pulaski"),:until(-273708000))), Map.new((:baseoffset("-5:00"),:until(-31536000))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(31536000))), Map.new((:baseoffset("-5:00"),:until(1143943200))), Map.new((:baseoffset("-6:00"),:rules("US"),:until(1173578400))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

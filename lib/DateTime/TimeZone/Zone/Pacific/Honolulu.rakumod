@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Honolulu
     method name(--> 'Pacific/Honolulu') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-10:31:26"),:until(-2334139200))), Map.new((:baseoffset("-10:30"),:until(-1157320800))), Map.new((:baseoffset("-9:30:00"),:until(-1155470400))), Map.new((:baseoffset("-10:30"),:rule("US"),:until(-712188000))), Map.new((:baseoffset("-10:00")))
+        BEGIN Map.new((:baseoffset("-10:31:26"),:until(-2334139200))), Map.new((:baseoffset("-10:30"),:until(-1157320800))), Map.new((:baseoffset("-9:30:00"),:until(-1155470400))), Map.new((:baseoffset("-10:30"),:rules("US"),:until(-712188000))), Map.new((:baseoffset("-10:00")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Moncton
     method name(--> 'America/Moncton') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:19:08"),:until(-2715897600))), Map.new((:baseoffset("-5:00"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(-1167609600))), Map.new((:baseoffset("-4:00"),:rule("Moncton"),:until(-883612800))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(-757382400))), Map.new((:baseoffset("-4:00"),:rule("Moncton"),:until(94694400))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(725846400))), Map.new((:baseoffset("-4:00"),:rule("Moncton"),:until(1167609600))), Map.new((:baseoffset("-4:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-4:19:08"),:until(-2715897600))), Map.new((:baseoffset("-5:00"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(-1167609600))), Map.new((:baseoffset("-4:00"),:rules("Moncton"),:until(-883612800))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(-757382400))), Map.new((:baseoffset("-4:00"),:rules("Moncton"),:until(94694400))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(725846400))), Map.new((:baseoffset("-4:00"),:rules("Moncton"),:until(1167609600))), Map.new((:baseoffset("-4:00"),:rules("Canada")))
     }
 
     method rules() {

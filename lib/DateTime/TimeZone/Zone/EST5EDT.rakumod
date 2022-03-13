@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::EST5EDT
     method name(--> 'EST5EDT') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:00"),:rule("US"))),
+        BEGIN Map.new((:baseoffset("-5:00"),:rules("US"))),
     }
 
     method rules() {

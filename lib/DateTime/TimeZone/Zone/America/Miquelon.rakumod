@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Miquelon
     method name(--> 'America/Miquelon') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:44:40"),:until(-1850342400))), Map.new((:baseoffset("-4:00"),:until(325987200))), Map.new((:baseoffset("-3:00"),:until(536457600))), Map.new((:baseoffset("-3:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-3:44:40"),:until(-1850342400))), Map.new((:baseoffset("-4:00"),:until(325987200))), Map.new((:baseoffset("-3:00"),:until(536457600))), Map.new((:baseoffset("-3:00"),:rules("Canada")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Srednekolymsk
     method name(--> 'Asia/Srednekolymsk') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("10:14:52"),:until(-1441152000))), Map.new((:baseoffset("10:00"),:until(-1247529600))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rule("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rule("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00"),:until(1414288800))), Map.new((:baseoffset("11:00")))
+        BEGIN Map.new((:baseoffset("10:14:52"),:until(-1441152000))), Map.new((:baseoffset("10:00"),:until(-1247529600))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(670384800))), Map.new((:baseoffset("10:00"),:rules("Russia"),:until(695786400))), Map.new((:baseoffset("11:00"),:rules("Russia"),:until(1301191200))), Map.new((:baseoffset("12:00"),:until(1414288800))), Map.new((:baseoffset("11:00")))
     }
 
     method rules() {

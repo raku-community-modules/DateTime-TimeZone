@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Argentina::Jujuy
     method name(--> 'America/Argentina/Jujuy') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:21:12"),:until(-2372112000))), Map.new((:baseoffset("-4:16:48"),:until(-1567468800))), Map.new((:baseoffset("-4:00"),:until(-1233446400))), Map.new((:baseoffset("-4:00"),:rule("Arg"),:until(-7603200))), Map.new((:baseoffset("-3:00"),:rule("Arg"),:until(636508800))), Map.new((:baseoffset("-4:00"),:until(657072000))), Map.new((:baseoffset("-3:00:00"),:until(669168000))), Map.new((:baseoffset("-4:00"),:until(686707200))), Map.new((:baseoffset("-2:00:00"),:until(694224000))), Map.new((:baseoffset("-3:00"),:rule("Arg"),:until(938908800))), Map.new((:baseoffset("-4:00"),:rule("Arg"),:until(952041600))), Map.new((:baseoffset("-3:00"),:rule("Arg"),:until(1224288000))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-4:21:12"),:until(-2372112000))), Map.new((:baseoffset("-4:16:48"),:until(-1567468800))), Map.new((:baseoffset("-4:00"),:until(-1233446400))), Map.new((:baseoffset("-4:00"),:rules("Arg"),:until(-7603200))), Map.new((:baseoffset("-3:00"),:rules("Arg"),:until(636508800))), Map.new((:baseoffset("-4:00"),:until(657072000))), Map.new((:baseoffset("-3:00:00"),:until(669168000))), Map.new((:baseoffset("-4:00"),:until(686707200))), Map.new((:baseoffset("-2:00:00"),:until(694224000))), Map.new((:baseoffset("-3:00"),:rules("Arg"),:until(938908800))), Map.new((:baseoffset("-4:00"),:rules("Arg"),:until(952041600))), Map.new((:baseoffset("-3:00"),:rules("Arg"),:until(1224288000))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

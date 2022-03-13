@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Pacific::Efate
     method name(--> 'Pacific/Efate') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("11:13:16"),:until(-1829347200))), Map.new((:baseoffset("11:00"),:rule("Vanuatu")))
+        BEGIN Map.new((:baseoffset("11:13:16"),:until(-1829347200))), Map.new((:baseoffset("11:00"),:rules("Vanuatu")))
     }
 
     method rules() {

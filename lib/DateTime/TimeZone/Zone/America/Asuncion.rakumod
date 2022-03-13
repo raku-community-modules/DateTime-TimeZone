@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Asuncion
     method name(--> 'America/Asuncion') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-3:50:40"),:until(-2524521600))), Map.new((:baseoffset("-3:50:40"),:until(-1206403200))), Map.new((:baseoffset("-4:00"),:until(86745600))), Map.new((:baseoffset("-3:00"),:until(134006400))), Map.new((:baseoffset("-4:00"),:rule("Para")))
+        BEGIN Map.new((:baseoffset("-3:50:40"),:until(-2524521600))), Map.new((:baseoffset("-3:50:40"),:until(-1206403200))), Map.new((:baseoffset("-4:00"),:until(86745600))), Map.new((:baseoffset("-3:00"),:until(134006400))), Map.new((:baseoffset("-4:00"),:rules("Para")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Halifax
     method name(--> 'America/Halifax') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:14:24"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rule("Halifax"),:until(-1640995200))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(-1609459200))), Map.new((:baseoffset("-4:00"),:rule("Halifax"),:until(-880236000))), Map.new((:baseoffset("-4:00"),:rule("Canada"),:until(-757382400))), Map.new((:baseoffset("-4:00"),:rule("Halifax"),:until(126230400))), Map.new((:baseoffset("-4:00"),:rule("Canada")))
+        BEGIN Map.new((:baseoffset("-4:14:24"),:until(-2131660800))), Map.new((:baseoffset("-4:00"),:rules("Halifax"),:until(-1640995200))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(-1609459200))), Map.new((:baseoffset("-4:00"),:rules("Halifax"),:until(-880236000))), Map.new((:baseoffset("-4:00"),:rules("Canada"),:until(-757382400))), Map.new((:baseoffset("-4:00"),:rules("Halifax"),:until(126230400))), Map.new((:baseoffset("-4:00"),:rules("Canada")))
     }
 
     method rules() {

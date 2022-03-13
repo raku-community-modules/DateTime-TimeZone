@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Tbilisi
     method name(--> 'Asia/Tbilisi') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:59:11"),:until(-2840140800))), Map.new((:baseoffset("2:59:11"),:until(-1441152000))), Map.new((:baseoffset("3:00"),:until(-405129600))), Map.new((:baseoffset("4:00"),:rule("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("3:00"),:rule("RussiaAsia"),:until(694224000))), Map.new((:baseoffset("3:00"),:rule("E-EurAsia"),:until(780451200))), Map.new((:baseoffset("4:00"),:rule("E-EurAsia"),:until(846374400))), Map.new((:baseoffset("5:00:00"),:until(859680000))), Map.new((:baseoffset("4:00"),:rule("E-EurAsia"),:until(1088294400))), Map.new((:baseoffset("3:00"),:rule("RussiaAsia"),:until(1111888800))), Map.new((:baseoffset("4:00")))
+        BEGIN Map.new((:baseoffset("2:59:11"),:until(-2840140800))), Map.new((:baseoffset("2:59:11"),:until(-1441152000))), Map.new((:baseoffset("3:00"),:until(-405129600))), Map.new((:baseoffset("4:00"),:rules("RussiaAsia"),:until(670384800))), Map.new((:baseoffset("3:00"),:rules("RussiaAsia"),:until(694224000))), Map.new((:baseoffset("3:00"),:rules("E-EurAsia"),:until(780451200))), Map.new((:baseoffset("4:00"),:rules("E-EurAsia"),:until(846374400))), Map.new((:baseoffset("5:00:00"),:until(859680000))), Map.new((:baseoffset("4:00"),:rules("E-EurAsia"),:until(1088294400))), Map.new((:baseoffset("3:00"),:rules("RussiaAsia"),:until(1111888800))), Map.new((:baseoffset("4:00")))
     }
 
     method rules() {

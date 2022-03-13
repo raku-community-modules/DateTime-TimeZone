@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Lima
     method name(--> 'America/Lima') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:08:12"),:until(-2524521600))), Map.new((:baseoffset("-5:08:36"),:until(-1938556800))), Map.new((:baseoffset("-5:00"),:rule("Peru")))
+        BEGIN Map.new((:baseoffset("-5:08:12"),:until(-2524521600))), Map.new((:baseoffset("-5:08:36"),:until(-1938556800))), Map.new((:baseoffset("-5:00"),:rules("Peru")))
     }
 
     method rules() {

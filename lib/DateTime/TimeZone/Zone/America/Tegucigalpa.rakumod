@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Tegucigalpa
     method name(--> 'America/Tegucigalpa') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:48:52"),:until(-1538524800))), Map.new((:baseoffset("-6:00"),:rule("Hond")))
+        BEGIN Map.new((:baseoffset("-5:48:52"),:until(-1538524800))), Map.new((:baseoffset("-6:00"),:rules("Hond")))
     }
 
     method rules() {

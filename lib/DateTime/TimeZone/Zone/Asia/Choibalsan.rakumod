@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Choibalsan
     method name(--> 'Asia/Choibalsan') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("7:38:00"),:until(-2032905600))), Map.new((:baseoffset("7:00"),:until(252460800))), Map.new((:baseoffset("8:00"),:until(418003200))), Map.new((:baseoffset("9:00"),:rule("Mongol"),:until(1206921600))), Map.new((:baseoffset("8:00"),:rule("Mongol")))
+        BEGIN Map.new((:baseoffset("7:38:00"),:until(-2032905600))), Map.new((:baseoffset("7:00"),:until(252460800))), Map.new((:baseoffset("8:00"),:until(418003200))), Map.new((:baseoffset("9:00"),:rules("Mongol"),:until(1206921600))), Map.new((:baseoffset("8:00"),:rules("Mongol")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::WET
     method name(--> 'WET') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("0:00"),:rule("EU"))),
+        BEGIN Map.new((:baseoffset("0:00"),:rules("EU"))),
     }
 
     method rules() {

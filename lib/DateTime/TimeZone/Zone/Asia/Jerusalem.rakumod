@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Jerusalem
     method name(--> 'Asia/Jerusalem') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:20:54"),:until(-2840140800))), Map.new((:baseoffset("2:20:40"),:until(-1640995200))), Map.new((:baseoffset("2:00"),:rule("Zion")))
+        BEGIN Map.new((:baseoffset("2:20:54"),:until(-2840140800))), Map.new((:baseoffset("2:20:40"),:until(-1640995200))), Map.new((:baseoffset("2:00"),:rules("Zion")))
     }
 
     method rules() {

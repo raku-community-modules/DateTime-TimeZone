@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Grand_Turk
     method name(--> 'America/Grand_Turk') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-4:44:32"),:until(-2524521600))), Map.new((:baseoffset("-5:07:10"),:until(-1827705600))), Map.new((:baseoffset("-5:00"),:until(283996800))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(1446343200))), Map.new((:baseoffset("-4:00"),:until(1520737200))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-4:44:32"),:until(-2524521600))), Map.new((:baseoffset("-5:07:10"),:until(-1827705600))), Map.new((:baseoffset("-5:00"),:until(283996800))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(1446343200))), Map.new((:baseoffset("-4:00"),:until(1520737200))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Beirut
     method name(--> 'Asia/Beirut') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:22:00"),:until(-2840140800))), Map.new((:baseoffset("2:00"),:rule("Lebanon")))
+        BEGIN Map.new((:baseoffset("2:22:00"),:until(-2840140800))), Map.new((:baseoffset("2:00"),:rules("Lebanon")))
     }
 
     method rules() {

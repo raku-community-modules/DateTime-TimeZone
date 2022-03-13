@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Gibraltar
     method name(--> 'Europe/Gibraltar') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:21:24"),:until(-2821651200))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(-401320800))), Map.new((:baseoffset("1:00"),:until(378691200))), Map.new((:baseoffset("1:00"),:rule("EU")))
+        BEGIN Map.new((:baseoffset("-0:21:24"),:until(-2821651200))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(-401320800))), Map.new((:baseoffset("1:00"),:until(378691200))), Map.new((:baseoffset("1:00"),:rules("EU")))
     }
 
     method rules() {

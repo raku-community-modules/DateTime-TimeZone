@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::EET
     method name(--> 'EET') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("2:00"),:rule("EU"))),
+        BEGIN Map.new((:baseoffset("2:00"),:rules("EU"))),
     }
 
     method rules() {

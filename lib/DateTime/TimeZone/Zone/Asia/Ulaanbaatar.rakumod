@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Ulaanbaatar
     method name(--> 'Asia/Ulaanbaatar') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("7:07:32"),:until(-2032905600))), Map.new((:baseoffset("7:00"),:until(252460800))), Map.new((:baseoffset("8:00"),:rule("Mongol")))
+        BEGIN Map.new((:baseoffset("7:07:32"),:until(-2032905600))), Map.new((:baseoffset("7:00"),:until(252460800))), Map.new((:baseoffset("8:00"),:rules("Mongol")))
     }
 
     method rules() {

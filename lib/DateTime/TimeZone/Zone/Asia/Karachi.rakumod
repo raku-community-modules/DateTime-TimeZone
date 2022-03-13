@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Asia::Karachi
     method name(--> 'Asia/Karachi') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("4:28:12"),:until(-1988150400))), Map.new((:baseoffset("5:30"),:until(-862617600))), Map.new((:baseoffset("6:30:00"),:until(-764121600))), Map.new((:baseoffset("5:30"),:until(-576115200))), Map.new((:baseoffset("5:00"),:until(38793600))), Map.new((:baseoffset("5:00"),:rule("Pakistan")))
+        BEGIN Map.new((:baseoffset("4:28:12"),:until(-1988150400))), Map.new((:baseoffset("5:30"),:until(-862617600))), Map.new((:baseoffset("6:30:00"),:until(-764121600))), Map.new((:baseoffset("5:30"),:until(-576115200))), Map.new((:baseoffset("5:00"),:until(38793600))), Map.new((:baseoffset("5:00"),:rules("Pakistan")))
     }
 
     method rules() {

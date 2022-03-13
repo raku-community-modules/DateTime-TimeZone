@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Recife
     method name(--> 'America/Recife') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-2:19:36"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(938649600))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(971568000))), Map.new((:baseoffset("-3:00"),:until(1000339200))), Map.new((:baseoffset("-3:00"),:rule("Brazil"),:until(1033430400))), Map.new((:baseoffset("-3:00")))
+        BEGIN Map.new((:baseoffset("-2:19:36"),:until(-1767225600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(653529600))), Map.new((:baseoffset("-3:00"),:until(938649600))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(971568000))), Map.new((:baseoffset("-3:00"),:until(1000339200))), Map.new((:baseoffset("-3:00"),:rules("Brazil"),:until(1033430400))), Map.new((:baseoffset("-3:00")))
     }
 
     method rules() {

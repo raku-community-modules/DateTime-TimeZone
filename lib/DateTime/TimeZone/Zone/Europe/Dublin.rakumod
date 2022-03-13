@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::Europe::Dublin
     method name(--> 'Europe/Dublin') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-0:25:00"),:until(-2821651200))), Map.new((:baseoffset("-0:25:21"),:until(-1691964000))), Map.new((:baseoffset("1:25:21"),:until(-1680472800))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(-1517011200))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(-942012000))), Map.new((:baseoffset("1:00:00"),:until(-733356000))), Map.new((:baseoffset("0:00"),:until(-719445600))), Map.new((:baseoffset("1:00:00"),:until(-699487200))), Map.new((:baseoffset("0:00"),:until(-684972000))), Map.new((:baseoffset("0:00"),:rule("GB-Eire"),:until(-37238400))), Map.new((:baseoffset("1:00"),:rule("Eire")))
+        BEGIN Map.new((:baseoffset("-0:25:00"),:until(-2821651200))), Map.new((:baseoffset("-0:25:21"),:until(-1691964000))), Map.new((:baseoffset("1:25:21"),:until(-1680472800))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(-1517011200))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(-942012000))), Map.new((:baseoffset("1:00:00"),:until(-733356000))), Map.new((:baseoffset("0:00"),:until(-719445600))), Map.new((:baseoffset("1:00:00"),:until(-699487200))), Map.new((:baseoffset("0:00"),:until(-684972000))), Map.new((:baseoffset("0:00"),:rules("GB-Eire"),:until(-37238400))), Map.new((:baseoffset("1:00"),:rules("Eire")))
     }
 
     method rules() {

@@ -9,7 +9,7 @@ class DateTime::TimeZone::Zone::America::Detroit
     method name(--> 'America/Detroit') { }
 
     method zonedata() {
-        BEGIN Map.new((:baseoffset("-5:32:11"),:until(-2051222400))), Map.new((:baseoffset("-6:00"),:until(-1724104800))), Map.new((:baseoffset("-5:00"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rule("Detroit"),:until(94694400))), Map.new((:baseoffset("-5:00"),:rule("US"),:until(157766400))), Map.new((:baseoffset("-5:00"),:until(167796000))), Map.new((:baseoffset("-5:00"),:rule("US")))
+        BEGIN Map.new((:baseoffset("-5:32:11"),:until(-2051222400))), Map.new((:baseoffset("-6:00"),:until(-1724104800))), Map.new((:baseoffset("-5:00"),:until(-883612800))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(-757382400))), Map.new((:baseoffset("-5:00"),:rules("Detroit"),:until(94694400))), Map.new((:baseoffset("-5:00"),:rules("US"),:until(157766400))), Map.new((:baseoffset("-5:00"),:until(167796000))), Map.new((:baseoffset("-5:00"),:rules("US")))
     }
 
     method rules() {
